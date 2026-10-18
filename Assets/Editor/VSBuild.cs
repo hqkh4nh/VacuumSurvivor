@@ -85,6 +85,21 @@ namespace VacuumSurvivor.EditorTools
             ledPs.Eyes = false;
             player.AddComponent<BatteryLED>();
 
+            var ringGO = new GameObject("SuctionRing");
+            ringGO.transform.SetParent(player.transform, false);
+            var ringSr = ringGO.AddComponent<SpriteRenderer>();
+            ringSr.sortingOrder = 1;
+            ringSr.color = new Color(0.957f, 0.447f, 0.714f, 0.12f); // #F472B6, translucent
+            var ringPs = ringGO.AddComponent<ProceduralSprite>();
+            ringPs.Color = Color.white;
+            ringPs.Eyes = false;
+            ringPs.Pixels = 64;
+
+            var suction = player.AddComponent<SuctionWeapon>();
+            suction.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset");
+            suction.Ring = ringGO.transform;
+            player.AddComponent<WeaponManager>();
+
             return player;
         }
 
@@ -160,6 +175,14 @@ namespace VacuumSurvivor.EditorTools
             tocRoiPrefab.GetComponent<SplitterEnemy>().ChildPrefab = tocNhoPrefab;
             EditorUtility.SetDirty(tocRoiPrefab);
             PrefabUtility.SavePrefabAsset(tocRoiPrefab);
+
+            EnsureFolder("Assets/ScriptableObjects/Weapons");
+            CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset", w =>
+            {
+                w.weaponName = "LucHut"; w.maxLevel = 5;
+                w.dps = new[] { 4f, 5.5f, 7f, 8.5f, 10f };
+                w.radius = new[] { 1.5f, 1.8f, 2.1f, 2.45f, 2.8f };
+            });
 
             CreateOrLoadAsset<WaveData>("Assets/ScriptableObjects/WaveData_PhongKhach.asset", w =>
             {
