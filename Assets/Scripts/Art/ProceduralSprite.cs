@@ -12,6 +12,8 @@ namespace VacuumSurvivor
         [SerializeField] int pixels = 64;
 
         public Color Color { get => color; set => color = value; }
+        public bool Eyes { get => eyes; set => eyes = value; }
+        public int Pixels { get => pixels; set => pixels = value; }
 
         void Awake() => Apply();
 

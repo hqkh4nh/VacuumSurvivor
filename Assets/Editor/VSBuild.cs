@@ -62,6 +62,18 @@ namespace VacuumSurvivor.EditorTools
             col.radius = 0.45f;
             player.AddComponent<PlayerStats>();
             player.AddComponent<PlayerController>();
+
+            var ledGO = new GameObject("LED");
+            ledGO.transform.SetParent(player.transform, false);
+            ledGO.transform.localPosition = new Vector3(0f, 0.28f, 0f);
+            ledGO.transform.localScale = Vector3.one * 0.3f;
+            var ledSr = ledGO.AddComponent<SpriteRenderer>();
+            ledSr.sortingOrder = 11;
+            var ledPs = ledGO.AddComponent<ProceduralSprite>();
+            ledPs.Color = Color.white;
+            ledPs.Eyes = false;
+            player.AddComponent<BatteryLED>();
+
             return player;
         }
 
