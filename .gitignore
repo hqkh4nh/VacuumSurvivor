@@ -42,3 +42,8 @@ crashlytics-build.properties
 .DS_Store
 Thumbs.db
 *.slnx
+
+# Local playmode screenshots (not art)
+/Assets/_vsshots/
+/Assets/_vsshots.meta
+/Screenshots/
