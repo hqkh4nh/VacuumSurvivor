@@ -34,6 +34,7 @@ namespace VacuumSurvivor
         void TryShowNext()
         {
             if (panel == null || panel.IsOpen || pending <= 0) return;
+            if (GameManager.Instance != null && GameManager.Instance.Current != GameManager.State.Playing) return;
             pending--;
 
             var options = UpgradeRoll.Pick(catalog, LevelOf, 3, rng);
@@ -50,7 +51,9 @@ namespace VacuumSurvivor
             ApplyEffect(u.type, value);
             levels[u] = lvl + 1;
 
-            Time.timeScale = 1f;
+            // Don't un-pause a run that ended (level-up and death on the same frame).
+            if (GameManager.Instance == null || GameManager.Instance.Current == GameManager.State.Playing)
+                Time.timeScale = 1f;
             TryShowNext();
         }
 
