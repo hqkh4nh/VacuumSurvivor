@@ -61,6 +61,10 @@ namespace VacuumSurvivor.EditorTools
 
             var canvas = BuildCanvas();
 
+            var hudGO = new GameObject("HUD", typeof(RectTransform));
+            hudGO.transform.SetParent(canvas.transform, false);
+            hudGO.AddComponent<HUD>();
+
             var levelUpGO = new GameObject("LevelUpPanel", typeof(RectTransform));
             levelUpGO.transform.SetParent(canvas.transform, false);
             var levelUpPanel = levelUpGO.AddComponent<LevelUpPanel>();
