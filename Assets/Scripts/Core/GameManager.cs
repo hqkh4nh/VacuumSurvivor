@@ -10,8 +10,22 @@ namespace VacuumSurvivor
         public static GameManager Instance { get; private set; }
 
         public State Current { get; private set; } = State.Playing;
-        public Transform Player { get; set; }
         public float Elapsed { get; private set; }
+
+        Transform player;
+        public Transform Player
+        {
+            get
+            {
+                if (player == null)
+                {
+                    var pc = FindFirstObjectByType<PlayerController>();
+                    if (pc != null) player = pc.transform;
+                }
+                return player;
+            }
+            set => player = value;
+        }
 
         void Awake()
         {

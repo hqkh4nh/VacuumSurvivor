@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f79e38bd66c8c7449278d14bc071af4, type: 3}
+  m_Name: CucTocRoi
+  m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.EnemyData
+  enemyName: CucTocRoi
+  maxHealth: 30
+  moveSpeed: 1.2
+  contactDamage: 8
+  dustValue: 3
+  bodyColor: {r: 0.22, g: 0.22, b: 0.28, a: 1}
+  bodyPixels: 58
+  splitsOnDeath: 1
+  splitInto: {fileID: 11400000, guid: 5098ca7258ce234468656afe564e11ce, type: 2}
+  splitCount: 2

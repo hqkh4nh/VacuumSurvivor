@@ -103,6 +103,99 @@ namespace VacuumSurvivor.EditorTools
             scenes.Add(new EditorBuildSettingsScene(path, true));
             EditorBuildSettings.scenes = scenes.ToArray();
         }
+
+        [MenuItem("VacuumSurvivor/Build Content")]
+        public static string BuildContent()
+        {
+            EnsureFolder("Assets/ScriptableObjects/Enemies");
+            EnsureFolder("Assets/Prefabs/Enemies");
+
+            var buiBong = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/BuiBong.asset", d =>
+            {
+                d.enemyName = "BuiBong";
+                d.maxHealth = 10f; d.moveSpeed = 1.8f; d.contactDamage = 5f; d.dustValue = 1;
+                d.bodyColor = new Color(0.545f, 0.545f, 0.62f); d.bodyPixels = 44;
+                d.splitsOnDeath = false;
+            });
+            CreateEnemyPrefab("Assets/Prefabs/Enemies/BuiBong.prefab", buiBong, typeof(ChaserEnemy), 0.35f);
+
+            var banhMi = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/VunBanhMi.asset", d =>
+            {
+                d.enemyName = "VunBanhMi";
+                d.maxHealth = 6f; d.moveSpeed = 3.5f; d.contactDamage = 3f; d.dustValue = 1;
+                d.bodyColor = new Color(0.85f, 0.7f, 0.33f); d.bodyPixels = 34;
+                d.splitsOnDeath = false;
+            });
+            CreateEnemyPrefab("Assets/Prefabs/Enemies/VunBanhMi.prefab", banhMi, typeof(ChaserEnemy), 0.28f);
+
+            var tocNho = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/CucTocRoiNho.asset", d =>
+            {
+                d.enemyName = "CucTocRoiNho";
+                d.maxHealth = 10f; d.moveSpeed = 1.4f; d.contactDamage = 5f; d.dustValue = 1;
+                d.bodyColor = new Color(0.3f, 0.3f, 0.36f); d.bodyPixels = 34;
+                d.splitsOnDeath = false;
+            });
+            var tocNhoPrefab = CreateEnemyPrefab("Assets/Prefabs/Enemies/CucTocRoiNho.prefab", tocNho, typeof(ChaserEnemy), 0.28f);
+
+            var tocRoi = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/CucTocRoi.asset", d =>
+            {
+                d.enemyName = "CucTocRoi";
+                d.maxHealth = 30f; d.moveSpeed = 1.2f; d.contactDamage = 8f; d.dustValue = 3;
+                d.bodyColor = new Color(0.22f, 0.22f, 0.28f); d.bodyPixels = 58;
+                d.splitsOnDeath = true; d.splitInto = tocNho; d.splitCount = 2;
+            });
+            var tocRoiPrefab = CreateEnemyPrefab("Assets/Prefabs/Enemies/CucTocRoi.prefab", tocRoi, typeof(SplitterEnemy), 0.5f);
+            tocRoiPrefab.GetComponent<SplitterEnemy>().ChildPrefab = tocNhoPrefab;
+            EditorUtility.SetDirty(tocRoiPrefab);
+            PrefabUtility.SavePrefabAsset(tocRoiPrefab);
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            return "content built";
+        }
+
+        static EnemyData CreateOrLoadEnemyData(string path, System.Action<EnemyData> init)
+        {
+            var d = AssetDatabase.LoadAssetAtPath<EnemyData>(path);
+            if (d == null)
+            {
+                d = ScriptableObject.CreateInstance<EnemyData>();
+                AssetDatabase.CreateAsset(d, path);
+            }
+            init(d);
+            EditorUtility.SetDirty(d);
+            return d;
+        }
+
+        static GameObject CreateEnemyPrefab(string path, EnemyData data, System.Type behaviour, float colliderRadius)
+        {
+            var go = new GameObject(data.enemyName);
+            go.layer = LayerMask.NameToLayer("Enemy");
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 5;
+            var ps = go.AddComponent<ProceduralSprite>();
+            ps.Color = Color.white;   // tinted per-type by EnemyBase; white base lets it flash
+            ps.Pixels = data.bodyPixels;
+            var rb = go.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            rb.freezeRotation = true;
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            go.AddComponent<CircleCollider2D>().radius = colliderRadius;
+            ((EnemyBase)go.AddComponent(behaviour)).Data = data;
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
+            Object.DestroyImmediate(go);
+            return prefab;
+        }
+
+        static void EnsureFolder(string path)
+        {
+            if (AssetDatabase.IsValidFolder(path)) return;
+            string parent = System.IO.Path.GetDirectoryName(path).Replace("\\", "/");
+            string leaf = System.IO.Path.GetFileName(path);
+            if (!AssetDatabase.IsValidFolder(parent)) EnsureFolder(parent);
+            AssetDatabase.CreateFolder(parent, leaf);
+        }
     }
 }
 #endif
