@@ -60,6 +60,7 @@ namespace VacuumSurvivor.EditorTools
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             var col = player.AddComponent<CircleCollider2D>();
             col.radius = 0.45f;
+            player.AddComponent<PlayerStats>();
             player.AddComponent<PlayerController>();
             return player;
         }
