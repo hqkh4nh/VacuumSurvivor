@@ -39,6 +39,17 @@ namespace VacuumSurvivor.EditorTools
             var gm = new GameObject("GameManager");
             gm.AddComponent<GameManager>();
 
+            var spawnerGO = new GameObject("EnemySpawner");
+            spawnerGO.AddComponent<EnemySpawner>().Configure(
+                AssetDatabase.LoadAssetAtPath<WaveData>("Assets/ScriptableObjects/WaveData_PhongKhach.asset"),
+                new[]
+                {
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/BuiBong.prefab"),
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/VunBanhMi.prefab"),
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/CucTocRoi.prefab"),
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/CucTocRoiNho.prefab"),
+                });
+
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, ScenePath);
             AddSceneToBuild(ScenePath);
@@ -124,6 +135,7 @@ namespace VacuumSurvivor.EditorTools
                 d.enemyName = "VunBanhMi";
                 d.maxHealth = 6f; d.moveSpeed = 3.5f; d.contactDamage = 3f; d.dustValue = 1;
                 d.bodyColor = new Color(0.85f, 0.7f, 0.33f); d.bodyPixels = 34;
+                d.swarmMin = 5; d.swarmMax = 8;
                 d.splitsOnDeath = false;
             });
             CreateEnemyPrefab("Assets/Prefabs/Enemies/VunBanhMi.prefab", banhMi, typeof(ChaserEnemy), 0.28f);
@@ -149,9 +161,33 @@ namespace VacuumSurvivor.EditorTools
             EditorUtility.SetDirty(tocRoiPrefab);
             PrefabUtility.SavePrefabAsset(tocRoiPrefab);
 
+            CreateOrLoadAsset<WaveData>("Assets/ScriptableObjects/WaveData_PhongKhach.asset", w =>
+            {
+                w.entries = new[]
+                {
+                    new WaveEntry { startTime = 0f,   spawnInterval = 1.0f,  maxAlive = 25, types = new[] { buiBong } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 0.85f, maxAlive = 40, types = new[] { buiBong, banhMi } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.7f,  maxAlive = 55, types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.6f,  maxAlive = 70, types = new[] { buiBong, banhMi, tocRoi } },
+                };
+            });
+
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             return "content built";
+        }
+
+        static T CreateOrLoadAsset<T>(string path, System.Action<T> init) where T : ScriptableObject
+        {
+            var a = AssetDatabase.LoadAssetAtPath<T>(path);
+            if (a == null)
+            {
+                a = ScriptableObject.CreateInstance<T>();
+                AssetDatabase.CreateAsset(a, path);
+            }
+            init(a);
+            EditorUtility.SetDirty(a);
+            return a;
         }
 
         static EnemyData CreateOrLoadEnemyData(string path, System.Action<EnemyData> init)

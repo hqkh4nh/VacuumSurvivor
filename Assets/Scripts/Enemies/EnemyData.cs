@@ -15,6 +15,10 @@ namespace VacuumSurvivor
         public Color bodyColor = new Color(0.545f, 0.545f, 0.62f); // #8B8B9E
         public int bodyPixels = 44;
 
+        [Header("Swarm (0 = spawn singly)")]
+        public int swarmMin;
+        public int swarmMax;
+
         [Header("Splitter only")]
         public bool splitsOnDeath;
         public EnemyData splitInto;

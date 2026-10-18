@@ -19,6 +19,8 @@ MonoBehaviour:
   dustValue: 1
   bodyColor: {r: 0.85, g: 0.7, b: 0.33, a: 1}
   bodyPixels: 34
+  swarmMin: 5
+  swarmMax: 8
   splitsOnDeath: 0
   splitInto: {fileID: 0}
   splitCount: 2

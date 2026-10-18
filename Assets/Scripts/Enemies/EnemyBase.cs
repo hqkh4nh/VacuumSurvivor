@@ -42,6 +42,10 @@ namespace VacuumSurvivor
         void FixedUpdate()
         {
             if (player == null && GameManager.Instance != null) player = GameManager.Instance.Player;
+            // Trash that wandered too far is recycled near the player: keeps the action on-screen
+            // and caps how far the physics has to simulate.
+            if (player != null && ((Vector2)player.position - rb.position).sqrMagnitude > 900f)
+                rb.position = (Vector2)player.position + Random.insideUnitCircle.normalized * 8f;
             Move();
         }
 
