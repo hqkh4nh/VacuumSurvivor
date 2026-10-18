@@ -69,6 +69,10 @@ namespace VacuumSurvivor.EditorTools
             levelUpGO.transform.SetParent(canvas.transform, false);
             var levelUpPanel = levelUpGO.AddComponent<LevelUpPanel>();
 
+            var endGO = new GameObject("EndScreen", typeof(RectTransform));
+            endGO.transform.SetParent(canvas.transform, false);
+            endGO.AddComponent<EndScreen>();
+
             var umGO = new GameObject("UpgradeManager");
             umGO.AddComponent<UpgradeManager>().Configure(LoadUpgrades(), levelUpPanel);
 

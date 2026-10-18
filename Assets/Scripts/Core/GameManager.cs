@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace VacuumSurvivor
 {
@@ -11,6 +12,9 @@ namespace VacuumSurvivor
 
         public State Current { get; private set; } = State.Playing;
         public float Elapsed { get; private set; }
+
+        [SerializeField] float sliceDuration = 180f;
+        public float SliceDuration { get => sliceDuration; set => sliceDuration = value; }
 
         Transform player;
         public Transform Player
@@ -37,7 +41,15 @@ namespace VacuumSurvivor
 
         void Update()
         {
-            if (Current == State.Playing) Elapsed += Time.deltaTime;
+            if (Current != State.Playing) return;
+            Elapsed += Time.deltaTime;
+            if (SliceClock.IsCleared(Elapsed, sliceDuration)) Win();
+        }
+
+        public static void Restart()
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void Win()
