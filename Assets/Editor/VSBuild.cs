@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace VacuumSurvivor.EditorTools
 {
@@ -53,6 +54,15 @@ namespace VacuumSurvivor.EditorTools
             var dustGO = new GameObject("DustSpawner");
             dustGO.AddComponent<DustSpawner>().Configure(
                 AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Pickups/Dust.prefab"));
+
+            var canvas = BuildCanvas();
+
+            var levelUpGO = new GameObject("LevelUpPanel", typeof(RectTransform));
+            levelUpGO.transform.SetParent(canvas.transform, false);
+            var levelUpPanel = levelUpGO.AddComponent<LevelUpPanel>();
+
+            var umGO = new GameObject("UpgradeManager");
+            umGO.AddComponent<UpgradeManager>().Configure(LoadUpgrades(), levelUpPanel);
 
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, ScenePath);
@@ -203,9 +213,50 @@ namespace VacuumSurvivor.EditorTools
             EnsureFolder("Assets/Prefabs/Pickups");
             CreateDustPrefab("Assets/Prefabs/Pickups/Dust.prefab");
 
+            EnsureFolder("Assets/ScriptableObjects/Upgrades");
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/LucHutCap.asset", u =>
+            { u.type = UpgradeType.SuctionLevel; u.title = "Lực hút mạnh hơn"; u.description = "Tăng 1 cấp Lực hút: sát thương và bán kính lớn hơn."; u.valuePerLevel = new[] { 1f, 1f, 1f, 1f }; u.maxLevel = 4; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/PinLon.asset", u =>
+            { u.type = UpgradeType.MaxBattery; u.title = "Pin dung lượng lớn"; u.description = "+20 pin tối đa, hồi luôn phần vừa tăng."; u.valuePerLevel = new[] { 20f, 20f, 20f, 20f, 20f }; u.maxLevel = 5; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/DongCo.asset", u =>
+            { u.type = UpgradeType.MoveSpeed; u.title = "Động cơ mạnh"; u.description = "+0,4 tốc độ di chuyển."; u.valuePerLevel = new[] { 0.4f, 0.4f, 0.4f, 0.4f, 0.4f }; u.maxLevel = 5; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/NamCham.asset", u =>
+            { u.type = UpgradeType.MagnetRadius; u.title = "Nam châm"; u.description = "+35% bán kính nhặt bụi."; u.valuePerLevel = new[] { 0.35f, 0.35f, 0.35f, 0.35f, 0.35f }; u.maxLevel = 5; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/LocHEPA.asset", u =>
+            { u.type = UpgradeType.SuctionDamage; u.title = "Lọc HEPA"; u.description = "+12% sát thương Lực hút."; u.valuePerLevel = new[] { 0.12f, 0.12f, 0.12f, 0.12f, 0.12f }; u.maxLevel = 5; });
+
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             return "content built";
+        }
+
+        static Canvas BuildCanvas()
+        {
+            var go = new GameObject("Canvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
+            var canvas = go.GetComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            var scaler = go.GetComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1280f, 720f);
+
+            if (Object.FindFirstObjectByType<UnityEngine.EventSystems.EventSystem>() == null)
+                new GameObject("EventSystem",
+                    typeof(UnityEngine.EventSystems.EventSystem),
+                    typeof(UnityEngine.InputSystem.UI.InputSystemUIInputModule));
+
+            return canvas;
+        }
+
+        static List<UpgradeData> LoadUpgrades()
+        {
+            string[] names = { "LucHutCap", "PinLon", "DongCo", "NamCham", "LocHEPA" };
+            var list = new List<UpgradeData>();
+            foreach (var n in names)
+            {
+                var u = AssetDatabase.LoadAssetAtPath<UpgradeData>("Assets/ScriptableObjects/Upgrades/" + n + ".asset");
+                if (u != null) list.Add(u);
+            }
+            return list;
         }
 
         static T CreateOrLoadAsset<T>(string path, System.Action<T> init) where T : ScriptableObject

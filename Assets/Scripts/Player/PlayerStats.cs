@@ -28,7 +28,6 @@ namespace VacuumSurvivor
         {
             GameEvents.RaiseBattery(battery.Current, battery.Max);
             GameEvents.RaiseDust(progress.Dust, progress.DustForNext);
-            GameEvents.RaisePlayerLevel(progress.Level);
         }
 
         void Update()

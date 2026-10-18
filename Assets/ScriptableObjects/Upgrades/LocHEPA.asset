@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e617f1ddd477433428696779a04a10e0, type: 3}
+  m_Name: LocHEPA
+  m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeData
+  type: 4
+  title: "L\u1ECDc HEPA"
+  description: "+12% s\xE1t th\u01B0\u01A1ng L\u1EF1c h\xFAt."
+  valuePerLevel:
+  - 0.12
+  - 0.12
+  - 0.12
+  - 0.12
+  - 0.12
+  maxLevel: 5

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e617f1ddd477433428696779a04a10e0, type: 3}
+  m_Name: LucHutCap
+  m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeData
+  type: 0
+  title: "L\u1EF1c h\xFAt m\u1EA1nh h\u01A1n"
+  description: "T\u0103ng 1 c\u1EA5p L\u1EF1c h\xFAt: s\xE1t th\u01B0\u01A1ng v\xE0
+    b\xE1n k\xEDnh l\u1EDBn h\u01A1n."
+  valuePerLevel:
+  - 1
+  - 1
+  - 1
+  - 1
+  maxLevel: 4

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e617f1ddd477433428696779a04a10e0, type: 3}
+  m_Name: DongCo
+  m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeData
+  type: 2
+  title: "\u0110\u1ED9ng c\u01A1 m\u1EA1nh"
+  description: "+0,4 t\u1ED1c \u0111\u1ED9 di chuy\u1EC3n."
+  valuePerLevel:
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  maxLevel: 5
