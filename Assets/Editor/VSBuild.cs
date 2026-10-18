@@ -50,6 +50,10 @@ namespace VacuumSurvivor.EditorTools
                     AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/CucTocRoiNho.prefab"),
                 });
 
+            var dustGO = new GameObject("DustSpawner");
+            dustGO.AddComponent<DustSpawner>().Configure(
+                AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Pickups/Dust.prefab"));
+
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, ScenePath);
             AddSceneToBuild(ScenePath);
@@ -99,6 +103,7 @@ namespace VacuumSurvivor.EditorTools
             suction.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset");
             suction.Ring = ringGO.transform;
             player.AddComponent<WeaponManager>();
+            player.AddComponent<PlayerMagnet>();
 
             return player;
         }
@@ -195,6 +200,9 @@ namespace VacuumSurvivor.EditorTools
                 };
             });
 
+            EnsureFolder("Assets/Prefabs/Pickups");
+            CreateDustPrefab("Assets/Prefabs/Pickups/Dust.prefab");
+
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             return "content built";
@@ -241,6 +249,26 @@ namespace VacuumSurvivor.EditorTools
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             go.AddComponent<CircleCollider2D>().radius = colliderRadius;
             ((EnemyBase)go.AddComponent(behaviour)).Data = data;
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
+            Object.DestroyImmediate(go);
+            return prefab;
+        }
+
+        static GameObject CreateDustPrefab(string path)
+        {
+            var go = new GameObject("Dust");
+            go.layer = LayerMask.NameToLayer("Pickup");
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 3;
+            var ps = go.AddComponent<ProceduralSprite>();
+            ps.Color = new Color(0.957f, 0.447f, 0.714f); // #F472B6
+            ps.Eyes = false;
+            ps.Pixels = 16;
+            var col = go.AddComponent<CircleCollider2D>();
+            col.isTrigger = true;
+            col.radius = 0.15f;
+            go.AddComponent<Dust>();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);

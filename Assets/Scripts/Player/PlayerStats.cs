@@ -17,9 +17,19 @@ namespace VacuumSurvivor
         public float MaxBattery => battery.Max;
         public float Percent => battery.Max > 0f ? battery.Current / battery.Max : 0f;
 
+        readonly LevelProgress progress = new LevelProgress();
+        public int Level => progress.Level;
+        public int Dust => progress.Dust;
+        public int DustForNext => progress.DustForNext;
+
         void Awake() => battery = new BatteryModel(maxBattery);
 
-        void Start() => GameEvents.RaiseBattery(battery.Current, battery.Max);
+        void Start()
+        {
+            GameEvents.RaiseBattery(battery.Current, battery.Max);
+            GameEvents.RaiseDust(progress.Dust, progress.DustForNext);
+            GameEvents.RaisePlayerLevel(progress.Level);
+        }
 
         void Update()
         {
@@ -48,6 +58,13 @@ namespace VacuumSurvivor
         {
             battery.AddMax(amount, true);
             GameEvents.RaiseBattery(battery.Current, battery.Max);
+        }
+
+        public void AddDust(int amount)
+        {
+            int gained = progress.AddDust(amount);
+            GameEvents.RaiseDust(progress.Dust, progress.DustForNext);
+            for (int i = 0; i < gained; i++) GameEvents.RaisePlayerLevel(progress.Level);
         }
 
         static bool IsPlaying =>
