@@ -55,6 +55,10 @@ namespace VacuumSurvivor.EditorTools
             dustGO.AddComponent<DustSpawner>().Configure(
                 AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Pickups/Dust.prefab"));
 
+            var dockGO = new GameObject("DockSpawner");
+            dockGO.AddComponent<DockSpawner>().Configure(
+                AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Pickups/ChargingDock.prefab"));
+
             var canvas = BuildCanvas();
 
             var levelUpGO = new GameObject("LevelUpPanel", typeof(RectTransform));
@@ -212,6 +216,7 @@ namespace VacuumSurvivor.EditorTools
 
             EnsureFolder("Assets/Prefabs/Pickups");
             CreateDustPrefab("Assets/Prefabs/Pickups/Dust.prefab");
+            CreateDockPrefab("Assets/Prefabs/Pickups/ChargingDock.prefab");
 
             EnsureFolder("Assets/ScriptableObjects/Upgrades");
             CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/LucHutCap.asset", u =>
@@ -320,6 +325,27 @@ namespace VacuumSurvivor.EditorTools
             col.isTrigger = true;
             col.radius = 0.15f;
             go.AddComponent<Dust>();
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
+            Object.DestroyImmediate(go);
+            return prefab;
+        }
+
+        static GameObject CreateDockPrefab(string path)
+        {
+            var go = new GameObject("ChargingDock");
+            go.layer = LayerMask.NameToLayer("Pickup");
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 2;
+            sr.color = new Color(0.29f, 0.87f, 0.5f, 0.5f); // #4ADE80, translucent pad
+            var ps = go.AddComponent<ProceduralSprite>();
+            ps.Color = Color.white;
+            ps.Eyes = false;
+            ps.Pixels = 96;
+            var col = go.AddComponent<CircleCollider2D>();
+            col.isTrigger = true;
+            col.radius = 0.9f;
+            go.AddComponent<ChargingDock>();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);
