@@ -10,6 +10,7 @@ namespace VacuumSurvivor
         public static event Action<int, int> DustChanged;          // current, needed-for-next
         public static event Action<int> PlayerLevelChanged;        // new level
         public static event Action<int> SuctionLevelChanged;       // new weapon level
+        public static event Action<string> WeaponsChanged;         // summary of owned weapons + levels
         public static event Action Won;
         public static event Action Lost;
         public static event Action BossPhase;                      // survival over, boss incoming
@@ -20,6 +21,7 @@ namespace VacuumSurvivor
         public static void RaiseDust(int current, int needed) => DustChanged?.Invoke(current, needed);
         public static void RaisePlayerLevel(int level) => PlayerLevelChanged?.Invoke(level);
         public static void RaiseSuctionLevel(int level) => SuctionLevelChanged?.Invoke(level);
+        public static void RaiseWeapons(string summary) => WeaponsChanged?.Invoke(summary);
         public static void RaiseWon() => Won?.Invoke();
         public static void RaiseLost() => Lost?.Invoke();
         public static void RaiseBossPhase() => BossPhase?.Invoke();
