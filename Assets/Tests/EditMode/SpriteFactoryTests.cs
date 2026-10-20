@@ -149,6 +149,16 @@ public class SpriteFactoryTests
     }
 
     [Test]
+    public void Vacuum_boss_returns_a_non_null_in_bounds_sprite_with_coverage()
+    {
+        const int px = 64;
+        var s = SpriteFactory.Build(SpriteKind.Vacuum, Color.gray, px);
+        Assert.IsNotNull(s);
+        Assert.AreEqual(px, (int)s.rect.width);
+        Assert.Greater(OpaqueCount((Texture2D)s.texture), 0);
+    }
+
+    [Test]
     public void Led_and_ring_are_plain_filled_circles()
     {
         const int px = 32;

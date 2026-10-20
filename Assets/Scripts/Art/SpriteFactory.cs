@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace VacuumSurvivor
 {
-    public enum SpriteKind { Robot, DustBunny, Breadcrumb, HairClump, Cat, DustMote, Dock, Led, Ring, Broom, Droplet }
+    public enum SpriteKind { Robot, DustBunny, Breadcrumb, HairClump, Cat, DustMote, Dock, Led, Ring, Broom, Droplet, Vacuum }
 
     /// Builds the whole game's look at runtime: one shared flat-shading model over a distinct
     /// silhouette per entity, so the project needs no imported art and keeps the "moonlit" mood.
@@ -64,6 +64,7 @@ namespace VacuumSurvivor
                 case SpriteKind.Dock: return Dock(body, px);
                 case SpriteKind.Broom: return Broom(body, px);
                 case SpriteKind.Droplet: return Droplet(body, px);
+                case SpriteKind.Vacuum: return Vacuum(body, px);
                 default: return PlainCircle(body, px); // Led, Ring
             }
         }
@@ -182,6 +183,17 @@ namespace VacuumSurvivor
             Disc(m, px, c * 0.5f, c * 0.40f, c * 0.30f);
             TriMask(m, px, new Vector2(c * 0.24f, c * 0.44f), new Vector2(c * 0.76f, c * 0.44f), new Vector2(c * 0.5f, c * 0.96f)); // point up
             return Finish(Shade(m, px, body), px, tex => DrawDot(tex, c * 0.5f, c * 0.40f, c * 0.11f, new Color(0.72f, 0.9f, 1f, 1f)));
+        }
+
+        static Sprite Vacuum(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            RoundedRect(m, px, c * 0.52f, c * 0.46f, c * 0.22f, c * 0.40f, c * 0.10f); // tall body
+            RoundedRect(m, px, c * 0.26f, c * 0.70f, c * 0.14f, c * 0.07f, c * 0.05f);  // nozzle jutting left
+            return Finish(Shade(m, px, body), px, tex =>
+            {
+                DrawDot(tex, c * 0.56f, c * 0.62f, c * 0.09f, new Color(1f, 0.4f, 0.35f, 1f)); // one angry eye
+            });
         }
 
         static Sprite PlainCircle(Color body, int px)
