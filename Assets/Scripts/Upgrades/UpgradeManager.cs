@@ -82,6 +82,15 @@ namespace VacuumSurvivor
                 case UpgradeType.ProjectileWeapon:
                     p.GetComponent<WeaponManager>()?.AcquireOrUpgrade(WeaponKind.Projectile);
                     break;
+                case UpgradeType.TrailWeapon:
+                    p.GetComponent<WeaponManager>()?.AcquireOrUpgrade(WeaponKind.Trail);
+                    break;
+                case UpgradeType.LaserWeapon:
+                    p.GetComponent<WeaponManager>()?.AcquireOrUpgrade(WeaponKind.Laser);
+                    break;
+                case UpgradeType.PushWeapon:
+                    p.GetComponent<WeaponManager>()?.AcquireOrUpgrade(WeaponKind.Push);
+                    break;
             }
         }
     }
