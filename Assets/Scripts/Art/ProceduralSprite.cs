@@ -10,16 +10,20 @@ namespace VacuumSurvivor
         [SerializeField] Color color = Color.white;
         [SerializeField] bool eyes = true;
         [SerializeField] int pixels = 64;
+        [SerializeField] bool cat;
 
         public Color Color { get => color; set => color = value; }
         public bool Eyes { get => eyes; set => eyes = value; }
         public int Pixels { get => pixels; set => pixels = value; }
+        public bool Cat { get => cat; set => cat = value; }
 
         void Awake() => Apply();
 
         public void Apply()
         {
-            GetComponent<SpriteRenderer>().sprite = SpriteFactory.CircleWithEyes(color, pixels, eyes);
+            GetComponent<SpriteRenderer>().sprite = cat
+                ? SpriteFactory.CatSprite(color, pixels)
+                : SpriteFactory.CircleWithEyes(color, pixels, eyes);
         }
     }
 }

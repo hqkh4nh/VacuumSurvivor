@@ -55,6 +55,35 @@ namespace VacuumSurvivor
             return t;
         }
 
+        /// A top-centre boss health bar: dark background, red fill that shrinks from the right
+        /// (via the fill's anchorMax.x, like the HUD's other bars) and a label above it.
+        public static GameObject BossBar(Transform parent, out Image fill, out Text label)
+        {
+            var root = new GameObject("BossBar", typeof(RectTransform));
+            root.transform.SetParent(parent, false);
+            var rt = root.GetComponent<RectTransform>();
+            rt.anchorMin = rt.anchorMax = rt.pivot = new Vector2(0.5f, 1f);
+            rt.sizeDelta = new Vector2(520f, 24f);
+            rt.anchoredPosition = new Vector2(0f, -56f);
+
+            var bg = Box(root.transform, new Color(0f, 0f, 0f, 0.6f), "BarBg");
+            Stretch(bg.gameObject);
+
+            fill = Box(bg.transform, new Color(0.85f, 0.25f, 0.3f), "Fill");
+            var fr = fill.rectTransform;
+            fr.anchorMin = Vector2.zero;
+            fr.anchorMax = Vector2.one;
+            fr.offsetMin = new Vector2(2f, 2f);
+            fr.offsetMax = new Vector2(-2f, -2f);
+
+            label = Label(root.transform, "CON MÈO", 16, TextAnchor.LowerCenter, Color.white);
+            var lr = label.rectTransform;
+            lr.anchorMin = lr.anchorMax = lr.pivot = new Vector2(0.5f, 0f);
+            lr.sizeDelta = new Vector2(520f, 24f);
+            lr.anchoredPosition = new Vector2(0f, 2f);
+            return root;
+        }
+
         public static Button Button(Transform parent, Color bg, string name = "Button")
         {
             var go = new GameObject(name, typeof(RectTransform), typeof(Image), typeof(Button));
