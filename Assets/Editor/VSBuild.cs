@@ -13,8 +13,8 @@ namespace VacuumSurvivor.EditorTools
     {
         const string ScenePath = "Assets/Scenes/Game.unity";
 
-        static readonly Color RobotBody = new Color(0.91f, 0.91f, 0.94f); // #E8E8F0
-        static readonly Color NightBg = new Color(0.106f, 0.106f, 0.184f); // #1B1B2F
+        static readonly Color RobotBody = Palette.Robot;
+        static readonly Color NightBg = Palette.NightBg;
 
         [MenuItem("VacuumSurvivor/Build Game Scene")]
         public static string BuildGameScene()
@@ -26,6 +26,7 @@ namespace VacuumSurvivor.EditorTools
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
             var player = BuildPlayer();
+            BuildFloor();
 
             var camGO = new GameObject("Main Camera");
             var cam = camGO.AddComponent<Camera>();
@@ -84,6 +85,13 @@ namespace VacuumSurvivor.EditorTools
             return "built " + ScenePath;
         }
 
+        static void BuildFloor()
+        {
+            var go = new GameObject("Floor");
+            go.AddComponent<SpriteRenderer>().sortingOrder = -100;
+            go.AddComponent<ProceduralFloor>();
+        }
+
         static GameObject BuildPlayer()
         {
             var player = new GameObject("Player");
@@ -91,6 +99,7 @@ namespace VacuumSurvivor.EditorTools
             var sr = player.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 10;
             var ps = player.AddComponent<ProceduralSprite>();
+            ps.Kind = SpriteKind.Robot;
             ps.Color = RobotBody;
             var rb = player.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
@@ -109,17 +118,17 @@ namespace VacuumSurvivor.EditorTools
             ledSr.sortingOrder = 11;
             var ledPs = ledGO.AddComponent<ProceduralSprite>();
             ledPs.Color = Color.white;
-            ledPs.Eyes = false;
+            ledPs.Kind = SpriteKind.Led;
             player.AddComponent<BatteryLED>();
 
             var ringGO = new GameObject("SuctionRing");
             ringGO.transform.SetParent(player.transform, false);
             var ringSr = ringGO.AddComponent<SpriteRenderer>();
             ringSr.sortingOrder = 1;
-            ringSr.color = new Color(0.957f, 0.447f, 0.714f, 0.12f); // #F472B6, translucent
+            ringSr.color = new Color(Palette.Accent.r, Palette.Accent.g, Palette.Accent.b, 0.12f);
             var ringPs = ringGO.AddComponent<ProceduralSprite>();
             ringPs.Color = Color.white;
-            ringPs.Eyes = false;
+            ringPs.Kind = SpriteKind.Ring;
             ringPs.Pixels = 64;
 
             var suction = player.AddComponent<SuctionWeapon>();
@@ -168,38 +177,38 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "BuiBong";
                 d.maxHealth = 10f; d.moveSpeed = 1.8f; d.contactDamage = 5f; d.dustValue = 1;
-                d.bodyColor = new Color(0.545f, 0.545f, 0.62f); d.bodyPixels = 44;
+                d.bodyColor = Palette.DustBunny; d.bodyPixels = 44;
                 d.splitsOnDeath = false;
             });
-            CreateEnemyPrefab("Assets/Prefabs/Enemies/BuiBong.prefab", buiBong, typeof(ChaserEnemy), 0.35f);
+            CreateEnemyPrefab("Assets/Prefabs/Enemies/BuiBong.prefab", buiBong, typeof(ChaserEnemy), 0.35f, SpriteKind.DustBunny);
 
             var banhMi = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/VunBanhMi.asset", d =>
             {
                 d.enemyName = "VunBanhMi";
                 d.maxHealth = 6f; d.moveSpeed = 3.5f; d.contactDamage = 3f; d.dustValue = 1;
-                d.bodyColor = new Color(0.85f, 0.7f, 0.33f); d.bodyPixels = 34;
+                d.bodyColor = Palette.Breadcrumb; d.bodyPixels = 34;
                 d.swarmMin = 5; d.swarmMax = 8;
                 d.splitsOnDeath = false;
             });
-            CreateEnemyPrefab("Assets/Prefabs/Enemies/VunBanhMi.prefab", banhMi, typeof(ChaserEnemy), 0.28f);
+            CreateEnemyPrefab("Assets/Prefabs/Enemies/VunBanhMi.prefab", banhMi, typeof(ChaserEnemy), 0.28f, SpriteKind.Breadcrumb);
 
             var tocNho = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/CucTocRoiNho.asset", d =>
             {
                 d.enemyName = "CucTocRoiNho";
                 d.maxHealth = 10f; d.moveSpeed = 1.4f; d.contactDamage = 5f; d.dustValue = 1;
-                d.bodyColor = new Color(0.3f, 0.3f, 0.36f); d.bodyPixels = 34;
+                d.bodyColor = Palette.HairClump; d.bodyPixels = 34;
                 d.splitsOnDeath = false;
             });
-            var tocNhoPrefab = CreateEnemyPrefab("Assets/Prefabs/Enemies/CucTocRoiNho.prefab", tocNho, typeof(ChaserEnemy), 0.28f);
+            var tocNhoPrefab = CreateEnemyPrefab("Assets/Prefabs/Enemies/CucTocRoiNho.prefab", tocNho, typeof(ChaserEnemy), 0.28f, SpriteKind.HairClump);
 
             var tocRoi = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/CucTocRoi.asset", d =>
             {
                 d.enemyName = "CucTocRoi";
                 d.maxHealth = 30f; d.moveSpeed = 1.2f; d.contactDamage = 8f; d.dustValue = 3;
-                d.bodyColor = new Color(0.22f, 0.22f, 0.28f); d.bodyPixels = 58;
+                d.bodyColor = Palette.HairClump; d.bodyPixels = 58;
                 d.splitsOnDeath = true; d.splitInto = tocNho; d.splitCount = 2;
             });
-            var tocRoiPrefab = CreateEnemyPrefab("Assets/Prefabs/Enemies/CucTocRoi.prefab", tocRoi, typeof(SplitterEnemy), 0.5f);
+            var tocRoiPrefab = CreateEnemyPrefab("Assets/Prefabs/Enemies/CucTocRoi.prefab", tocRoi, typeof(SplitterEnemy), 0.5f, SpriteKind.HairClump);
             tocRoiPrefab.GetComponent<SplitterEnemy>().ChildPrefab = tocNhoPrefab;
             EditorUtility.SetDirty(tocRoiPrefab);
             PrefabUtility.SavePrefabAsset(tocRoiPrefab);
@@ -208,7 +217,7 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "Con mèo";
                 d.maxHealth = 400f; d.moveSpeed = 2f; d.contactDamage = 10f; d.dustValue = 40;
-                d.bodyColor = new Color(0.7f, 0.55f, 0.42f); d.bodyPixels = 96;
+                d.bodyColor = Palette.Cat; d.bodyPixels = 96;
                 d.splitsOnDeath = false;
             });
             CreateBossPrefab("Assets/Prefabs/Enemies/ConMeo.prefab", conMeo, tocRoi);
@@ -308,13 +317,14 @@ namespace VacuumSurvivor.EditorTools
             return d;
         }
 
-        static GameObject CreateEnemyPrefab(string path, EnemyData data, System.Type behaviour, float colliderRadius)
+        static GameObject CreateEnemyPrefab(string path, EnemyData data, System.Type behaviour, float colliderRadius, SpriteKind kind)
         {
             var go = new GameObject(data.enemyName);
             go.layer = LayerMask.NameToLayer("Enemy");
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 5;
             var ps = go.AddComponent<ProceduralSprite>();
+            ps.Kind = kind;
             ps.Color = Color.white;   // tinted per-type by EnemyBase; white base lets it flash
             ps.Pixels = data.bodyPixels;
             var rb = go.AddComponent<Rigidbody2D>();
@@ -338,7 +348,7 @@ namespace VacuumSurvivor.EditorTools
             sr.sortingOrder = 6;
             var ps = go.AddComponent<ProceduralSprite>();
             ps.Color = Color.white;   // tinted to bodyColor by EnemyBase; white base lets it flash
-            ps.Cat = true;
+            ps.Kind = SpriteKind.Cat;
             ps.Pixels = data.bodyPixels;
             var rb = go.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
@@ -366,8 +376,8 @@ namespace VacuumSurvivor.EditorTools
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 3;
             var ps = go.AddComponent<ProceduralSprite>();
-            ps.Color = new Color(0.957f, 0.447f, 0.714f); // #F472B6
-            ps.Eyes = false;
+            ps.Color = Palette.DustMote;
+            ps.Kind = SpriteKind.DustMote;
             ps.Pixels = 16;
             var col = go.AddComponent<CircleCollider2D>();
             col.isTrigger = true;
@@ -385,10 +395,10 @@ namespace VacuumSurvivor.EditorTools
             go.layer = LayerMask.NameToLayer("Pickup");
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 2;
-            sr.color = new Color(0.29f, 0.87f, 0.5f, 0.5f); // #4ADE80, translucent pad
+            sr.color = new Color(Palette.Accent.r, Palette.Accent.g, Palette.Accent.b, 0.5f);
             var ps = go.AddComponent<ProceduralSprite>();
             ps.Color = Color.white;
-            ps.Eyes = false;
+            ps.Kind = SpriteKind.Dock;
             ps.Pixels = 96;
             var col = go.AddComponent<CircleCollider2D>();
             col.isTrigger = true;

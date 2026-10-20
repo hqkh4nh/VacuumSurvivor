@@ -2,28 +2,24 @@ using UnityEngine;
 
 namespace VacuumSurvivor
 {
-    /// Assigns a code-generated circle sprite to this renderer at startup, so no art asset
-    /// has to be imported or serialized into the scene.
+    /// Assigns a code-generated sprite to this renderer at startup, so no art asset has to be
+    /// imported or serialized into the scene. The kind picks which silhouette to build.
     [RequireComponent(typeof(SpriteRenderer))]
     public class ProceduralSprite : MonoBehaviour
     {
+        [SerializeField] SpriteKind kind = SpriteKind.DustBunny;
         [SerializeField] Color color = Color.white;
-        [SerializeField] bool eyes = true;
         [SerializeField] int pixels = 64;
-        [SerializeField] bool cat;
 
+        public SpriteKind Kind { get => kind; set => kind = value; }
         public Color Color { get => color; set => color = value; }
-        public bool Eyes { get => eyes; set => eyes = value; }
         public int Pixels { get => pixels; set => pixels = value; }
-        public bool Cat { get => cat; set => cat = value; }
 
         void Awake() => Apply();
 
         public void Apply()
         {
-            GetComponent<SpriteRenderer>().sprite = cat
-                ? SpriteFactory.CatSprite(color, pixels)
-                : SpriteFactory.CircleWithEyes(color, pixels, eyes);
+            GetComponent<SpriteRenderer>().sprite = SpriteFactory.Build(kind, color, pixels);
         }
     }
 }
