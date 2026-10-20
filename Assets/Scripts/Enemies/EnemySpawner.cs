@@ -27,6 +27,26 @@ namespace VacuumSurvivor
             bossPrefab = boss;
         }
 
+        /// Swap in the next level's wave curve and boss without rebuilding the shared pools.
+        public void Reconfigure(WaveData waveData, GameObject boss)
+        {
+            waves = waveData;
+            bossPrefab = boss;
+            bossPhase = false;
+            timer = 0f;
+        }
+
+        /// Return every live trash to its pool so the next level starts on a clean room.
+        public void ClearLive()
+        {
+            foreach (var e in FindObjectsByType<EnemyBase>(FindObjectsSortMode.None))
+            {
+                if (e.Pool != null) e.Pool.Return(e.gameObject);
+                else e.gameObject.SetActive(false);
+            }
+            activeCount = 0;
+        }
+
         void Awake()
         {
             foreach (var prefab in enemyPrefabs)

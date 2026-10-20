@@ -13,6 +13,7 @@ namespace VacuumSurvivor
         public static event Action Won;
         public static event Action Lost;
         public static event Action BossPhase;                      // survival over, boss incoming
+        public static event Action<int, string> LevelChanged;      // level index, room name
         public static event Action<float> BossSpawned;             // max health
         public static event Action<float, float> BossHealthChanged; // current, max
 
@@ -23,6 +24,7 @@ namespace VacuumSurvivor
         public static void RaiseWon() => Won?.Invoke();
         public static void RaiseLost() => Lost?.Invoke();
         public static void RaiseBossPhase() => BossPhase?.Invoke();
+        public static void RaiseLevelChanged(int index, string name) => LevelChanged?.Invoke(index, name);
         public static void RaiseBossSpawned(float max) => BossSpawned?.Invoke(max);
         public static void RaiseBossHealth(float current, float max) => BossHealthChanged?.Invoke(current, max);
     }

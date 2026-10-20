@@ -109,7 +109,7 @@ namespace VacuumSurvivor
         protected override void Die()
         {
             base.Die(); // drops dust and deactivates (the boss has no pool)
-            if (GameManager.Instance != null) GameManager.Instance.Win();
+            if (GameManager.Instance != null) GameManager.Instance.BossDefeated();
         }
     }
 }
