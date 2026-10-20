@@ -44,6 +44,7 @@ namespace VacuumSurvivor
             lastHitTime = Time.time;
             battery.Damage(amount);
             GameEvents.RaiseBattery(battery.Current, battery.Max);
+            GameEvents.RaisePlayerHurt();
             if (battery.IsDead) Die();
         }
 
@@ -56,6 +57,12 @@ namespace VacuumSurvivor
         public void RechargeFull()
         {
             battery.RechargeFull();
+            GameEvents.RaiseBattery(battery.Current, battery.Max);
+        }
+
+        public void AddBattery(float amount)
+        {
+            battery.Add(amount);
             GameEvents.RaiseBattery(battery.Current, battery.Max);
         }
 
