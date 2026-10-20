@@ -49,4 +49,95 @@ public class SpriteFactoryTests
         var outp = SpriteFactory.Shade(mask, px, new Color(0.5f, 0.5f, 0.5f));
         Assert.AreEqual(0f, outp[0].a, 0.001f); // corner (0,0) is outside the disc
     }
+
+    static readonly SpriteKind[] Creatures =
+        { SpriteKind.Robot, SpriteKind.DustBunny, SpriteKind.Breadcrumb, SpriteKind.HairClump, SpriteKind.Cat };
+
+    static Texture2D Tex(SpriteKind k, Color body, int px) => (Texture2D)SpriteFactory.Build(k, body, px).texture;
+
+    static int OpaqueCount(Texture2D t)
+    {
+        int n = 0;
+        foreach (var c in t.GetPixels()) if (c.a > 0.01f) n++;
+        return n;
+    }
+
+    static bool[] AlphaMask(Texture2D t)
+    {
+        var px = t.GetPixels();
+        var a = new bool[px.Length];
+        for (int i = 0; i < px.Length; i++) a[i] = px[i].a > 0.5f;
+        return a;
+    }
+
+    static bool SameMask(bool[] a, bool[] b)
+    {
+        for (int i = 0; i < a.Length; i++) if (a[i] != b[i]) return false;
+        return true;
+    }
+
+    [Test]
+    public void Each_creature_kind_returns_a_non_null_sprite_of_the_requested_size()
+    {
+        const int px = 48;
+        foreach (var k in Creatures)
+        {
+            var s = SpriteFactory.Build(k, Color.gray, px);
+            Assert.IsNotNull(s, k.ToString());
+            Assert.AreEqual(px, (int)s.rect.width, k.ToString());
+            Assert.AreEqual(px, (int)s.rect.height, k.ToString());
+        }
+    }
+
+    [Test]
+    public void Each_creature_kind_covers_pixels_and_stays_within_bounds()
+    {
+        const int px = 48;
+        foreach (var k in Creatures)
+        {
+            var t = Tex(k, Color.gray, px);
+            Assert.AreEqual(px, t.width, k.ToString());
+            Assert.AreEqual(px, t.height, k.ToString());
+            Assert.Greater(OpaqueCount(t), 0, k.ToString());
+        }
+    }
+
+    [Test]
+    public void The_creature_kinds_are_not_all_the_same_silhouette()
+    {
+        const int px = 48;
+        var robot = AlphaMask(Tex(SpriteKind.Robot, Color.gray, px));
+        var bunny = AlphaMask(Tex(SpriteKind.DustBunny, Color.gray, px));
+        var crumb = AlphaMask(Tex(SpriteKind.Breadcrumb, Color.gray, px));
+        Assert.IsFalse(SameMask(robot, bunny) && SameMask(bunny, crumb));
+    }
+
+    [Test]
+    public void Dock_and_dust_mote_return_non_null_in_bounds_sprites()
+    {
+        var dock = SpriteFactory.Build(SpriteKind.Dock, Color.white, 64);
+        Assert.IsNotNull(dock);
+        Assert.AreEqual(64, (int)dock.rect.width);
+        Assert.Greater(OpaqueCount((Texture2D)dock.texture), 0);
+
+        var mote = SpriteFactory.Build(SpriteKind.DustMote, Color.white, 16);
+        Assert.IsNotNull(mote);
+        Assert.AreEqual(16, (int)mote.rect.width);
+        Assert.Greater(OpaqueCount((Texture2D)mote.texture), 0);
+    }
+
+    [Test]
+    public void Led_and_ring_are_plain_filled_circles()
+    {
+        const int px = 32;
+        foreach (var k in new[] { SpriteKind.Led, SpriteKind.Ring })
+        {
+            var t = Tex(k, Color.white, px);
+            Assert.Greater(t.GetPixel(px / 2, px / 2).r, 0.8f, k.ToString()); // bright body, not darkened
+            bool hasInk = false;
+            foreach (var c in t.GetPixels())
+                if (c.a > 0.5f && Mathf.Abs(c.r - Palette.Ink.r) < 0.03f && Mathf.Abs(c.g - Palette.Ink.g) < 0.03f) hasInk = true;
+            Assert.IsFalse(hasInk, k + " should not be inked (plain, unshaded)");
+        }
+    }
 }
