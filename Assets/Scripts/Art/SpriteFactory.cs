@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace VacuumSurvivor
 {
-    public enum SpriteKind { Robot, DustBunny, Breadcrumb, HairClump, Cat, DustMote, Dock, Led, Ring }
+    public enum SpriteKind { Robot, DustBunny, Breadcrumb, HairClump, Cat, DustMote, Dock, Led, Ring, Broom, Droplet }
 
     /// Builds the whole game's look at runtime: one shared flat-shading model over a distinct
     /// silhouette per entity, so the project needs no imported art and keeps the "moonlit" mood.
@@ -62,6 +62,8 @@ namespace VacuumSurvivor
                 case SpriteKind.Cat: return Cat(body, px);
                 case SpriteKind.DustMote: return DustMote(body, px);
                 case SpriteKind.Dock: return Dock(body, px);
+                case SpriteKind.Broom: return Broom(body, px);
+                case SpriteKind.Droplet: return Droplet(body, px);
                 default: return PlainCircle(body, px); // Led, Ring
             }
         }
@@ -164,6 +166,22 @@ namespace VacuumSurvivor
             var m = NewMask(px);
             RoundedRect(m, px, px * 0.5f, px * 0.5f, px * 0.42f, px * 0.22f, px * 0.10f);
             return Finish(Shade(m, px, body), px, tex => DrawRing(tex, px, px * 0.5f, px * 0.5f, px * 0.34f, px * 0.16f, Palette.Accent));
+        }
+
+        static Sprite Broom(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            RoundedRect(m, px, c * 0.5f, c * 0.40f, c * 0.055f, c * 0.34f, c * 0.05f); // handle
+            TriMask(m, px, new Vector2(c * 0.27f, c * 0.98f), new Vector2(c * 0.73f, c * 0.98f), new Vector2(c * 0.5f, c * 0.58f)); // bristle fan
+            return Finish(Shade(m, px, body), px, null); // a tool, not a creature: no glow
+        }
+
+        static Sprite Droplet(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            Disc(m, px, c * 0.5f, c * 0.40f, c * 0.30f);
+            TriMask(m, px, new Vector2(c * 0.24f, c * 0.44f), new Vector2(c * 0.76f, c * 0.44f), new Vector2(c * 0.5f, c * 0.96f)); // point up
+            return Finish(Shade(m, px, body), px, tex => DrawDot(tex, c * 0.5f, c * 0.40f, c * 0.11f, new Color(0.72f, 0.9f, 1f, 1f)));
         }
 
         static Sprite PlainCircle(Color body, int px)

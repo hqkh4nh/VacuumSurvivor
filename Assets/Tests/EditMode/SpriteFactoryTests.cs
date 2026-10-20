@@ -127,6 +127,28 @@ public class SpriteFactoryTests
     }
 
     [Test]
+    public void Broom_and_droplet_return_non_null_in_bounds_sprites_with_coverage()
+    {
+        foreach (var k in new[] { SpriteKind.Broom, SpriteKind.Droplet })
+        {
+            const int px = 24;
+            var s = SpriteFactory.Build(k, Color.gray, px);
+            Assert.IsNotNull(s, k.ToString());
+            Assert.AreEqual(px, (int)s.rect.width, k.ToString());
+            Assert.Greater(OpaqueCount((Texture2D)s.texture), 0, k.ToString());
+        }
+    }
+
+    [Test]
+    public void Broom_and_droplet_have_different_silhouettes()
+    {
+        const int px = 24;
+        var broom = AlphaMask(Tex(SpriteKind.Broom, Color.gray, px));
+        var drop = AlphaMask(Tex(SpriteKind.Droplet, Color.gray, px));
+        Assert.IsFalse(SameMask(broom, drop));
+    }
+
+    [Test]
     public void Led_and_ring_are_plain_filled_circles()
     {
         const int px = 32;
