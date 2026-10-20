@@ -12,6 +12,9 @@ namespace VacuumSurvivor
         public static event Action<int> SuctionLevelChanged;       // new weapon level
         public static event Action Won;
         public static event Action Lost;
+        public static event Action BossPhase;                      // survival over, boss incoming
+        public static event Action<float> BossSpawned;             // max health
+        public static event Action<float, float> BossHealthChanged; // current, max
 
         public static void RaiseBattery(float current, float max) => BatteryChanged?.Invoke(current, max);
         public static void RaiseDust(int current, int needed) => DustChanged?.Invoke(current, needed);
@@ -19,5 +22,8 @@ namespace VacuumSurvivor
         public static void RaiseSuctionLevel(int level) => SuctionLevelChanged?.Invoke(level);
         public static void RaiseWon() => Won?.Invoke();
         public static void RaiseLost() => Lost?.Invoke();
+        public static void RaiseBossPhase() => BossPhase?.Invoke();
+        public static void RaiseBossSpawned(float max) => BossSpawned?.Invoke(max);
+        public static void RaiseBossHealth(float current, float max) => BossHealthChanged?.Invoke(current, max);
     }
 }

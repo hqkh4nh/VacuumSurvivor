@@ -44,7 +44,7 @@ namespace VacuumSurvivor
             if (player == null && GameManager.Instance != null) player = GameManager.Instance.Player;
             // Trash that wandered too far is recycled near the player: keeps the action on-screen
             // and caps how far the physics has to simulate.
-            if (player != null && ((Vector2)player.position - rb.position).sqrMagnitude > 900f)
+            if (RecycleWhenFar && player != null && ((Vector2)player.position - rb.position).sqrMagnitude > 900f)
                 rb.position = (Vector2)player.position + Random.insideUnitCircle.normalized * 8f;
             Move();
         }
@@ -59,6 +59,10 @@ namespace VacuumSurvivor
         }
 
         protected abstract void Move();
+
+        /// Ordinary trash is teleported back near the player when it drifts too far. The boss roams
+        /// the whole room on purpose, so it opts out.
+        protected virtual bool RecycleWhenFar => true;
 
         public virtual void TakeDamage(float amount)
         {
