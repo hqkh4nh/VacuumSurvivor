@@ -66,6 +66,34 @@ namespace VacuumSurvivor
             }
         }
 
+        /// A low-contrast parquet tile for the floor: warm boards in a half-offset brick layout with
+        /// darker seams, built to repeat seamlessly under a tiled SpriteRenderer so the scene reads as
+        /// a room at night instead of an empty void. Fully opaque.
+        public static Sprite FloorTile(int px = 256)
+        {
+            var tex = new Texture2D(px, px, TextureFormat.RGBA32, false)
+                { filterMode = FilterMode.Bilinear, wrapMode = TextureWrapMode.Repeat };
+            int plankH = px / 2;
+            int seam = Mathf.Max(1, px / 128);
+            var board = Palette.FloorBoard;
+            var row1 = new Color(board.r * 0.94f, board.g * 0.94f, board.b * 0.94f);
+            var seamC = Palette.FloorSeam;
+
+            for (int y = 0; y < px; y++)
+            for (int x = 0; x < px; x++)
+            {
+                bool bottomRow = y < plankH;
+                int vSeamX = bottomRow ? 0 : px / 2; // the upper row is offset half a plank
+                bool vSeam = (x - vSeamX + px) % px < seam;
+                bool hSeam = y % plankH < seam;
+                Color c = hSeam || vSeam ? seamC : (bottomRow ? board : row1);
+                c.a = 1f;
+                tex.SetPixel(x, y, c);
+            }
+            tex.Apply();
+            return Sprite.Create(tex, new Rect(0f, 0f, px, px), new Vector2(0.5f, 0.5f), px / 4f);
+        }
+
         static readonly Color EyeGlow = new Color(0.86f, 0.95f, 1f, 1f);
 
         static Sprite Robot(Color body, int px)

@@ -140,4 +140,14 @@ public class SpriteFactoryTests
             Assert.IsFalse(hasInk, k + " should not be inked (plain, unshaded)");
         }
     }
+
+    [Test]
+    public void Floor_tile_is_non_null_requested_size_and_fully_opaque()
+    {
+        const int px = 64;
+        var s = SpriteFactory.FloorTile(px);
+        Assert.IsNotNull(s);
+        Assert.AreEqual(px, (int)s.rect.width);
+        foreach (var c in ((Texture2D)s.texture).GetPixels()) Assert.AreEqual(1f, c.a, 0.001f);
+    }
 }

@@ -26,6 +26,7 @@ namespace VacuumSurvivor.EditorTools
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
             var player = BuildPlayer();
+            BuildFloor();
 
             var camGO = new GameObject("Main Camera");
             var cam = camGO.AddComponent<Camera>();
@@ -82,6 +83,13 @@ namespace VacuumSurvivor.EditorTools
             AddSceneToBuild(ScenePath);
             AssetDatabase.SaveAssets();
             return "built " + ScenePath;
+        }
+
+        static void BuildFloor()
+        {
+            var go = new GameObject("Floor");
+            go.AddComponent<SpriteRenderer>().sortingOrder = -100;
+            go.AddComponent<ProceduralFloor>();
         }
 
         static GameObject BuildPlayer()
