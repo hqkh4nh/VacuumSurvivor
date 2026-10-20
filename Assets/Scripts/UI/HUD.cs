@@ -13,8 +13,11 @@ namespace VacuumSurvivor
         Text timerLabel;
         Text levelLabel;
         Text weaponLabel;
+        GameObject bossBar;
+        Image bossFill;
 
         float batteryPercent = 1f;
+        float bossMax = 1f;
 
         void Awake() => Build();
 
@@ -24,6 +27,8 @@ namespace VacuumSurvivor
             GameEvents.DustChanged += OnDust;
             GameEvents.PlayerLevelChanged += OnLevel;
             GameEvents.SuctionLevelChanged += OnWeapon;
+            GameEvents.BossSpawned += OnBossSpawned;
+            GameEvents.BossHealthChanged += OnBossHealth;
         }
 
         void OnDisable()
@@ -32,6 +37,8 @@ namespace VacuumSurvivor
             GameEvents.DustChanged -= OnDust;
             GameEvents.PlayerLevelChanged -= OnLevel;
             GameEvents.SuctionLevelChanged -= OnWeapon;
+            GameEvents.BossSpawned -= OnBossSpawned;
+            GameEvents.BossHealthChanged -= OnBossHealth;
         }
 
         void Start()
@@ -72,6 +79,20 @@ namespace VacuumSurvivor
         void OnLevel(int level) => levelLabel.text = $"Cấp {level}";
         void OnWeapon(int level) => weaponLabel.text = $"Lực hút Lv{level}";
 
+        void OnBossSpawned(float max)
+        {
+            bossMax = max > 0f ? max : 1f;
+            bossBar.SetActive(true);
+            SetBar(bossFill, 1f);
+        }
+
+        void OnBossHealth(float current, float max)
+        {
+            if (max > 0f) bossMax = max;
+            SetBar(bossFill, bossMax > 0f ? current / bossMax : 0f);
+            if (current <= 0f) bossBar.SetActive(false);
+        }
+
         static void SetBar(Image fill, float t)
         {
             var rt = fill.rectTransform;
@@ -93,6 +114,9 @@ namespace VacuumSurvivor
             timerLabel = Corner("Màn 1 · 00:00", 22, new Vector2(0.5f, 1f), new Vector2(0f, -20f), TextAnchor.UpperCenter);
             levelLabel = Corner("Cấp 1", 22, new Vector2(1f, 1f), new Vector2(-20f, -20f), TextAnchor.UpperRight);
             weaponLabel = Corner("Lực hút Lv1", 18, new Vector2(0f, 0f), new Vector2(20f, 20f), TextAnchor.LowerLeft);
+
+            bossBar = UIFactory.BossBar(transform, out bossFill, out _);
+            bossBar.SetActive(false);
         }
 
         Image MakeBar(Vector2 pos, Vector2 size, out Image fill, Color fillColor)

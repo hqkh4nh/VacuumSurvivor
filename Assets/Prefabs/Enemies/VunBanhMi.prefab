@@ -111,6 +111,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   eyes: 1
   pixels: 34
+  cat: 0
 --- !u!50 &66923983300693327
 Rigidbody2D:
   serializedVersion: 5

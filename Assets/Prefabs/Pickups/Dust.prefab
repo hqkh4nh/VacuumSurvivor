@@ -110,6 +110,7 @@ MonoBehaviour:
   color: {r: 0.957, g: 0.447, b: 0.714, a: 1}
   eyes: 0
   pixels: 16
+  cat: 0
 --- !u!58 &3796361264822122688
 CircleCollider2D:
   m_ObjectHideFlags: 0

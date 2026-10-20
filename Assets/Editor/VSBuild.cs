@@ -49,7 +49,8 @@ namespace VacuumSurvivor.EditorTools
                     AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/VunBanhMi.prefab"),
                     AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/CucTocRoi.prefab"),
                     AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/CucTocRoiNho.prefab"),
-                });
+                },
+                AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/ConMeo.prefab"));
 
             var dustGO = new GameObject("DustSpawner");
             dustGO.AddComponent<DustSpawner>().Configure(
@@ -203,6 +204,15 @@ namespace VacuumSurvivor.EditorTools
             EditorUtility.SetDirty(tocRoiPrefab);
             PrefabUtility.SavePrefabAsset(tocRoiPrefab);
 
+            var conMeo = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/ConMeo.asset", d =>
+            {
+                d.enemyName = "Con mèo";
+                d.maxHealth = 400f; d.moveSpeed = 2f; d.contactDamage = 10f; d.dustValue = 40;
+                d.bodyColor = new Color(0.7f, 0.55f, 0.42f); d.bodyPixels = 96;
+                d.splitsOnDeath = false;
+            });
+            CreateBossPrefab("Assets/Prefabs/Enemies/ConMeo.prefab", conMeo, tocRoi);
+
             EnsureFolder("Assets/ScriptableObjects/Weapons");
             CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset", w =>
             {
@@ -313,6 +323,36 @@ namespace VacuumSurvivor.EditorTools
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             go.AddComponent<CircleCollider2D>().radius = colliderRadius;
             ((EnemyBase)go.AddComponent(behaviour)).Data = data;
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
+            Object.DestroyImmediate(go);
+            return prefab;
+        }
+
+        static GameObject CreateBossPrefab(string path, EnemyData data, EnemyData hairball)
+        {
+            var go = new GameObject(data.enemyName);
+            go.layer = LayerMask.NameToLayer("Enemy");
+            go.transform.localScale = Vector3.one * 2.5f; // ~8x the robot's footprint
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 6;
+            var ps = go.AddComponent<ProceduralSprite>();
+            ps.Color = Color.white;   // tinted to bodyColor by EnemyBase; white base lets it flash
+            ps.Cat = true;
+            ps.Pixels = data.bodyPixels;
+            var rb = go.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            rb.freezeRotation = true;
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            go.AddComponent<CircleCollider2D>().radius = 0.6f;
+
+            var boss = go.AddComponent<BossCat>();
+            boss.Data = data;
+            boss.HairballData = hairball;
+            boss.TelegraphColor = new Color(0.95f, 0.3f, 0.3f);
+            var so = new SerializedObject(boss);
+            so.FindProperty("knockback").floatValue = 0f; // the boss is too big to be shoved
+            so.ApplyModifiedPropertiesWithoutUndo();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);

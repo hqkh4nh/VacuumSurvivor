@@ -13,6 +13,9 @@ namespace VacuumSurvivor
         public State Current { get; private set; } = State.Playing;
         public float Elapsed { get; private set; }
 
+        bool bossPhase;
+        public bool BossPhase => bossPhase;
+
         [SerializeField] float sliceDuration = 180f;
         public float SliceDuration { get => sliceDuration; set => sliceDuration = value; }
 
@@ -43,7 +46,13 @@ namespace VacuumSurvivor
         {
             if (Current != State.Playing) return;
             Elapsed += Time.deltaTime;
-            if (SliceClock.IsCleared(Elapsed, sliceDuration)) Win();
+            // Surviving the slice no longer wins outright: it summons the boss, and only killing
+            // the boss wins.
+            if (!bossPhase && SliceClock.IsCleared(Elapsed, sliceDuration))
+            {
+                bossPhase = true;
+                GameEvents.RaiseBossPhase();
+            }
         }
 
         public static void Restart()
