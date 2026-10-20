@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a858bbbfd1b5d4c9b5200ea6737988, type: 3}
   m_Name: LucHut
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.WeaponData
-  weaponName: LucHut
+  weaponName: "L\u1EF1c h\xFAt"
   maxLevel: 5
   dps:
   - 4

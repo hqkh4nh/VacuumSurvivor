@@ -134,10 +134,54 @@ namespace VacuumSurvivor.EditorTools
             var suction = player.AddComponent<SuctionWeapon>();
             suction.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset");
             suction.Ring = ringGO.transform;
+            suction.Owned = true;
+
+            BuildOrbitWeapon(player);
+            BuildProjectileWeapon(player);
+
             player.AddComponent<WeaponManager>();
             player.AddComponent<PlayerMagnet>();
 
             return player;
+        }
+
+        static void BuildOrbitWeapon(GameObject player)
+        {
+            var orbit = player.AddComponent<OrbitWeapon>();
+            orbit.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/ChoiQuay.asset");
+
+            var pivot = new GameObject("BroomPivot");
+            pivot.transform.SetParent(player.transform, false);
+
+            const int broomCount = 4; // the weapon's level-5 broom count; OrbitWeapon shows only its current level's share
+            var brooms = new Transform[broomCount];
+            for (int i = 0; i < broomCount; i++)
+            {
+                var b = new GameObject("Broom" + i);
+                b.transform.SetParent(pivot.transform, false);
+                b.transform.localScale = Vector3.one * 0.6f;
+                var sr = b.AddComponent<SpriteRenderer>();
+                sr.sortingOrder = 9;
+                var ps = b.AddComponent<ProceduralSprite>();
+                ps.Kind = SpriteKind.Broom;
+                ps.Color = Palette.Breadcrumb;
+                ps.Pixels = 24;
+                brooms[i] = b.transform;
+            }
+            orbit.Pivot = pivot.transform;
+            orbit.Brooms = brooms;
+        }
+
+        static void BuildProjectileWeapon(GameObject player)
+        {
+            var proj = player.AddComponent<ProjectileWeapon>();
+            proj.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/VoiXit.asset");
+
+            var poolGO = new GameObject("DropletPool");
+            poolGO.transform.SetParent(player.transform, false);
+            var pool = poolGO.AddComponent<GameObjectPool>();
+            pool.Prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Weapons/Droplet.prefab");
+            proj.Pool = pool;
         }
 
         static void EnsureLayer(string layerName)
@@ -225,10 +269,16 @@ namespace VacuumSurvivor.EditorTools
             EnsureFolder("Assets/ScriptableObjects/Weapons");
             CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset", w =>
             {
-                w.weaponName = "LucHut"; w.maxLevel = 5;
+                w.weaponName = "Lực hút"; w.maxLevel = 5;
                 w.dps = new[] { 4f, 5.5f, 7f, 8.5f, 10f };
                 w.radius = new[] { 1.5f, 1.8f, 2.1f, 2.45f, 2.8f };
             });
+            // Orbit/projectile per-level stats live on their weapon components; these assets only
+            // carry the display name and max level.
+            CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/ChoiQuay.asset", w =>
+            { w.weaponName = "Chổi"; w.maxLevel = 5; });
+            CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/VoiXit.asset", w =>
+            { w.weaponName = "Vòi"; w.maxLevel = 5; });
 
             CreateOrLoadAsset<WaveData>("Assets/ScriptableObjects/WaveData_PhongKhach.asset", w =>
             {
@@ -245,6 +295,9 @@ namespace VacuumSurvivor.EditorTools
             CreateDustPrefab("Assets/Prefabs/Pickups/Dust.prefab");
             CreateDockPrefab("Assets/Prefabs/Pickups/ChargingDock.prefab");
 
+            EnsureFolder("Assets/Prefabs/Weapons");
+            CreateProjectilePrefab("Assets/Prefabs/Weapons/Droplet.prefab");
+
             EnsureFolder("Assets/ScriptableObjects/Upgrades");
             CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/LucHutCap.asset", u =>
             { u.type = UpgradeType.SuctionLevel; u.title = "Lực hút mạnh hơn"; u.description = "Tăng 1 cấp Lực hút: sát thương và bán kính lớn hơn."; u.valuePerLevel = new[] { 1f, 1f, 1f, 1f }; u.maxLevel = 4; });
@@ -256,6 +309,10 @@ namespace VacuumSurvivor.EditorTools
             { u.type = UpgradeType.MagnetRadius; u.title = "Nam châm"; u.description = "+35% bán kính nhặt bụi."; u.valuePerLevel = new[] { 0.35f, 0.35f, 0.35f, 0.35f, 0.35f }; u.maxLevel = 5; });
             CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/LocHEPA.asset", u =>
             { u.type = UpgradeType.SuctionDamage; u.title = "Lọc HEPA"; u.description = "+12% sát thương Lực hút."; u.valuePerLevel = new[] { 0.12f, 0.12f, 0.12f, 0.12f, 0.12f }; u.maxLevel = 5; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/ChoiQuay.asset", u =>
+            { u.type = UpgradeType.OrbitWeapon; u.title = "Chổi quay"; u.description = "Các cây chổi xoay quanh robot, chạm vào rác thì gây sát thương. Chọn lại để lên cấp."; u.valuePerLevel = new[] { 0f, 0f, 0f, 0f, 0f }; u.maxLevel = 5; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/VoiXit.asset", u =>
+            { u.type = UpgradeType.ProjectileWeapon; u.title = "Vòi xịt nước"; u.description = "Tự bắn viên nước về kẻ địch gần nhất. Chọn lại để lên cấp."; u.valuePerLevel = new[] { 0f, 0f, 0f, 0f, 0f }; u.maxLevel = 5; });
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -281,7 +338,7 @@ namespace VacuumSurvivor.EditorTools
 
         static List<UpgradeData> LoadUpgrades()
         {
-            string[] names = { "LucHutCap", "PinLon", "DongCo", "NamCham", "LocHEPA" };
+            string[] names = { "LucHutCap", "PinLon", "DongCo", "NamCham", "LocHEPA", "ChoiQuay", "VoiXit" };
             var list = new List<UpgradeData>();
             foreach (var n in names)
             {
@@ -383,6 +440,28 @@ namespace VacuumSurvivor.EditorTools
             col.isTrigger = true;
             col.radius = 0.15f;
             go.AddComponent<Dust>();
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
+            Object.DestroyImmediate(go);
+            return prefab;
+        }
+
+        static GameObject CreateProjectilePrefab(string path)
+        {
+            var go = new GameObject("Droplet");   // Default layer: Pickup↔Enemy collisions are off, triggers must still fire
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 4;
+            var ps = go.AddComponent<ProceduralSprite>();
+            ps.Color = Palette.Moonlight;
+            ps.Kind = SpriteKind.Droplet;
+            ps.Pixels = 20;
+            var rb = go.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            var col = go.AddComponent<CircleCollider2D>();
+            col.isTrigger = true;
+            col.radius = 0.15f;
+            go.AddComponent<Projectile>();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);

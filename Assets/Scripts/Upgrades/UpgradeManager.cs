@@ -76,6 +76,12 @@ namespace VacuumSurvivor
                     { var m = p.GetComponent<PlayerMagnet>(); if (m != null) m.RadiusMultiplier += value; break; }
                 case UpgradeType.SuctionDamage:
                     { var s = p.GetComponentInChildren<SuctionWeapon>(); if (s != null) s.DamageMultiplier += value; break; }
+                case UpgradeType.OrbitWeapon:
+                    p.GetComponent<WeaponManager>()?.AcquireOrUpgrade(WeaponKind.Orbit);
+                    break;
+                case UpgradeType.ProjectileWeapon:
+                    p.GetComponent<WeaponManager>()?.AcquireOrUpgrade(WeaponKind.Projectile);
+                    break;
             }
         }
     }

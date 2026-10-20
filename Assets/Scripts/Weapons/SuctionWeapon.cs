@@ -12,13 +12,19 @@ namespace VacuumSurvivor
         public float Overdrive { get; set; } = 1f;
         public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value; }
         public Transform Ring { get => ring; set => ring = value; }
+        public override WeaponKind Kind => WeaponKind.Suction;
 
         int enemyMask;
 
-        void Awake() => enemyMask = LayerMask.GetMask("Enemy");
+        void Awake()
+        {
+            enemyMask = LayerMask.GetMask("Enemy");
+            Owned = true;   // the starting weapon
+        }
 
         void Update()
         {
+            if (!Owned) return;
             if (GameManager.Instance != null && GameManager.Instance.Current != GameManager.State.Playing) return;
 
             SuctionTuning t = SuctionStats.For(data.dps, data.radius, Level, Overdrive);
