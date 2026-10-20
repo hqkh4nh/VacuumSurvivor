@@ -15,9 +15,11 @@ namespace VacuumSurvivor
         Text weaponLabel;
         GameObject bossBar;
         Image bossFill;
+        Text bossLabel;
 
         float batteryPercent = 1f;
         float bossMax = 1f;
+        string room = "Phòng khách";
 
         void Awake() => Build();
 
@@ -29,6 +31,7 @@ namespace VacuumSurvivor
             GameEvents.WeaponsChanged += OnWeapons;
             GameEvents.BossSpawned += OnBossSpawned;
             GameEvents.BossHealthChanged += OnBossHealth;
+            GameEvents.LevelChanged += OnLevelChanged;
         }
 
         void OnDisable()
@@ -39,6 +42,7 @@ namespace VacuumSurvivor
             GameEvents.WeaponsChanged -= OnWeapons;
             GameEvents.BossSpawned -= OnBossSpawned;
             GameEvents.BossHealthChanged -= OnBossHealth;
+            GameEvents.LevelChanged -= OnLevelChanged;
         }
 
         void Start()
@@ -57,7 +61,7 @@ namespace VacuumSurvivor
             if (GameManager.Instance != null)
             {
                 float t = GameManager.Instance.Elapsed;
-                timerLabel.text = $"Màn 1 · {(int)t / 60:00}:{(int)t % 60:00}";
+                timerLabel.text = $"{room} · {(int)t / 60:00}:{(int)t % 60:00}";
             }
 
             if (batteryPercent < 0.3f)
@@ -78,6 +82,13 @@ namespace VacuumSurvivor
         void OnDust(int current, int needed) => SetBar(dustFill, needed > 0 ? (float)current / needed : 0f);
         void OnLevel(int level) => levelLabel.text = $"Cấp {level}";
         void OnWeapons(string summary) => weaponLabel.text = summary;
+
+        void OnLevelChanged(int index, string name)
+        {
+            room = name;
+            // The kitchen is the final room, where the old handheld vacuum shows up instead of the cat.
+            bossLabel.text = name == "Nhà bếp" ? "MÁY HÚT BỤI CŨ" : "CON MÈO";
+        }
 
         void OnBossSpawned(float max)
         {
@@ -115,7 +126,7 @@ namespace VacuumSurvivor
             levelLabel = Corner("Cấp 1", 22, new Vector2(1f, 1f), new Vector2(-20f, -20f), TextAnchor.UpperRight);
             weaponLabel = Corner("Lực hút Lv1", 18, new Vector2(0f, 0f), new Vector2(20f, 20f), TextAnchor.LowerLeft);
 
-            bossBar = UIFactory.BossBar(transform, out bossFill, out _);
+            bossBar = UIFactory.BossBar(transform, out bossFill, out bossLabel);
             bossBar.SetActive(false);
         }
 
