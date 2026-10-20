@@ -38,6 +38,9 @@ namespace VacuumSurvivor.EditorTools
             camGO.tag = "MainCamera";
             camGO.transform.position = new Vector3(0f, 0f, -10f);
             camGO.AddComponent<CameraFollow>().Target = player.transform;
+            camGO.AddComponent<AudioListener>();   // the generated scene has no listener otherwise
+
+            new GameObject("Sfx").AddComponent<Sfx>();
 
             var gm = new GameObject("GameManager");
             gm.AddComponent<GameManager>().Configure(new[]
@@ -91,6 +94,10 @@ namespace VacuumSurvivor.EditorTools
             var dockGO = new GameObject("DockSpawner");
             dockGO.AddComponent<DockSpawner>().Configure(
                 AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Pickups/ChargingDock.prefab"));
+
+            var powerUpGO = new GameObject("PowerUpSpawner");
+            powerUpGO.AddComponent<PowerUpSpawner>().Configure(
+                AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Pickups/PowerUp.prefab"));
 
             var canvas = BuildCanvas();
 
@@ -473,10 +480,10 @@ namespace VacuumSurvivor.EditorTools
             {
                 w.entries = new[]
                 {
-                    new WaveEntry { startTime = 0f,   spawnInterval = 1.0f,  maxAlive = 25, types = new[] { buiBong } },
-                    new WaveEntry { startTime = 30f,  spawnInterval = 0.85f, maxAlive = 40, types = new[] { buiBong, banhMi, cucLego } },
-                    new WaveEntry { startTime = 75f,  spawnInterval = 0.7f,  maxAlive = 55, types = new[] { buiBong, banhMi, tocRoi, cucLego } },
-                    new WaveEntry { startTime = 120f, spawnInterval = 0.6f,  maxAlive = 70, types = new[] { buiBong, banhMi, tocRoi, tatLe } },
+                    new WaveEntry { startTime = 0f,   spawnInterval = 1.4f,  maxAlive = 16, types = new[] { buiBong } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 1.1f,  maxAlive = 28, types = new[] { buiBong, banhMi, cucLego } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.75f, maxAlive = 45, types = new[] { buiBong, banhMi, tocRoi, cucLego } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.62f, maxAlive = 60, types = new[] { buiBong, banhMi, tocRoi, tatLe } },
                 };
             });
 
@@ -484,10 +491,10 @@ namespace VacuumSurvivor.EditorTools
             {
                 w.entries = new[]
                 {
-                    new WaveEntry { startTime = 0f,   spawnInterval = 0.9f,  maxAlive = 35, types = new[] { buiBong, tocRoi } },
-                    new WaveEntry { startTime = 30f,  spawnInterval = 0.75f, maxAlive = 50, types = new[] { buiBong, banhMi, tocRoi, tatLe } },
-                    new WaveEntry { startTime = 75f,  spawnInterval = 0.6f,  maxAlive = 65, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac } },
-                    new WaveEntry { startTime = 120f, spawnInterval = 0.5f,  maxAlive = 80, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac, cucLego } },
+                    new WaveEntry { startTime = 0f,   spawnInterval = 1.2f,  maxAlive = 22, types = new[] { buiBong, tocRoi } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 0.9f,  maxAlive = 38, types = new[] { buiBong, banhMi, tocRoi, tatLe } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.68f, maxAlive = 55, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.52f, maxAlive = 72, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac, cucLego } },
                 };
             });
 
@@ -495,16 +502,17 @@ namespace VacuumSurvivor.EditorTools
             {
                 w.entries = new[]
                 {
-                    new WaveEntry { startTime = 0f,   spawnInterval = 0.7f, maxAlive = 50,  types = new[] { buiBong, banhMi, tocRoi } },
-                    new WaveEntry { startTime = 30f,  spawnInterval = 0.6f, maxAlive = 70,  types = new[] { buiBong, banhMi, tocRoi, daySac } },
-                    new WaveEntry { startTime = 75f,  spawnInterval = 0.5f, maxAlive = 90,  types = new[] { buiBong, banhMi, tocRoi, daySac, vungNuoc } },
-                    new WaveEntry { startTime = 120f, spawnInterval = 0.4f, maxAlive = 110, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac, vungNuoc } },
+                    new WaveEntry { startTime = 0f,   spawnInterval = 1.0f,  maxAlive = 30,  types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 0.8f,  maxAlive = 48,  types = new[] { buiBong, banhMi, tocRoi, daySac } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.6f,  maxAlive = 72,  types = new[] { buiBong, banhMi, tocRoi, daySac, vungNuoc } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.45f, maxAlive = 100, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac, vungNuoc } },
                 };
             });
 
             EnsureFolder("Assets/Prefabs/Pickups");
             CreateDustPrefab("Assets/Prefabs/Pickups/Dust.prefab");
             CreateDockPrefab("Assets/Prefabs/Pickups/ChargingDock.prefab");
+            CreatePowerUpPrefab("Assets/Prefabs/Pickups/PowerUp.prefab");
 
             EnsureFolder("Assets/Prefabs/Weapons");
             CreateProjectilePrefab("Assets/Prefabs/Weapons/Droplet.prefab");
@@ -710,6 +718,26 @@ namespace VacuumSurvivor.EditorTools
             col.isTrigger = true;
             col.radius = 0.15f;
             go.AddComponent<Projectile>();
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
+            Object.DestroyImmediate(go);
+            return prefab;
+        }
+
+        static GameObject CreatePowerUpPrefab(string path)
+        {
+            var go = new GameObject("PowerUp");
+            go.layer = LayerMask.NameToLayer("Pickup");
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 4;
+            var ps = go.AddComponent<ProceduralSprite>();
+            ps.Color = Palette.Moonlight;
+            ps.Kind = SpriteKind.Battery;   // PowerUp.Init swaps the silhouette per drop
+            ps.Pixels = 32;
+            var col = go.AddComponent<CircleCollider2D>();
+            col.isTrigger = true;
+            col.radius = 0.4f;
+            go.AddComponent<PowerUp>();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);

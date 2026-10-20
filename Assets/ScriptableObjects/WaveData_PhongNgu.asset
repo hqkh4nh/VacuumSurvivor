@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.WaveData
   entries:
   - startTime: 0
-    spawnInterval: 0.9
-    maxAlive: 35
+    spawnInterval: 1.2
+    maxAlive: 22
     types:
     - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
     - {fileID: 11400000, guid: 866396bce238ae348a74f8c2abc6aecd, type: 2}
   - startTime: 30
-    spawnInterval: 0.75
-    maxAlive: 50
+    spawnInterval: 0.9
+    maxAlive: 38
     types:
     - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
     - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}
     - {fileID: 11400000, guid: 866396bce238ae348a74f8c2abc6aecd, type: 2}
     - {fileID: 11400000, guid: f3bb4d9daccb0be4c8584afc6b8118a1, type: 2}
   - startTime: 75
-    spawnInterval: 0.6
-    maxAlive: 65
+    spawnInterval: 0.68
+    maxAlive: 55
     types:
     - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
     - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}
@@ -37,8 +37,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: f3bb4d9daccb0be4c8584afc6b8118a1, type: 2}
     - {fileID: 11400000, guid: 751a0da737b84134a8c31a3180c8aceb, type: 2}
   - startTime: 120
-    spawnInterval: 0.5
-    maxAlive: 80
+    spawnInterval: 0.52
+    maxAlive: 72
     types:
     - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
     - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}

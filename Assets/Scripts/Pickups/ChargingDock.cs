@@ -58,8 +58,21 @@ namespace VacuumSurvivor
         void OnTriggerExit2D(Collider2D other)
         {
             if (other.gameObject != occupant) return;
-            SetBuffs(occupant, 1f, 1f);
+            // Overlapping docks would otherwise flicker the buff off for a frame: keep it while the
+            // robot is still standing on another dock.
+            if (!StillOnAnotherDock(other.transform.position)) SetBuffs(occupant, 1f, 1f);
             occupant = null;
+        }
+
+        bool StillOnAnotherDock(Vector2 playerPos)
+        {
+            var hits = Physics2D.OverlapCircleAll(playerPos, 0.1f, LayerMask.GetMask("Pickup"));
+            foreach (var h in hits)
+            {
+                var dock = h.GetComponent<ChargingDock>();
+                if (dock != null && dock != this) return true;
+            }
+            return false;
         }
 
         void ReleaseAndDespawn()
