@@ -9,19 +9,22 @@ namespace VacuumSurvivor
     {
         [SerializeField] WaveData waves;
         [SerializeField] GameObject[] enemyPrefabs;
+        [SerializeField] GameObject bossPrefab;
         [SerializeField] float spawnRadius = 8f;
 
         readonly Dictionary<EnemyData, GameObjectPool> pools = new Dictionary<EnemyData, GameObjectPool>();
         int activeCount;
         float timer;
+        bool bossPhase;
         Transform player;
 
         public int ActiveCount => activeCount;
 
-        public void Configure(WaveData waveData, GameObject[] prefabs)
+        public void Configure(WaveData waveData, GameObject[] prefabs, GameObject boss = null)
         {
             waves = waveData;
             enemyPrefabs = prefabs;
+            bossPrefab = boss;
         }
 
         void Awake()
@@ -40,12 +43,25 @@ namespace VacuumSurvivor
             EnemyBase.SpawnRequest = SpawnAt;
         }
 
-        void OnEnable() => EnemyBase.EnemyDied += OnEnemyDied;
+        void OnEnable()
+        {
+            EnemyBase.EnemyDied += OnEnemyDied;
+            GameEvents.BossPhase += OnBossPhase;
+        }
 
         void OnDisable()
         {
             EnemyBase.EnemyDied -= OnEnemyDied;
+            GameEvents.BossPhase -= OnBossPhase;
             if (EnemyBase.SpawnRequest == SpawnAt) EnemyBase.SpawnRequest = null;
+        }
+
+        void OnBossPhase()
+        {
+            bossPhase = true;
+            if (bossPrefab == null) return;
+            if (player == null && GameManager.Instance != null) player = GameManager.Instance.Player;
+            Instantiate(bossPrefab, player != null ? RingPosition() : Vector2.zero, Quaternion.identity);
         }
 
         void OnEnemyDied(Vector2 pos, int dust)
@@ -57,6 +73,7 @@ namespace VacuumSurvivor
         void Update()
         {
             if (GameManager.Instance == null || GameManager.Instance.Current != GameManager.State.Playing) return;
+            if (bossPhase) return;
             if (player == null) player = GameManager.Instance.Player;
             if (player == null || waves == null) return;
 
