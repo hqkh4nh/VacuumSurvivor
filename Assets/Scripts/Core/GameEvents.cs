@@ -16,6 +16,9 @@ namespace VacuumSurvivor
         public static event Action<int, string> LevelChanged;      // level index, room name
         public static event Action<float> BossSpawned;             // max health
         public static event Action<float, float> BossHealthChanged; // current, max
+        public static event Action PlayerHurt;                     // took contact damage (outside i-frames)
+        public static event Action Shot;                           // a projectile volley fired
+        public static event Action<PowerUpKind> PowerUpCollected;  // a floor power-up was collected
 
         public static void RaiseBattery(float current, float max) => BatteryChanged?.Invoke(current, max);
         public static void RaiseDust(int current, int needed) => DustChanged?.Invoke(current, needed);
@@ -27,5 +30,8 @@ namespace VacuumSurvivor
         public static void RaiseLevelChanged(int index, string name) => LevelChanged?.Invoke(index, name);
         public static void RaiseBossSpawned(float max) => BossSpawned?.Invoke(max);
         public static void RaiseBossHealth(float current, float max) => BossHealthChanged?.Invoke(current, max);
+        public static void RaisePlayerHurt() => PlayerHurt?.Invoke();
+        public static void RaiseShot() => Shot?.Invoke();
+        public static void RaisePowerUp(PowerUpKind kind) => PowerUpCollected?.Invoke(kind);
     }
 }

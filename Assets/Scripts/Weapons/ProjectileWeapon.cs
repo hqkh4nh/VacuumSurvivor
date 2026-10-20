@@ -42,6 +42,7 @@ namespace VacuumSurvivor
 
             Vector2 aim = ((Vector2)enemies[idx].transform.position - (Vector2)transform.position).normalized;
             Fire(aim, t);
+            GameEvents.RaiseShot();
             cooldownLeft = t.Cooldown;
         }
 
