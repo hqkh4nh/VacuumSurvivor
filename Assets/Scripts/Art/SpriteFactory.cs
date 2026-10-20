@@ -110,7 +110,7 @@ namespace VacuumSurvivor
         static Sprite DustBunny(Color body, int px)
         {
             var m = NewMask(px);
-            Fuzzy(m, px, px * 0.5f, px * 0.48f, px * 0.36f);
+            Fuzzy(m, px, px * 0.5f, px * 0.48f, px * 0.39f);
             return Finish(Shade(m, px, body), px, tex => SmallEyes(tex, px));
         }
 
@@ -253,7 +253,7 @@ namespace VacuumSurvivor
             {
                 float dx = x - cx + 0.5f, dy = y - cy + 0.5f;
                 float ang = Mathf.Atan2(dy, dx);
-                float r = baseR * (1f + 0.16f * Mathf.Sin(5f * ang) + 0.11f * Mathf.Sin(9f * ang + 1.3f) + 0.07f * Mathf.Sin(13f * ang + 0.5f));
+                float r = baseR * (1f + 0.09f * Mathf.Sin(5f * ang + 0.6f) + 0.05f * Mathf.Sin(8f * ang));
                 float a = Mathf.Clamp01(r - Mathf.Sqrt(dx * dx + dy * dy));
                 int i = y * px + x; if (a > m[i]) m[i] = a;
             }
