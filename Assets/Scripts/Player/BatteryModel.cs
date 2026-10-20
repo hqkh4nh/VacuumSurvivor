@@ -21,6 +21,8 @@ namespace VacuumSurvivor
 
         public void Charge(float dt, float perSec) => Current = Clamp(Current + perSec * dt);
 
+        public void RechargeFull() => Current = Max;
+
         // Capacity upgrade: raise Max and, when healAdded, top up by the same amount.
         public void AddMax(float amount, bool healAdded)
         {

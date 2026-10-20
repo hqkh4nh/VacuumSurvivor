@@ -53,6 +53,12 @@ namespace VacuumSurvivor
             GameEvents.RaiseBattery(battery.Current, battery.Max);
         }
 
+        public void RechargeFull()
+        {
+            battery.RechargeFull();
+            GameEvents.RaiseBattery(battery.Current, battery.Max);
+        }
+
         public void AddMaxBattery(float amount)
         {
             battery.AddMax(amount, true);

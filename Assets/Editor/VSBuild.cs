@@ -12,6 +12,7 @@ namespace VacuumSurvivor.EditorTools
     public static class VSBuild
     {
         const string ScenePath = "Assets/Scenes/Game.unity";
+        const string MainMenuScenePath = "Assets/Scenes/MainMenu.unity";
 
         static readonly Color RobotBody = Palette.Robot;
         static readonly Color NightBg = Palette.NightBg;
@@ -39,7 +40,37 @@ namespace VacuumSurvivor.EditorTools
             camGO.AddComponent<CameraFollow>().Target = player.transform;
 
             var gm = new GameObject("GameManager");
-            gm.AddComponent<GameManager>();
+            gm.AddComponent<GameManager>().Configure(new[]
+            {
+                new LevelConfig
+                {
+                    name = "Phòng khách",
+                    waves = AssetDatabase.LoadAssetAtPath<WaveData>("Assets/ScriptableObjects/WaveData_PhongKhach.asset"),
+                    bossPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/ConMeo.prefab"),
+                    floorTint = Color.white,
+                    duration = 180f,
+                },
+                new LevelConfig
+                {
+                    name = "Phòng ngủ",
+                    waves = AssetDatabase.LoadAssetAtPath<WaveData>("Assets/ScriptableObjects/WaveData_PhongNgu.asset"),
+                    bossPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/ConMeo2.prefab"),
+                    floorTint = new Color(0.82f, 0.88f, 1f),
+                    duration = 180f,
+                },
+                new LevelConfig
+                {
+                    name = "Nhà bếp",
+                    waves = AssetDatabase.LoadAssetAtPath<WaveData>("Assets/ScriptableObjects/WaveData_NhaBep.asset"),
+                    bossPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/MayHutBui.prefab"),
+                    floorTint = new Color(1f, 0.92f, 0.82f),
+                    duration = 180f,
+                },
+            });
+
+            // Created before the UI so it subscribes to Won/Lost first and finalises the score the
+            // end screen then reads.
+            new GameObject("RunTracker").AddComponent<RunTracker>();
 
             var spawnerGO = new GameObject("EnemySpawner");
             spawnerGO.AddComponent<EnemySpawner>().Configure(
@@ -71,6 +102,10 @@ namespace VacuumSurvivor.EditorTools
             levelUpGO.transform.SetParent(canvas.transform, false);
             var levelUpPanel = levelUpGO.AddComponent<LevelUpPanel>();
 
+            var bannerGO = new GameObject("LevelBanner", typeof(RectTransform));
+            bannerGO.transform.SetParent(canvas.transform, false);
+            bannerGO.AddComponent<LevelBanner>();
+
             var endGO = new GameObject("EndScreen", typeof(RectTransform));
             endGO.transform.SetParent(canvas.transform, false);
             endGO.AddComponent<EndScreen>();
@@ -80,9 +115,34 @@ namespace VacuumSurvivor.EditorTools
 
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, ScenePath);
-            AddSceneToBuild(ScenePath);
+            EnsureBuildOrder();
             AssetDatabase.SaveAssets();
             return "built " + ScenePath;
+        }
+
+        [MenuItem("VacuumSurvivor/Build Main Menu")]
+        public static string BuildMainMenu()
+        {
+            var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+
+            var camGO = new GameObject("Main Camera");
+            var cam = camGO.AddComponent<Camera>();
+            cam.orthographic = true;
+            cam.clearFlags = CameraClearFlags.SolidColor;
+            cam.backgroundColor = NightBg;
+            camGO.tag = "MainCamera";
+            camGO.transform.position = new Vector3(0f, 0f, -10f);
+
+            var canvas = BuildCanvas();
+            var menuGO = new GameObject("MainMenu", typeof(RectTransform));
+            menuGO.transform.SetParent(canvas.transform, false);
+            menuGO.AddComponent<MainMenuScreen>();
+
+            EditorSceneManager.MarkSceneDirty(scene);
+            EditorSceneManager.SaveScene(scene, MainMenuScenePath);
+            EnsureBuildOrder();
+            AssetDatabase.SaveAssets();
+            return "built " + MainMenuScenePath;
         }
 
         static void BuildFloor()
@@ -203,11 +263,14 @@ namespace VacuumSurvivor.EditorTools
             }
         }
 
-        static void AddSceneToBuild(string path)
+        // Keep the menu at build index 0 and the game at index 1, skipping either if it has not been
+        // built yet, so the player boots into the menu.
+        static void EnsureBuildOrder()
         {
-            var scenes = new List<EditorBuildSettingsScene>(EditorBuildSettings.scenes);
-            if (scenes.Exists(s => s.path == path)) return;
-            scenes.Add(new EditorBuildSettingsScene(path, true));
+            var scenes = new List<EditorBuildSettingsScene>();
+            foreach (var path in new[] { MainMenuScenePath, ScenePath })
+                if (System.IO.File.Exists(path))
+                    scenes.Add(new EditorBuildSettingsScene(path, true));
             EditorBuildSettings.scenes = scenes.ToArray();
         }
 
@@ -266,6 +329,24 @@ namespace VacuumSurvivor.EditorTools
             });
             CreateBossPrefab("Assets/Prefabs/Enemies/ConMeo.prefab", conMeo, tocRoi);
 
+            var conMeo2 = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/ConMeo2.asset", d =>
+            {
+                d.enemyName = "Con mèo";
+                d.maxHealth = 600f; d.moveSpeed = 2.5f; d.contactDamage = 10f; d.dustValue = 50;
+                d.bodyColor = Palette.Cat; d.bodyPixels = 96;
+                d.splitsOnDeath = false;
+            });
+            CreateBossPrefab("Assets/Prefabs/Enemies/ConMeo2.prefab", conMeo2, tocRoi);
+
+            var mayHutBui = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/MayHutBui.asset", d =>
+            {
+                d.enemyName = "Máy hút bụi cũ";
+                d.maxHealth = 800f; d.moveSpeed = 1.5f; d.contactDamage = 12f; d.dustValue = 60;
+                d.bodyColor = new Color(0.5f, 0.5f, 0.58f); d.bodyPixels = 96;
+                d.splitsOnDeath = false;
+            });
+            CreateVacuumBossPrefab("Assets/Prefabs/Enemies/MayHutBui.prefab", mayHutBui, buiBong);
+
             EnsureFolder("Assets/ScriptableObjects/Weapons");
             CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset", w =>
             {
@@ -288,6 +369,28 @@ namespace VacuumSurvivor.EditorTools
                     new WaveEntry { startTime = 30f,  spawnInterval = 0.85f, maxAlive = 40, types = new[] { buiBong, banhMi } },
                     new WaveEntry { startTime = 75f,  spawnInterval = 0.7f,  maxAlive = 55, types = new[] { buiBong, banhMi, tocRoi } },
                     new WaveEntry { startTime = 120f, spawnInterval = 0.6f,  maxAlive = 70, types = new[] { buiBong, banhMi, tocRoi } },
+                };
+            });
+
+            CreateOrLoadAsset<WaveData>("Assets/ScriptableObjects/WaveData_PhongNgu.asset", w =>
+            {
+                w.entries = new[]
+                {
+                    new WaveEntry { startTime = 0f,   spawnInterval = 0.9f,  maxAlive = 35, types = new[] { buiBong, tocRoi } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 0.75f, maxAlive = 50, types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.6f,  maxAlive = 65, types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.5f,  maxAlive = 80, types = new[] { buiBong, banhMi, tocRoi } },
+                };
+            });
+
+            CreateOrLoadAsset<WaveData>("Assets/ScriptableObjects/WaveData_NhaBep.asset", w =>
+            {
+                w.entries = new[]
+                {
+                    new WaveEntry { startTime = 0f,   spawnInterval = 0.7f, maxAlive = 50,  types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 0.6f, maxAlive = 70,  types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.5f, maxAlive = 90,  types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.4f, maxAlive = 110, types = new[] { buiBong, banhMi, tocRoi } },
                 };
             });
 
@@ -416,6 +519,36 @@ namespace VacuumSurvivor.EditorTools
             var boss = go.AddComponent<BossCat>();
             boss.Data = data;
             boss.HairballData = hairball;
+            boss.TelegraphColor = new Color(0.95f, 0.3f, 0.3f);
+            var so = new SerializedObject(boss);
+            so.FindProperty("knockback").floatValue = 0f; // the boss is too big to be shoved
+            so.ApplyModifiedPropertiesWithoutUndo();
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
+            Object.DestroyImmediate(go);
+            return prefab;
+        }
+
+        static GameObject CreateVacuumBossPrefab(string path, EnemyData data, EnemyData blow)
+        {
+            var go = new GameObject(data.enemyName);
+            go.layer = LayerMask.NameToLayer("Enemy");
+            go.transform.localScale = Vector3.one * 2.5f;
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 6;
+            var ps = go.AddComponent<ProceduralSprite>();
+            ps.Color = Color.white;   // tinted to bodyColor by EnemyBase; white base lets it flash
+            ps.Kind = SpriteKind.Vacuum;
+            ps.Pixels = data.bodyPixels;
+            var rb = go.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            rb.freezeRotation = true;
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            go.AddComponent<CircleCollider2D>().radius = 0.6f;
+
+            var boss = go.AddComponent<BossVacuum>();
+            boss.Data = data;
+            boss.BlowData = blow;
             boss.TelegraphColor = new Color(0.95f, 0.3f, 0.3f);
             var so = new SerializedObject(boss);
             so.FindProperty("knockback").floatValue = 0f; // the boss is too big to be shoved

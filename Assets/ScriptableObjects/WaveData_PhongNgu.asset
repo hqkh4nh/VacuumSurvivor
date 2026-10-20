@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bac5c5806d8a0541aa7e9d448c756e3, type: 3}
+  m_Name: WaveData_PhongNgu
+  m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.WaveData
+  entries:
+  - startTime: 0
+    spawnInterval: 0.9
+    maxAlive: 35
+    types:
+    - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
+    - {fileID: 11400000, guid: 866396bce238ae348a74f8c2abc6aecd, type: 2}
+  - startTime: 30
+    spawnInterval: 0.75
+    maxAlive: 50
+    types:
+    - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
+    - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}
+    - {fileID: 11400000, guid: 866396bce238ae348a74f8c2abc6aecd, type: 2}
+  - startTime: 75
+    spawnInterval: 0.6
+    maxAlive: 65
+    types:
+    - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
+    - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}
+    - {fileID: 11400000, guid: 866396bce238ae348a74f8c2abc6aecd, type: 2}
+  - startTime: 120
+    spawnInterval: 0.5
+    maxAlive: 80
+    types:
+    - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
+    - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}
+    - {fileID: 11400000, guid: 866396bce238ae348a74f8c2abc6aecd, type: 2}
