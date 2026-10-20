@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace VacuumSurvivor
 {
-    public enum SpriteKind { Robot, DustBunny, Breadcrumb, HairClump, Cat, DustMote, Dock, Led, Ring, Broom, Droplet, Vacuum, Sock, Lego, Puddle, Cord, MopTrail }
+    public enum SpriteKind { Robot, DustBunny, Breadcrumb, HairClump, Cat, DustMote, Dock, Led, Ring, Broom, Droplet, Vacuum, Sock, Lego, Puddle, Cord, MopTrail, Battery, Magnet, Bomb }
 
     /// Builds the whole game's look at runtime: one shared flat-shading model over a distinct
     /// silhouette per entity, so the project needs no imported art and keeps the "moonlit" mood.
@@ -70,6 +70,9 @@ namespace VacuumSurvivor
                 case SpriteKind.Puddle: return Puddle(body, px);
                 case SpriteKind.Cord: return Cord(body, px);
                 case SpriteKind.MopTrail: return MopTrail(body, px);
+                case SpriteKind.Battery: return Battery(body, px);
+                case SpriteKind.Magnet: return Magnet(body, px);
+                case SpriteKind.Bomb: return Bomb(body, px);
                 default: return PlainCircle(body, px); // Led, Ring
             }
         }
@@ -253,6 +256,37 @@ namespace VacuumSurvivor
             var m = NewMask(px); float c = px;
             Ellipse(m, px, c * 0.5f, c * 0.5f, c * 0.46f, c * 0.24f); // a soft wet streak, no face
             return Finish(Shade(m, px, body), px, null);
+        }
+
+        static Sprite Battery(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            RoundedRect(m, px, c * 0.5f, c * 0.46f, c * 0.24f, c * 0.34f, c * 0.08f); // upright cell
+            RoundedRect(m, px, c * 0.5f, c * 0.84f, c * 0.09f, c * 0.05f, c * 0.03f); // top terminal
+            return Finish(Shade(m, px, body), px, tex =>
+                FillRectTex(tex, px, 0.30f, 0.70f, 0.40f, 0.52f, Palette.Accent)); // charge band
+        }
+
+        static Sprite Magnet(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            RoundedRect(m, px, c * 0.30f, c * 0.42f, c * 0.085f, c * 0.26f, c * 0.04f); // left leg
+            RoundedRect(m, px, c * 0.70f, c * 0.42f, c * 0.085f, c * 0.26f, c * 0.04f); // right leg
+            RoundedRect(m, px, c * 0.50f, c * 0.66f, c * 0.30f, c * 0.085f, c * 0.06f); // joining bar on top
+            return Finish(Shade(m, px, body), px, tex =>
+            {
+                FillRectTex(tex, px, 0.21f, 0.39f, 0.16f, 0.26f, Palette.Accent); // the two pole tips
+                FillRectTex(tex, px, 0.61f, 0.79f, 0.16f, 0.26f, Palette.Accent);
+            });
+        }
+
+        static Sprite Bomb(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            Disc(m, px, c * 0.5f, c * 0.42f, c * 0.32f);                         // round body
+            RoundedRect(m, px, c * 0.62f, c * 0.78f, c * 0.04f, c * 0.10f, c * 0.03f); // fuse stub
+            return Finish(Shade(m, px, body), px, tex =>
+                DrawDot(tex, c * 0.66f, c * 0.90f, c * 0.07f, Palette.Accent)); // spark
         }
 
         static Sprite PlainCircle(Color body, int px)

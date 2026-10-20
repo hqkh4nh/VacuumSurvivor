@@ -173,6 +173,19 @@ public class SpriteFactoryTests
     }
 
     [Test]
+    public void Powerup_items_return_non_null_in_bounds_sprites_with_coverage()
+    {
+        foreach (var k in new[] { SpriteKind.Battery, SpriteKind.Magnet, SpriteKind.Bomb })
+        {
+            const int px = 32;
+            var s = SpriteFactory.Build(k, Color.gray, px);
+            Assert.IsNotNull(s, k.ToString());
+            Assert.AreEqual(px, (int)s.rect.width, k.ToString());
+            Assert.Greater(OpaqueCount((Texture2D)s.texture), 0, k.ToString());
+        }
+    }
+
+    [Test]
     public void Led_and_ring_are_plain_filled_circles()
     {
         const int px = 32;
