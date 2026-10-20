@@ -23,5 +23,20 @@ namespace VacuumSurvivor
         public bool splitsOnDeath;
         public EnemyData splitInto;
         public int splitCount = 2;
+
+        [Header("Dasher only")]
+        public float aimTime = 1f;
+        public float dashSpeed = 9f;
+        public float dashDuration = 0.5f;
+        public float recoverTime = 0.6f;
+
+        [Header("Hazard only")]
+        public float lifetime;        // 0 = permanent
+        public bool indestructible;
+
+        [Header("Snake only")]
+        public float rootDuration = 1f;
+        public float weaveAmp = 0.6f;
+        public float weaveFreq = 6f;
     }
 }

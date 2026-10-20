@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace VacuumSurvivor
 {
-    public enum UpgradeType { SuctionLevel, MaxBattery, MoveSpeed, MagnetRadius, SuctionDamage, OrbitWeapon, ProjectileWeapon }
+    public enum UpgradeType { SuctionLevel, MaxBattery, MoveSpeed, MagnetRadius, SuctionDamage, OrbitWeapon, ProjectileWeapon, TrailWeapon, LaserWeapon, PushWeapon }
 
     /// One pickable upgrade. valuePerLevel[0] is the effect of taking it the first time.
     [CreateAssetMenu(menuName = "VacuumSurvivor/Upgrade")]

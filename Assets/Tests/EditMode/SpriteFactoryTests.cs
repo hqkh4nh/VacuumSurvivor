@@ -51,7 +51,8 @@ public class SpriteFactoryTests
     }
 
     static readonly SpriteKind[] Creatures =
-        { SpriteKind.Robot, SpriteKind.DustBunny, SpriteKind.Breadcrumb, SpriteKind.HairClump, SpriteKind.Cat };
+        { SpriteKind.Robot, SpriteKind.DustBunny, SpriteKind.Breadcrumb, SpriteKind.HairClump, SpriteKind.Cat,
+          SpriteKind.Sock, SpriteKind.Lego, SpriteKind.Cord };
 
     static Texture2D Tex(SpriteKind k, Color body, int px) => (Texture2D)SpriteFactory.Build(k, body, px).texture;
 
@@ -156,6 +157,19 @@ public class SpriteFactoryTests
         Assert.IsNotNull(s);
         Assert.AreEqual(px, (int)s.rect.width);
         Assert.Greater(OpaqueCount((Texture2D)s.texture), 0);
+    }
+
+    [Test]
+    public void Puddle_and_mop_trail_return_non_null_in_bounds_sprites_with_coverage()
+    {
+        foreach (var k in new[] { SpriteKind.Puddle, SpriteKind.MopTrail })
+        {
+            const int px = 48;
+            var s = SpriteFactory.Build(k, Color.gray, px);
+            Assert.IsNotNull(s, k.ToString());
+            Assert.AreEqual(px, (int)s.rect.width, k.ToString());
+            Assert.Greater(OpaqueCount((Texture2D)s.texture), 0, k.ToString());
+        }
     }
 
     [Test]
