@@ -26,7 +26,7 @@ namespace VacuumSurvivor
             GameEvents.BatteryChanged += OnBattery;
             GameEvents.DustChanged += OnDust;
             GameEvents.PlayerLevelChanged += OnLevel;
-            GameEvents.SuctionLevelChanged += OnWeapon;
+            GameEvents.WeaponsChanged += OnWeapons;
             GameEvents.BossSpawned += OnBossSpawned;
             GameEvents.BossHealthChanged += OnBossHealth;
         }
@@ -36,7 +36,7 @@ namespace VacuumSurvivor
             GameEvents.BatteryChanged -= OnBattery;
             GameEvents.DustChanged -= OnDust;
             GameEvents.PlayerLevelChanged -= OnLevel;
-            GameEvents.SuctionLevelChanged -= OnWeapon;
+            GameEvents.WeaponsChanged -= OnWeapons;
             GameEvents.BossSpawned -= OnBossSpawned;
             GameEvents.BossHealthChanged -= OnBossHealth;
         }
@@ -49,7 +49,7 @@ namespace VacuumSurvivor
             var stats = p.GetComponent<PlayerStats>();
             if (stats != null) { OnBattery(stats.Battery, stats.MaxBattery); OnDust(stats.Dust, stats.DustForNext); OnLevel(stats.Level); }
             var wm = p.GetComponent<WeaponManager>();
-            if (wm != null && wm.Suction != null) OnWeapon(wm.Suction.Level);
+            if (wm != null) OnWeapons(wm.Summary());
         }
 
         void Update()
@@ -77,7 +77,7 @@ namespace VacuumSurvivor
 
         void OnDust(int current, int needed) => SetBar(dustFill, needed > 0 ? (float)current / needed : 0f);
         void OnLevel(int level) => levelLabel.text = $"Cấp {level}";
-        void OnWeapon(int level) => weaponLabel.text = $"Lực hút Lv{level}";
+        void OnWeapons(string summary) => weaponLabel.text = summary;
 
         void OnBossSpawned(float max)
         {
