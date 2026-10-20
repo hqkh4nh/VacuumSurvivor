@@ -107,10 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902e1f8b475c00847989c94780c815fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.ProceduralSprite
-  color: {r: 0.957, g: 0.447, b: 0.714, a: 1}
-  eyes: 0
+  kind: 5
+  color: {r: 0.976, g: 0.659, b: 0.831, a: 1}
   pixels: 16
-  cat: 0
 --- !u!58 &3796361264822122688
 CircleCollider2D:
   m_ObjectHideFlags: 0

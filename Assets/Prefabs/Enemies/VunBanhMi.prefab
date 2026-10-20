@@ -108,10 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902e1f8b475c00847989c94780c815fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.ProceduralSprite
+  kind: 2
   color: {r: 1, g: 1, b: 1, a: 1}
-  eyes: 1
   pixels: 34
-  cat: 0
 --- !u!50 &66923983300693327
 Rigidbody2D:
   serializedVersion: 5
