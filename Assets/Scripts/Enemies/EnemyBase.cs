@@ -92,7 +92,15 @@ namespace VacuumSurvivor
         void OnCollisionStay2D(Collision2D collision)
         {
             var ps = collision.collider.GetComponent<PlayerStats>();
-            if (ps != null) ps.TakeContactDamage(data.contactDamage);
+            if (ps != null)
+            {
+                ps.TakeContactDamage(data.contactDamage);
+                OnContactPlayer(ps);
+            }
         }
+
+        /// Runs each physics frame the trash is touching the player, after contact damage. Lets a
+        /// type add an on-touch effect (Dây sạc roots the robot) without duplicating contact logic.
+        protected virtual void OnContactPlayer(PlayerStats stats) { }
     }
 }

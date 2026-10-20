@@ -17,6 +17,10 @@ namespace VacuumSurvivor
 
         Rigidbody2D rb;
         Vector2 input;
+        float rootedUntil = -999f;
+
+        /// Pins the robot in place briefly (Dây sạc wraps the wheels).
+        public void Root(float seconds) => rootedUntil = Time.time + seconds;
 
         void Awake()
         {
@@ -32,6 +36,7 @@ namespace VacuumSurvivor
 
         void FixedUpdate()
         {
+            if (Time.time < rootedUntil) { rb.linearVelocity = Vector2.zero; return; }
             rb.linearVelocity = input.normalized * (moveSpeed * SpeedMultiplier);
         }
 
