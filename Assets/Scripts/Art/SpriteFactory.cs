@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace VacuumSurvivor
 {
-    public enum SpriteKind { Robot, DustBunny, Breadcrumb, HairClump, Cat, DustMote, Dock, Led, Ring, Broom, Droplet, Vacuum }
+    public enum SpriteKind { Robot, DustBunny, Breadcrumb, HairClump, Cat, DustMote, Dock, Led, Ring, Broom, Droplet, Vacuum, Sock, Lego, Puddle, Cord, MopTrail }
 
     /// Builds the whole game's look at runtime: one shared flat-shading model over a distinct
     /// silhouette per entity, so the project needs no imported art and keeps the "moonlit" mood.
@@ -65,6 +65,11 @@ namespace VacuumSurvivor
                 case SpriteKind.Broom: return Broom(body, px);
                 case SpriteKind.Droplet: return Droplet(body, px);
                 case SpriteKind.Vacuum: return Vacuum(body, px);
+                case SpriteKind.Sock: return Sock(body, px);
+                case SpriteKind.Lego: return Lego(body, px);
+                case SpriteKind.Puddle: return Puddle(body, px);
+                case SpriteKind.Cord: return Cord(body, px);
+                case SpriteKind.MopTrail: return MopTrail(body, px);
                 default: return PlainCircle(body, px); // Led, Ring
             }
         }
@@ -194,6 +199,60 @@ namespace VacuumSurvivor
             {
                 DrawDot(tex, c * 0.56f, c * 0.62f, c * 0.09f, new Color(1f, 0.4f, 0.35f, 1f)); // one angry eye
             });
+        }
+
+        static Sprite Sock(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            RoundedRect(m, px, c * 0.5f, c * 0.46f, c * 0.24f, c * 0.36f, c * 0.14f); // a lone tall sock
+            return Finish(Shade(m, px, body), px, tex => SmallEyes(tex, px));
+        }
+
+        static Sprite Lego(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            RoundedRect(m, px, c * 0.5f, c * 0.46f, c * 0.34f, c * 0.30f, c * 0.06f);
+            var stud = new Color(0.82f, 0.82f, 0.9f, 1f);
+            return Finish(Shade(m, px, body), px, tex =>
+            {
+                DrawDot(tex, c * 0.36f, c * 0.66f, c * 0.07f, stud);
+                DrawDot(tex, c * 0.64f, c * 0.66f, c * 0.07f, stud);
+                DrawDot(tex, c * 0.36f, c * 0.46f, c * 0.07f, stud);
+                DrawDot(tex, c * 0.64f, c * 0.46f, c * 0.07f, stud);
+            });
+        }
+
+        static Sprite Puddle(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            Ellipse(m, px, c * 0.5f, c * 0.45f, c * 0.44f, c * 0.28f); // a shallow spill
+            return Finish(Shade(m, px, body), px, null);
+        }
+
+        static Sprite Cord(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            float headX = 0f, headY = 0f;
+            for (int i = 0; i <= 12; i++)
+            {
+                float t = i / 12f;
+                float x = Mathf.Lerp(c * 0.12f, c * 0.88f, t);
+                float y = c * 0.5f + Mathf.Sin(t * Mathf.PI * 2f) * c * 0.15f;
+                Disc(m, px, x, y, c * 0.095f);
+                headX = x; headY = y;
+            }
+            return Finish(Shade(m, px, body), px, tex =>
+            {
+                DrawDot(tex, headX - c * 0.03f, headY + c * 0.03f, c * 0.045f, EyeGlow);
+                DrawDot(tex, headX + c * 0.03f, headY - c * 0.03f, c * 0.045f, EyeGlow);
+            });
+        }
+
+        static Sprite MopTrail(Color body, int px)
+        {
+            var m = NewMask(px); float c = px;
+            Ellipse(m, px, c * 0.5f, c * 0.5f, c * 0.46f, c * 0.24f); // a soft wet streak, no face
+            return Finish(Shade(m, px, body), px, null);
         }
 
         static Sprite PlainCircle(Color body, int px)

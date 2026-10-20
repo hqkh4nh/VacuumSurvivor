@@ -24,6 +24,7 @@ MonoBehaviour:
     types:
     - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
     - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}
+    - {fileID: 11400000, guid: 3d297792337bc654ea0b19cfd105b36a, type: 2}
   - startTime: 75
     spawnInterval: 0.7
     maxAlive: 55
@@ -31,6 +32,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
     - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}
     - {fileID: 11400000, guid: 866396bce238ae348a74f8c2abc6aecd, type: 2}
+    - {fileID: 11400000, guid: 3d297792337bc654ea0b19cfd105b36a, type: 2}
   - startTime: 120
     spawnInterval: 0.6
     maxAlive: 70
@@ -38,3 +40,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 09e532e4e6546e0419898eadd8f1c1a1, type: 2}
     - {fileID: 11400000, guid: 239003035167b1e47b081d65460d9de7, type: 2}
     - {fileID: 11400000, guid: 866396bce238ae348a74f8c2abc6aecd, type: 2}
+    - {fileID: 11400000, guid: f3bb4d9daccb0be4c8584afc6b8118a1, type: 2}

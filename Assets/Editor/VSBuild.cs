@@ -198,6 +198,9 @@ namespace VacuumSurvivor.EditorTools
 
             BuildOrbitWeapon(player);
             BuildProjectileWeapon(player);
+            BuildTrailWeapon(player);
+            BuildLaserWeapon(player);
+            BuildPushWeapon(player);
 
             player.AddComponent<WeaponManager>();
             player.AddComponent<PlayerMagnet>();
@@ -242,6 +245,67 @@ namespace VacuumSurvivor.EditorTools
             var pool = poolGO.AddComponent<GameObjectPool>();
             pool.Prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Weapons/Droplet.prefab");
             proj.Pool = pool;
+        }
+
+        static void BuildTrailWeapon(GameObject player)
+        {
+            var trail = player.AddComponent<TrailWeapon>();
+            trail.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/VetLau.asset");
+
+            var poolGO = new GameObject("TrailPool");
+            poolGO.transform.SetParent(player.transform, false);
+            var pool = poolGO.AddComponent<GameObjectPool>();
+            pool.Prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Weapons/TrailPatch.prefab");
+            trail.Pool = pool;
+        }
+
+        static void BuildLaserWeapon(GameObject player)
+        {
+            var laser = player.AddComponent<LaserWeapon>();
+            laser.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/TiaLidar.asset");
+            // The beams are line renderers the weapon builds for itself at runtime.
+        }
+
+        static void BuildPushWeapon(GameObject player)
+        {
+            var push = player.AddComponent<PushWeapon>();
+            push.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/CoiBaoDong.asset");
+
+            var ringGO = new GameObject("HornRing");
+            ringGO.transform.SetParent(player.transform, false);
+            var sr = ringGO.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 1;
+            sr.color = new Color(Palette.Accent.r, Palette.Accent.g, Palette.Accent.b, 0.22f);
+            var ps = ringGO.AddComponent<ProceduralSprite>();
+            ps.Color = Color.white;
+            ps.Kind = SpriteKind.Ring;
+            ps.Pixels = 64;
+            ringGO.SetActive(false);
+            push.Ring = ringGO.transform;
+        }
+
+        static void MakeStatic(GameObject prefab)
+        {
+            var rb = prefab.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic; // LEGO and puddles don't get shoved
+            EditorUtility.SetDirty(prefab);
+            PrefabUtility.SavePrefabAsset(prefab);
+        }
+
+        static GameObject CreateTrailPatchPrefab(string path)
+        {
+            var go = new GameObject("TrailPatch");   // Default layer; damages via OverlapCircleAll, no collider needed
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 1;
+            var ps = go.AddComponent<ProceduralSprite>();
+            ps.Color = new Color(Palette.Moonlight.r, Palette.Moonlight.g, Palette.Moonlight.b, 0.45f);
+            ps.Kind = SpriteKind.MopTrail;
+            ps.Pixels = 32;
+            go.AddComponent<TrailPatch>();
+
+            var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
+            Object.DestroyImmediate(go);
+            return prefab;
         }
 
         static void EnsureLayer(string layerName)
@@ -347,6 +411,44 @@ namespace VacuumSurvivor.EditorTools
             });
             CreateVacuumBossPrefab("Assets/Prefabs/Enemies/MayHutBui.prefab", mayHutBui, buiBong);
 
+            var tatLe = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/TatLe.asset", d =>
+            {
+                d.enemyName = "Tất lẻ";
+                d.maxHealth = 20f; d.moveSpeed = 0f; d.contactDamage = 12f; d.dustValue = 2;
+                d.bodyColor = new Color(0.6f, 0.62f, 0.72f); d.bodyPixels = 40;
+                d.aimTime = 1f; d.dashSpeed = 9f; d.dashDuration = 0.5f; d.recoverTime = 0.6f;
+                d.splitsOnDeath = false;
+            });
+            CreateEnemyPrefab("Assets/Prefabs/Enemies/TatLe.prefab", tatLe, typeof(DasherEnemy), 0.3f, SpriteKind.Sock);
+
+            var cucLego = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/CucLego.asset", d =>
+            {
+                d.enemyName = "Cục LEGO";
+                d.maxHealth = 1f; d.moveSpeed = 0f; d.contactDamage = 20f; d.dustValue = 0;
+                d.bodyColor = new Color(0.82f, 0.4f, 0.42f); d.bodyPixels = 40;
+                d.indestructible = true; d.lifetime = 25f;
+            });
+            MakeStatic(CreateEnemyPrefab("Assets/Prefabs/Enemies/CucLego.prefab", cucLego, typeof(HazardEnemy), 0.34f, SpriteKind.Lego));
+
+            var vungNuoc = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/VungNuoc.asset", d =>
+            {
+                d.enemyName = "Vũng nước";
+                d.maxHealth = 12f; d.moveSpeed = 0f; d.contactDamage = 4f; d.dustValue = 0;
+                d.bodyColor = new Color(0.45f, 0.6f, 0.8f, 0.75f); d.bodyPixels = 56;
+                d.indestructible = false; d.lifetime = 0f;
+            });
+            MakeStatic(CreateEnemyPrefab("Assets/Prefabs/Enemies/VungNuoc.prefab", vungNuoc, typeof(HazardEnemy), 0.6f, SpriteKind.Puddle));
+
+            var daySac = CreateOrLoadEnemyData("Assets/ScriptableObjects/Enemies/DaySac.asset", d =>
+            {
+                d.enemyName = "Dây sạc";
+                d.maxHealth = 25f; d.moveSpeed = 2.5f; d.contactDamage = 6f; d.dustValue = 3;
+                d.bodyColor = new Color(0.8f, 0.8f, 0.85f); d.bodyPixels = 48;
+                d.rootDuration = 1f; d.weaveAmp = 0.6f; d.weaveFreq = 6f;
+                d.splitsOnDeath = false;
+            });
+            CreateEnemyPrefab("Assets/Prefabs/Enemies/DaySac.prefab", daySac, typeof(SnakeEnemy), 0.3f, SpriteKind.Cord);
+
             EnsureFolder("Assets/ScriptableObjects/Weapons");
             CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset", w =>
             {
@@ -360,15 +462,21 @@ namespace VacuumSurvivor.EditorTools
             { w.weaponName = "Chổi"; w.maxLevel = 5; });
             CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/VoiXit.asset", w =>
             { w.weaponName = "Vòi"; w.maxLevel = 5; });
+            CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/VetLau.asset", w =>
+            { w.weaponName = "Vệt lau"; w.maxLevel = 5; });
+            CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/TiaLidar.asset", w =>
+            { w.weaponName = "LIDAR"; w.maxLevel = 5; });
+            CreateOrLoadAsset<WeaponData>("Assets/ScriptableObjects/Weapons/CoiBaoDong.asset", w =>
+            { w.weaponName = "Còi"; w.maxLevel = 5; });
 
             CreateOrLoadAsset<WaveData>("Assets/ScriptableObjects/WaveData_PhongKhach.asset", w =>
             {
                 w.entries = new[]
                 {
                     new WaveEntry { startTime = 0f,   spawnInterval = 1.0f,  maxAlive = 25, types = new[] { buiBong } },
-                    new WaveEntry { startTime = 30f,  spawnInterval = 0.85f, maxAlive = 40, types = new[] { buiBong, banhMi } },
-                    new WaveEntry { startTime = 75f,  spawnInterval = 0.7f,  maxAlive = 55, types = new[] { buiBong, banhMi, tocRoi } },
-                    new WaveEntry { startTime = 120f, spawnInterval = 0.6f,  maxAlive = 70, types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 0.85f, maxAlive = 40, types = new[] { buiBong, banhMi, cucLego } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.7f,  maxAlive = 55, types = new[] { buiBong, banhMi, tocRoi, cucLego } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.6f,  maxAlive = 70, types = new[] { buiBong, banhMi, tocRoi, tatLe } },
                 };
             });
 
@@ -377,9 +485,9 @@ namespace VacuumSurvivor.EditorTools
                 w.entries = new[]
                 {
                     new WaveEntry { startTime = 0f,   spawnInterval = 0.9f,  maxAlive = 35, types = new[] { buiBong, tocRoi } },
-                    new WaveEntry { startTime = 30f,  spawnInterval = 0.75f, maxAlive = 50, types = new[] { buiBong, banhMi, tocRoi } },
-                    new WaveEntry { startTime = 75f,  spawnInterval = 0.6f,  maxAlive = 65, types = new[] { buiBong, banhMi, tocRoi } },
-                    new WaveEntry { startTime = 120f, spawnInterval = 0.5f,  maxAlive = 80, types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 0.75f, maxAlive = 50, types = new[] { buiBong, banhMi, tocRoi, tatLe } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.6f,  maxAlive = 65, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.5f,  maxAlive = 80, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac, cucLego } },
                 };
             });
 
@@ -388,9 +496,9 @@ namespace VacuumSurvivor.EditorTools
                 w.entries = new[]
                 {
                     new WaveEntry { startTime = 0f,   spawnInterval = 0.7f, maxAlive = 50,  types = new[] { buiBong, banhMi, tocRoi } },
-                    new WaveEntry { startTime = 30f,  spawnInterval = 0.6f, maxAlive = 70,  types = new[] { buiBong, banhMi, tocRoi } },
-                    new WaveEntry { startTime = 75f,  spawnInterval = 0.5f, maxAlive = 90,  types = new[] { buiBong, banhMi, tocRoi } },
-                    new WaveEntry { startTime = 120f, spawnInterval = 0.4f, maxAlive = 110, types = new[] { buiBong, banhMi, tocRoi } },
+                    new WaveEntry { startTime = 30f,  spawnInterval = 0.6f, maxAlive = 70,  types = new[] { buiBong, banhMi, tocRoi, daySac } },
+                    new WaveEntry { startTime = 75f,  spawnInterval = 0.5f, maxAlive = 90,  types = new[] { buiBong, banhMi, tocRoi, daySac, vungNuoc } },
+                    new WaveEntry { startTime = 120f, spawnInterval = 0.4f, maxAlive = 110, types = new[] { buiBong, banhMi, tocRoi, tatLe, daySac, vungNuoc } },
                 };
             });
 
@@ -400,6 +508,7 @@ namespace VacuumSurvivor.EditorTools
 
             EnsureFolder("Assets/Prefabs/Weapons");
             CreateProjectilePrefab("Assets/Prefabs/Weapons/Droplet.prefab");
+            CreateTrailPatchPrefab("Assets/Prefabs/Weapons/TrailPatch.prefab");
 
             EnsureFolder("Assets/ScriptableObjects/Upgrades");
             CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/LucHutCap.asset", u =>
@@ -416,6 +525,12 @@ namespace VacuumSurvivor.EditorTools
             { u.type = UpgradeType.OrbitWeapon; u.title = "Chổi quay"; u.description = "Các cây chổi xoay quanh robot, chạm vào rác thì gây sát thương. Chọn lại để lên cấp."; u.valuePerLevel = new[] { 0f, 0f, 0f, 0f, 0f }; u.maxLevel = 5; });
             CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/VoiXit.asset", u =>
             { u.type = UpgradeType.ProjectileWeapon; u.title = "Vòi xịt nước"; u.description = "Tự bắn viên nước về kẻ địch gần nhất. Chọn lại để lên cấp."; u.valuePerLevel = new[] { 0f, 0f, 0f, 0f, 0f }; u.maxLevel = 5; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/VetLau.asset", u =>
+            { u.type = UpgradeType.TrailWeapon; u.title = "Vệt lau sàn"; u.description = "Để lại vệt nước phía sau, rác đi qua bị mất máu. Chọn lại để lên cấp."; u.valuePerLevel = new[] { 0f, 0f, 0f, 0f, 0f }; u.maxLevel = 5; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/TiaLidar.asset", u =>
+            { u.type = UpgradeType.LaserWeapon; u.title = "Tia quét LIDAR"; u.description = "Quét một tia laser xoay vòng, gây sát thương rác trên đường. Chọn lại để lên cấp."; u.valuePerLevel = new[] { 0f, 0f, 0f, 0f, 0f }; u.maxLevel = 5; });
+            CreateOrLoadAsset<UpgradeData>("Assets/ScriptableObjects/Upgrades/CoiBaoDong.asset", u =>
+            { u.type = UpgradeType.PushWeapon; u.title = "Còi báo động"; u.description = "Định kỳ đẩy lùi rác xung quanh và gây sát thương nhẹ. Chọn lại để lên cấp."; u.valuePerLevel = new[] { 0f, 0f, 0f, 0f, 0f }; u.maxLevel = 5; });
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -441,7 +556,7 @@ namespace VacuumSurvivor.EditorTools
 
         static List<UpgradeData> LoadUpgrades()
         {
-            string[] names = { "LucHutCap", "PinLon", "DongCo", "NamCham", "LocHEPA", "ChoiQuay", "VoiXit" };
+            string[] names = { "LucHutCap", "PinLon", "DongCo", "NamCham", "LocHEPA", "ChoiQuay", "VoiXit", "VetLau", "TiaLidar", "CoiBaoDong" };
             var list = new List<UpgradeData>();
             foreach (var n in names)
             {
