@@ -24,3 +24,12 @@ MonoBehaviour:
   splitsOnDeath: 0
   splitInto: {fileID: 0}
   splitCount: 2
+  aimTime: 1
+  dashSpeed: 9
+  dashDuration: 0.5
+  recoverTime: 0.6
+  lifetime: 0
+  indestructible: 0
+  rootDuration: 1
+  weaveAmp: 0.6
+  weaveFreq: 6
