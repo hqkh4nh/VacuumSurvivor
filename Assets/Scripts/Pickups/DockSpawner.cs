@@ -34,6 +34,7 @@ namespace VacuumSurvivor
             timer = 0f;
 
             Vector2 pos = (Vector2)player.position + Random.insideUnitCircle.normalized * spawnRadius;
+            if (RoomBounds.Instance != null) pos = RoomBounds.Instance.Clamp(pos, RoomBounds.RadiusOf(dockPrefab));
             var go = pool.Get(pos);
             go.GetComponent<ChargingDock>().Pool = pool;
         }

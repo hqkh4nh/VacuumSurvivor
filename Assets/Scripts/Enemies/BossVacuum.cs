@@ -53,6 +53,7 @@ namespace VacuumSurvivor
             if (playerRb == null) return;
             Vector2 toBoss = (rb.position - (Vector2)player.position).normalized;
             playerRb.position += toBoss * (pullSpeed * dt);
+            if (RoomBounds.Instance != null) RoomBounds.Instance.Constrain(playerRb);
         }
 
         void Blow()

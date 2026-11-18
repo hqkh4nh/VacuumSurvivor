@@ -36,8 +36,8 @@ namespace VacuumSurvivor
 
         void FixedUpdate()
         {
-            if (Time.time < rootedUntil) { rb.linearVelocity = Vector2.zero; return; }
-            rb.linearVelocity = input.normalized * (moveSpeed * SpeedMultiplier);
+            rb.linearVelocity = Time.time < rootedUntil ? Vector2.zero : input.normalized * (moveSpeed * SpeedMultiplier);
+            if (RoomBounds.Instance != null) RoomBounds.Instance.Constrain(rb);
         }
 
         static Vector2 ReadMove()

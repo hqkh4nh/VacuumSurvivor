@@ -84,6 +84,7 @@ namespace VacuumSurvivor
             // The player's velocity is rewritten every FixedUpdate from input, so a displacement
             // sticks where an impulse would not.
             if (playerRb != null) playerRb.position += away * slapKnockback;
+            if (playerRb != null && RoomBounds.Instance != null) RoomBounds.Instance.Constrain(playerRb);
             var stats = player.GetComponent<PlayerStats>();
             if (stats != null) stats.TakeContactDamage(slapDamage);
         }
@@ -98,6 +99,7 @@ namespace VacuumSurvivor
         {
             Vector2 around = player != null ? (Vector2)player.position : Vector2.zero;
             roamTarget = around + Random.insideUnitCircle * roamRadius;
+            if (RoomBounds.Instance != null) roamTarget = RoomBounds.Instance.Clamp(roamTarget, RoomBounds.RadiusOf(gameObject));
         }
 
         public override void TakeDamage(float amount)

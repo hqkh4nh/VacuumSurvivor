@@ -13,6 +13,7 @@ namespace VacuumSurvivor
         public float contactDamage = 5f;
         public int dustValue = 1;
         public Color bodyColor = new Color(0.545f, 0.545f, 0.62f); // #8B8B9E
+        public Color hitFlashColor = Color.white;
         public int bodyPixels = 44;
 
         [Header("Swarm (0 = spawn singly)")]

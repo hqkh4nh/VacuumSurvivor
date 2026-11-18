@@ -14,7 +14,6 @@ namespace VacuumSurvivor.EditorTools
         const string ScenePath = "Assets/Scenes/Game.unity";
         const string MainMenuScenePath = "Assets/Scenes/MainMenu.unity";
 
-        static readonly Color RobotBody = Palette.Robot;
         static readonly Color NightBg = Palette.NightBg;
 
         [MenuItem("VacuumSurvivor/Build Game Scene")]
@@ -141,9 +140,9 @@ namespace VacuumSurvivor.EditorTools
 
         static void BuildFloor()
         {
-            var go = new GameObject("Floor");
-            go.AddComponent<SpriteRenderer>().sortingOrder = -100;
-            go.AddComponent<ProceduralFloor>();
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Maps/Room.prefab");
+            if (prefab == null) throw new System.InvalidOperationException("Missing room prefab");
+            PrefabUtility.InstantiatePrefab(prefab);
         }
 
         static GameObject BuildPlayer()
@@ -152,9 +151,7 @@ namespace VacuumSurvivor.EditorTools
             player.layer = LayerMask.NameToLayer("Player");
             var sr = player.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 10;
-            var ps = player.AddComponent<ProceduralSprite>();
-            ps.Kind = SpriteKind.Robot;
-            ps.Color = RobotBody;
+            sr.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Soft2D/Robot.png");
             var rb = player.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
             rb.freezeRotation = true;
@@ -166,8 +163,8 @@ namespace VacuumSurvivor.EditorTools
 
             var ledGO = new GameObject("LED");
             ledGO.transform.SetParent(player.transform, false);
-            ledGO.transform.localPosition = new Vector3(0f, 0.28f, 0f);
-            ledGO.transform.localScale = Vector3.one * 0.3f;
+            ledGO.transform.localPosition = new Vector3(0f, -0.22f, 0f);
+            ledGO.transform.localScale = Vector3.one * 0.1f;
             var ledSr = ledGO.AddComponent<SpriteRenderer>();
             ledSr.sortingOrder = 11;
             var ledPs = ledGO.AddComponent<ProceduralSprite>();
@@ -342,7 +339,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "BuiBong";
                 d.maxHealth = 10f; d.moveSpeed = 1.8f; d.contactDamage = 5f; d.dustValue = 1;
-                d.bodyColor = Palette.DustBunny; d.bodyPixels = 44;
+                d.bodyColor = Color.white; d.bodyPixels = 44;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.splitsOnDeath = false;
             });
             CreateEnemyPrefab("Assets/Prefabs/Enemies/BuiBong.prefab", buiBong, typeof(ChaserEnemy), 0.35f, SpriteKind.DustBunny);
@@ -602,10 +600,15 @@ namespace VacuumSurvivor.EditorTools
             go.layer = LayerMask.NameToLayer("Enemy");
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 5;
-            var ps = go.AddComponent<ProceduralSprite>();
-            ps.Kind = kind;
-            ps.Color = Color.white;   // tinted per-type by EnemyBase; white base lets it flash
-            ps.Pixels = data.bodyPixels;
+            if (kind == SpriteKind.DustBunny)
+                sr.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Soft2D/DustBunny.png");
+            else
+            {
+                var ps = go.AddComponent<ProceduralSprite>();
+                ps.Kind = kind;
+                ps.Color = Color.white;
+                ps.Pixels = data.bodyPixels;
+            }
             var rb = go.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
             rb.freezeRotation = true;
