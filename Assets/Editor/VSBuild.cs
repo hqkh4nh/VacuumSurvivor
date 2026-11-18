@@ -101,21 +101,10 @@ namespace VacuumSurvivor.EditorTools
 
             var canvas = BuildCanvas();
 
-            var hudGO = new GameObject("HUD", typeof(RectTransform));
-            hudGO.transform.SetParent(canvas.transform, false);
-            hudGO.AddComponent<HUD>();
-
-            var levelUpGO = new GameObject("LevelUpPanel", typeof(RectTransform));
-            levelUpGO.transform.SetParent(canvas.transform, false);
-            var levelUpPanel = levelUpGO.AddComponent<LevelUpPanel>();
-
-            var bannerGO = new GameObject("LevelBanner", typeof(RectTransform));
-            bannerGO.transform.SetParent(canvas.transform, false);
-            bannerGO.AddComponent<LevelBanner>();
-
-            var endGO = new GameObject("EndScreen", typeof(RectTransform));
-            endGO.transform.SetParent(canvas.transform, false);
-            endGO.AddComponent<EndScreen>();
+            AddUI<HUD>(canvas, "HUD");
+            var levelUpPanel = AddUI<LevelUpPanel>(canvas, "LevelUpPanel");
+            AddUI<LevelBanner>(canvas, "LevelBanner");
+            AddUI<EndScreen>(canvas, "EndScreen");
 
             var umGO = new GameObject("UpgradeManager");
             umGO.AddComponent<UpgradeManager>().Configure(LoadUpgrades(), levelUpPanel);
@@ -141,9 +130,7 @@ namespace VacuumSurvivor.EditorTools
             camGO.transform.position = new Vector3(0f, 0f, -10f);
 
             var canvas = BuildCanvas();
-            var menuGO = new GameObject("MainMenu", typeof(RectTransform));
-            menuGO.transform.SetParent(canvas.transform, false);
-            menuGO.AddComponent<MainMenuScreen>();
+            AddUI<MainMenuScreen>(canvas, "MainMenuScreen");
 
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, MainMenuScenePath);
@@ -543,6 +530,15 @@ namespace VacuumSurvivor.EditorTools
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             return "content built";
+        }
+
+        static T AddUI<T>(Canvas canvas, string name) where T : Component
+        {
+            string path = "Assets/Prefabs/UI/" + name + ".prefab";
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            if (prefab == null) throw new System.InvalidOperationException("Missing UI prefab: " + path);
+            var go = (GameObject)PrefabUtility.InstantiatePrefab(prefab, canvas.transform);
+            return go.GetComponent<T>();
         }
 
         static Canvas BuildCanvas()

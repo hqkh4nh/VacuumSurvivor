@@ -4,24 +4,24 @@ using UnityEngine.UI;
 namespace VacuumSurvivor
 {
     /// The in-game overlay: battery bar (colour-coded, blinks when low), dust bar, match clock,
-    /// player level and suction level. Builds itself and listens to GameEvents.
+    /// player level and weapons. Listens to GameEvents and updates the authored Canvas.
     public class HUD : MonoBehaviour
     {
-        Image batteryFill;
-        Image dustFill;
-        Text batteryLabel;
-        Text timerLabel;
-        Text levelLabel;
-        Text weaponLabel;
-        GameObject bossBar;
-        Image bossFill;
-        Text bossLabel;
+        [SerializeField] Image batteryFill;
+        [SerializeField] Image dustFill;
+        [SerializeField] Text batteryLabel;
+        [SerializeField] Text timerLabel;
+        [SerializeField] Text levelLabel;
+        [SerializeField] Text weaponLabel;
+        [SerializeField] GameObject bossBar;
+        [SerializeField] Image bossFill;
+        [SerializeField] Text bossLabel;
 
         float batteryPercent = 1f;
         float bossMax = 1f;
         string room = "Phòng khách";
 
-        void Awake() => Build();
+        void Awake() => bossBar.SetActive(false);
 
         void OnEnable()
         {
@@ -112,50 +112,5 @@ namespace VacuumSurvivor
             rt.anchorMax = a;
         }
 
-        void Build()
-        {
-            UIFactory.Stretch(gameObject);
-
-            var batteryBg = MakeBar(new Vector2(20f, -20f), new Vector2(320f, 30f), out batteryFill, BatteryColor.Green);
-            batteryLabel = UIFactory.Label(batteryBg.transform, "PIN 100%", 16, TextAnchor.MiddleCenter, Color.white);
-            UIFactory.Stretch(batteryLabel.gameObject);
-
-            MakeBar(new Vector2(20f, -56f), new Vector2(400f, 14f), out dustFill, new Color(0.957f, 0.447f, 0.714f));
-
-            timerLabel = Corner("Màn 1 · 00:00", 22, new Vector2(0.5f, 1f), new Vector2(0f, -20f), TextAnchor.UpperCenter);
-            levelLabel = Corner("Cấp 1", 22, new Vector2(1f, 1f), new Vector2(-20f, -20f), TextAnchor.UpperRight);
-            weaponLabel = Corner("Lực hút Lv1", 18, new Vector2(0f, 0f), new Vector2(20f, 20f), TextAnchor.LowerLeft);
-
-            bossBar = UIFactory.BossBar(transform, out bossFill, out bossLabel);
-            bossBar.SetActive(false);
-        }
-
-        Image MakeBar(Vector2 pos, Vector2 size, out Image fill, Color fillColor)
-        {
-            var bg = UIFactory.Box(transform, new Color(0f, 0f, 0f, 0.5f), "BarBg");
-            var br = bg.rectTransform;
-            br.anchorMin = br.anchorMax = new Vector2(0f, 1f);
-            br.pivot = new Vector2(0f, 1f);
-            br.sizeDelta = size;
-            br.anchoredPosition = pos;
-
-            fill = UIFactory.Box(bg.transform, fillColor, "Fill");
-            var fr = fill.rectTransform;
-            fr.anchorMin = Vector2.zero;
-            fr.anchorMax = Vector2.one;
-            fr.offsetMin = new Vector2(2f, 2f);
-            fr.offsetMax = new Vector2(-2f, -2f);
-            return bg;
-        }
-
-        Text Corner(string text, int size, Vector2 anchor, Vector2 pos, TextAnchor align)
-        {
-            var t = UIFactory.Label(transform, text, size, align, Color.white);
-            var rt = t.rectTransform;
-            rt.anchorMin = rt.anchorMax = rt.pivot = anchor;
-            rt.sizeDelta = new Vector2(320f, 40f);
-            rt.anchoredPosition = pos;
-            return t;
-        }
     }
 }

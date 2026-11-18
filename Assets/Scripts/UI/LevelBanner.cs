@@ -7,22 +7,13 @@ namespace VacuumSurvivor
     /// the robot just cleared.
     public class LevelBanner : MonoBehaviour
     {
-        GameObject root;
-        Text label;
+        [SerializeField] GameObject root;
+        [SerializeField] Text label;
         string clearedRoom = "";
         string currentRoom = "";
         bool showing;
 
-        void Awake()
-        {
-            UIFactory.Stretch(gameObject);
-            root = UIFactory.Panel(transform, new Color(0.03f, 0.03f, 0.07f, 0.75f), "Root").gameObject;
-            label = UIFactory.Label(root.transform, "", 44, TextAnchor.MiddleCenter, new Color(0.29f, 0.87f, 0.5f));
-            var lr = label.rectTransform;
-            lr.anchorMin = lr.anchorMax = lr.pivot = new Vector2(0.5f, 0.5f);
-            lr.sizeDelta = new Vector2(900f, 160f);
-            root.SetActive(false);
-        }
+        void Awake() => root.SetActive(false);
 
         void OnEnable() => GameEvents.LevelChanged += OnLevelChanged;
         void OnDisable() => GameEvents.LevelChanged -= OnLevelChanged;

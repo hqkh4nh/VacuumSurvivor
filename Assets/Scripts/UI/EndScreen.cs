@@ -8,16 +8,11 @@ namespace VacuumSurvivor
     /// again or return to the main menu.
     public class EndScreen : MonoBehaviour
     {
-        GameObject root;
-        Text message;
-        Text stats;
+        [SerializeField] GameObject root;
+        [SerializeField] Text message;
+        [SerializeField] Text stats;
 
-        void Awake()
-        {
-            UIFactory.Stretch(gameObject);
-            Build();
-            root.SetActive(false);
-        }
+        void Awake() => root.SetActive(false);
 
         void OnEnable()
         {
@@ -52,38 +47,12 @@ namespace VacuumSurvivor
                    $"Điểm: {s.Score(won)}";
         }
 
-        void Build()
+        public void PlayAgain() => GameManager.Restart();
+
+        public void ReturnToMenu()
         {
-            root = UIFactory.Panel(transform, new Color(0.03f, 0.03f, 0.07f, 0.92f), "Root").gameObject;
-
-            message = UIFactory.Label(root.transform, "", 44, TextAnchor.MiddleCenter, Color.white);
-            var mr = message.rectTransform;
-            mr.anchorMin = mr.anchorMax = mr.pivot = new Vector2(0.5f, 0.5f);
-            mr.sizeDelta = new Vector2(900f, 180f);
-            mr.anchoredPosition = new Vector2(0f, 150f);
-
-            stats = UIFactory.Label(root.transform, "", 26, TextAnchor.MiddleCenter, new Color(0.85f, 0.85f, 0.95f));
-            var sr = stats.rectTransform;
-            sr.anchorMin = sr.anchorMax = sr.pivot = new Vector2(0.5f, 0.5f);
-            sr.sizeDelta = new Vector2(900f, 160f);
-            sr.anchoredPosition = new Vector2(0f, -20f);
-
-            MakeButton("Chơi lại", new Color(0.29f, 0.87f, 0.5f, 1f), new Vector2(-140f, -150f), GameManager.Restart);
-            MakeButton("Về menu", new Color(0.42f, 0.48f, 0.6f, 1f), new Vector2(140f, -150f),
-                () => SceneManager.LoadScene("MainMenu"));
-        }
-
-        void MakeButton(string text, Color color, Vector2 pos, UnityEngine.Events.UnityAction onClick)
-        {
-            var btn = UIFactory.Button(root.transform, color, text);
-            var br = btn.GetComponent<RectTransform>();
-            br.anchorMin = br.anchorMax = br.pivot = new Vector2(0.5f, 0.5f);
-            br.sizeDelta = new Vector2(240f, 64f);
-            br.anchoredPosition = pos;
-            btn.onClick.AddListener(onClick);
-
-            var label = UIFactory.Label(btn.transform, text, 26, TextAnchor.MiddleCenter, new Color(0.05f, 0.1f, 0.05f));
-            UIFactory.Stretch(label.gameObject);
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
