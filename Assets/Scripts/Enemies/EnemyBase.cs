@@ -13,6 +13,9 @@ namespace VacuumSurvivor
         /// Fired when any trash dies, with where it died and how much dust it drops.
         public static event System.Action<Vector2, int> EnemyDied;
 
+        /// Fired by ReturnToPool, including hazards that expire without dying.
+        public static event System.Action<EnemyBase> EnemyReturned;
+
         /// Set by the spawner so split children come from the pool. Returns the spawned enemy.
         public static System.Func<EnemyData, Vector2, GameObject> SpawnRequest;
 
@@ -86,7 +89,11 @@ namespace VacuumSurvivor
 
         protected void ReturnToPool()
         {
-            if (Pool != null) Pool.Return(gameObject);
+            if (Pool != null)
+            {
+                Pool.Return(gameObject);
+                EnemyReturned?.Invoke(this);
+            }
             else gameObject.SetActive(false);
         }
 

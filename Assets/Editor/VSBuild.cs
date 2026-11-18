@@ -83,6 +83,10 @@ namespace VacuumSurvivor.EditorTools
                     AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/VunBanhMi.prefab"),
                     AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/CucTocRoi.prefab"),
                     AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/CucTocRoiNho.prefab"),
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/TatLe.prefab"),
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/CucLego.prefab"),
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/VungNuoc.prefab"),
+                    AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/DaySac.prefab"),
                 },
                 AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/ConMeo.prefab"));
 
@@ -349,7 +353,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "VunBanhMi";
                 d.maxHealth = 6f; d.moveSpeed = 3.5f; d.contactDamage = 3f; d.dustValue = 1;
-                d.bodyColor = Palette.Breadcrumb; d.bodyPixels = 34;
+                d.bodyColor = Color.white; d.bodyPixels = 34;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.swarmMin = 5; d.swarmMax = 8;
                 d.splitsOnDeath = false;
             });
@@ -359,7 +364,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "CucTocRoiNho";
                 d.maxHealth = 10f; d.moveSpeed = 1.4f; d.contactDamage = 5f; d.dustValue = 1;
-                d.bodyColor = Palette.HairClump; d.bodyPixels = 34;
+                d.bodyColor = Color.white; d.bodyPixels = 34;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.splitsOnDeath = false;
             });
             var tocNhoPrefab = CreateEnemyPrefab("Assets/Prefabs/Enemies/CucTocRoiNho.prefab", tocNho, typeof(ChaserEnemy), 0.28f, SpriteKind.HairClump);
@@ -368,7 +374,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "CucTocRoi";
                 d.maxHealth = 30f; d.moveSpeed = 1.2f; d.contactDamage = 8f; d.dustValue = 3;
-                d.bodyColor = Palette.HairClump; d.bodyPixels = 58;
+                d.bodyColor = Color.white; d.bodyPixels = 58;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.splitsOnDeath = true; d.splitInto = tocNho; d.splitCount = 2;
             });
             var tocRoiPrefab = CreateEnemyPrefab("Assets/Prefabs/Enemies/CucTocRoi.prefab", tocRoi, typeof(SplitterEnemy), 0.5f, SpriteKind.HairClump);
@@ -407,7 +414,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "Tất lẻ";
                 d.maxHealth = 20f; d.moveSpeed = 0f; d.contactDamage = 12f; d.dustValue = 2;
-                d.bodyColor = new Color(0.6f, 0.62f, 0.72f); d.bodyPixels = 40;
+                d.bodyColor = Color.white; d.bodyPixels = 40;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.aimTime = 1f; d.dashSpeed = 9f; d.dashDuration = 0.5f; d.recoverTime = 0.6f;
                 d.splitsOnDeath = false;
             });
@@ -417,7 +425,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "Cục LEGO";
                 d.maxHealth = 1f; d.moveSpeed = 0f; d.contactDamage = 20f; d.dustValue = 0;
-                d.bodyColor = new Color(0.82f, 0.4f, 0.42f); d.bodyPixels = 40;
+                d.bodyColor = Color.white; d.bodyPixels = 40;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.indestructible = true; d.lifetime = 25f;
             });
             MakeStatic(CreateEnemyPrefab("Assets/Prefabs/Enemies/CucLego.prefab", cucLego, typeof(HazardEnemy), 0.34f, SpriteKind.Lego));
@@ -426,7 +435,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "Vũng nước";
                 d.maxHealth = 12f; d.moveSpeed = 0f; d.contactDamage = 4f; d.dustValue = 0;
-                d.bodyColor = new Color(0.45f, 0.6f, 0.8f, 0.75f); d.bodyPixels = 56;
+                d.bodyColor = Color.white; d.bodyPixels = 56;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.indestructible = false; d.lifetime = 0f;
             });
             MakeStatic(CreateEnemyPrefab("Assets/Prefabs/Enemies/VungNuoc.prefab", vungNuoc, typeof(HazardEnemy), 0.6f, SpriteKind.Puddle));
@@ -435,7 +445,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "Dây sạc";
                 d.maxHealth = 25f; d.moveSpeed = 2.5f; d.contactDamage = 6f; d.dustValue = 3;
-                d.bodyColor = new Color(0.8f, 0.8f, 0.85f); d.bodyPixels = 48;
+                d.bodyColor = Color.white; d.bodyPixels = 48;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.rootDuration = 1f; d.weaveAmp = 0.6f; d.weaveFreq = 6f;
                 d.splitsOnDeath = false;
             });
@@ -600,15 +611,11 @@ namespace VacuumSurvivor.EditorTools
             go.layer = LayerMask.NameToLayer("Enemy");
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 5;
-            if (kind == SpriteKind.DustBunny)
-                sr.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Soft2D/DustBunny.png");
-            else
-            {
-                var ps = go.AddComponent<ProceduralSprite>();
-                ps.Kind = kind;
-                ps.Color = Color.white;
-                ps.Pixels = data.bodyPixels;
-            }
+            string spritePath = kind == SpriteKind.DustBunny
+                ? "Assets/Art/Soft2D/DustBunny.png"
+                : "Assets/Art/Soft2D/Enemies/" + System.IO.Path.GetFileNameWithoutExtension(path) + ".png";
+            sr.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+            if (sr.sprite == null) throw new System.InvalidOperationException("Missing enemy sprite: " + spritePath);
             var rb = go.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
             rb.freezeRotation = true;

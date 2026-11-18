@@ -1,0 +1,1833 @@
+fileFormatVersion: 2
+guid: 9b1a622f7c081444da8496143b483421
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5459438692832449560
+    second: VungNuoc_0
+  - first:
+      213: 3501091145792755855
+    second: VungNuoc_1
+  - first:
+      213: -1960393064182198134
+    second: VungNuoc_2
+  - first:
+      213: -2423518287101277279
+    second: VungNuoc_3
+  - first:
+      213: 1909246638889742629
+    second: VungNuoc_4
+  - first:
+      213: -1412248007405377089
+    second: VungNuoc_5
+  - first:
+      213: -3657177129868300789
+    second: VungNuoc_6
+  - first:
+      213: -337623649139547049
+    second: VungNuoc_7
+  - first:
+      213: 8026088879507944946
+    second: VungNuoc_8
+  - first:
+      213: 1403008865001214184
+    second: VungNuoc_9
+  - first:
+      213: 6328516050658951835
+    second: VungNuoc_10
+  - first:
+      213: -376579398492095148
+    second: VungNuoc_11
+  - first:
+      213: 1804116497239175903
+    second: VungNuoc_12
+  - first:
+      213: 7644604172845535140
+    second: VungNuoc_13
+  - first:
+      213: 4805505128350697985
+    second: VungNuoc_14
+  - first:
+      213: 8898255555038979956
+    second: VungNuoc_15
+  - first:
+      213: 83727458498301488
+    second: VungNuoc_16
+  - first:
+      213: -412985057709540083
+    second: VungNuoc_17
+  - first:
+      213: 7377971577785059152
+    second: VungNuoc_18
+  - first:
+      213: -528767488745644654
+    second: VungNuoc_19
+  - first:
+      213: -6083312584319459689
+    second: VungNuoc_20
+  - first:
+      213: -4896493497402977876
+    second: VungNuoc_21
+  - first:
+      213: 649122539664278026
+    second: VungNuoc_22
+  - first:
+      213: 3009663645854137216
+    second: VungNuoc_23
+  - first:
+      213: 9143742869437656714
+    second: VungNuoc_24
+  - first:
+      213: -2219919389190714256
+    second: VungNuoc_25
+  - first:
+      213: 7972995235267587046
+    second: VungNuoc_26
+  - first:
+      213: -8899465002156662462
+    second: VungNuoc_27
+  - first:
+      213: 4665483516169868909
+    second: VungNuoc_28
+  - first:
+      213: -1908453887909834671
+    second: VungNuoc_29
+  - first:
+      213: -6136059985519001640
+    second: VungNuoc_30
+  - first:
+      213: -3754256377631455460
+    second: VungNuoc_31
+  - first:
+      213: -1995165594424830985
+    second: VungNuoc_32
+  - first:
+      213: 2376880508295518168
+    second: VungNuoc_33
+  - first:
+      213: 1338303287137447970
+    second: VungNuoc_34
+  - first:
+      213: -6793147560758292029
+    second: VungNuoc_35
+  - first:
+      213: -3525688573866225083
+    second: VungNuoc_36
+  - first:
+      213: 383704163539524814
+    second: VungNuoc_37
+  - first:
+      213: -7854501348342782507
+    second: VungNuoc_38
+  - first:
+      213: -761288034725552507
+    second: VungNuoc_39
+  - first:
+      213: -694781325824663694
+    second: VungNuoc_40
+  - first:
+      213: -1673589253569702466
+    second: VungNuoc_41
+  - first:
+      213: 6435121013401459911
+    second: VungNuoc_42
+  - first:
+      213: -8378451898910575824
+    second: VungNuoc_43
+  - first:
+      213: -3580323724597234210
+    second: VungNuoc_44
+  - first:
+      213: -4378040908615714765
+    second: VungNuoc_45
+  - first:
+      213: -4211186618327066590
+    second: VungNuoc_46
+  - first:
+      213: 9010318956699268006
+    second: VungNuoc_47
+  - first:
+      213: -6626522534116560491
+    second: VungNuoc_48
+  - first:
+      213: 8412760869322512116
+    second: VungNuoc_49
+  - first:
+      213: 1817231887227911976
+    second: VungNuoc_50
+  - first:
+      213: 6505731305048279925
+    second: VungNuoc_51
+  - first:
+      213: -8076695513346649046
+    second: VungNuoc_52
+  - first:
+      213: -7177403650826663015
+    second: VungNuoc_53
+  - first:
+      213: 3998067041034354184
+    second: VungNuoc_54
+  - first:
+      213: -8410078797733402867
+    second: VungNuoc_55
+  - first:
+      213: -5050734174091950450
+    second: VungNuoc_56
+  - first:
+      213: 3915951225964007528
+    second: VungNuoc_57
+  - first:
+      213: 4339851436192562754
+    second: VungNuoc_58
+  - first:
+      213: -2241720223020919750
+    second: VungNuoc_59
+  - first:
+      213: 4158546786621097624
+    second: VungNuoc_60
+  - first:
+      213: -2472065702041120435
+    second: VungNuoc_61
+  - first:
+      213: -3451511531473651851
+    second: VungNuoc_62
+  - first:
+      213: 5868890105288765015
+    second: VungNuoc_63
+  - first:
+      213: -5457987500780180578
+    second: VungNuoc_64
+  - first:
+      213: 8198187875258174349
+    second: VungNuoc_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.4996041, y: 0.45585874}
+  spritePixelsToUnits: 653.3333
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VungNuoc_0
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1106
+        width: 58
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ebe2b82f6d2c34b0800000000000000
+      internalID: -5459438692832449560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_1
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 978
+        width: 708
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f881e37f8df569030800000000000000
+      internalID: 3501091145792755855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 43
+        width: 1167
+        height: 1031
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a80d74d05e84bc4e0800000000000000
+      internalID: -1960393064182198134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_3
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 970
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab4aae45feed5ed0800000000000000
+      internalID: -2423518287101277279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_4
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 940
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521b1a3d3b10f7a10800000000000000
+      internalID: 1909246638889742629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_5
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 927
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb969df6befa66ce0800000000000000
+      internalID: -1412248007405377089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_6
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 881
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0e6485e6c81f3dc0800000000000000
+      internalID: -3657177129868300789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_7
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 910
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75424457415805bf0800000000000000
+      internalID: -337623649139547049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_8
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 905
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f5b8c6df45626f60800000000000000
+      internalID: 8026088879507944946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_9
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 871
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e01f17112d787310800000000000000
+      internalID: 1403008865001214184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_10
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 897
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9282e271d763d750800000000000000
+      internalID: 6328516050658951835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_11
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 897
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45df523480f16caf0800000000000000
+      internalID: -376579398492095148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_12
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 889
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2fc574562890910800000000000000
+      internalID: 1804116497239175903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_13
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 888
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af4dea0ef6171a60800000000000000
+      internalID: 7644604172845535140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_14
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 873
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a49ad147590b240800000000000000
+      internalID: 4805505128350697985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_15
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 876
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477aeb64844fc7b70800000000000000
+      internalID: 8898255555038979956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_16
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 872
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03eccbd0ea5792100800000000000000
+      internalID: 83727458498301488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_17
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 875
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0dbda13748c44af0800000000000000
+      internalID: -412985057709540083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_18
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 872
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0578ec05f02d36660800000000000000
+      internalID: 7377971577785059152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_19
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 847
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d5a8045c079a8f0800000000000000
+      internalID: -528767488745644654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_20
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 874
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79e99f17f6bb39ba0800000000000000
+      internalID: -6083312584319459689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_21
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 863
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca1194a5b192c0cb0800000000000000
+      internalID: -4896493497402977876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_22
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 865
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a028368b285220900800000000000000
+      internalID: 649122539664278026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_23
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 849
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08bfa88d32974c920800000000000000
+      internalID: 3009663645854137216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_24
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 848
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8ea752b1b915ee70800000000000000
+      internalID: 9143742869437656714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_25
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 822
+        width: 64
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c0941c3134131e0800000000000000
+      internalID: -2219919389190714256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_26
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 842
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eba10a7ce4c5ae60800000000000000
+      internalID: 7972995235267587046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_27
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 846
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2416e6f5bbfbe7480800000000000000
+      internalID: -8899465002156662462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_28
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 840
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d66deb60a802fb040800000000000000
+      internalID: 4665483516169868909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_29
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 808
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150dbe4ec4fc385e0800000000000000
+      internalID: -1908453887909834671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_30
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 838
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dfb6a214f558daa0800000000000000
+      internalID: -6136059985519001640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_31
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 784
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c17488727b336ebc0800000000000000
+      internalID: -3754256377631455460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_32
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 778
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f31a34767fbf44e0800000000000000
+      internalID: -1995165594424830985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_33
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 772
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d71182aa306cf020800000000000000
+      internalID: 2376880508295518168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_34
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 759
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220b09fbfbb929210800000000000000
+      internalID: 1338303287137447970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_35
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 725
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1d03ef844e9b1a0800000000000000
+      internalID: -6793147560758292029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_36
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 707
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542dc060cec321fc0800000000000000
+      internalID: -3525688573866225083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_37
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 393
+        width: 157
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc9c9e57e0335500800000000000000
+      internalID: 383704163539524814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 662
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d5a33c73a43ff290800000000000000
+      internalID: -7854501348342782507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_39
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 652
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e9d6ed09c5f65f0800000000000000
+      internalID: -761288034725552507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_40
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 644
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f55a5b014ab56f0800000000000000
+      internalID: -694781325824663694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_41
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 656
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb51111e07736c8e0800000000000000
+      internalID: -1673589253569702466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_42
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 668
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cc127a87742e4950800000000000000
+      internalID: 6435121013401459911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_43
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 667
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033fcbd8362c9bb80800000000000000
+      internalID: -8378451898910575824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_44
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 614
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed57a76ba82205ec0800000000000000
+      internalID: -3580323724597234210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_45
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 573
+        width: 90
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338f4dd4df21e33c0800000000000000
+      internalID: -4378040908615714765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_46
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 628
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2289cbb151cde85c0800000000000000
+      internalID: -4211186618327066590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_47
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 629
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a337073a551b0d70800000000000000
+      internalID: 9010318956699268006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_48
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 596
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5917cd13ddcd904a0800000000000000
+      internalID: -6626522534116560491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_49
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 535
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f6564c107120c470800000000000000
+      internalID: 8412760869322512116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_50
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 501
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f7bb8f5ca183910800000000000000
+      internalID: 1817231887227911976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_51
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 460
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b8a813720094a50800000000000000
+      internalID: 6505731305048279925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_52
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 465
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a245bf70930d9ef80800000000000000
+      internalID: -8076695513346649046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_53
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 438
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b82e6386db46c90800000000000000
+      internalID: -7177403650826663015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_54
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 444
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ebc098accfb7730800000000000000
+      internalID: 3998067041034354184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_55
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 420
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d076e0854e5694b80800000000000000
+      internalID: -8410078797733402867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_56
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 410
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86c252570038e9b0800000000000000
+      internalID: -5050734174091950450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_57
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 266
+        width: 80
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860175574e0485630800000000000000
+      internalID: 3915951225964007528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_58
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 278
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ef93043ef3a3c30800000000000000
+      internalID: 4339851436192562754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_59
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 225
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a345705955fc3e0e0800000000000000
+      internalID: -2241720223020919750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_60
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 227
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896846ef44026b930800000000000000
+      internalID: 4158546786621097624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_61
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 209
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d419960775571bdd0800000000000000
+      internalID: -2472065702041120435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_62
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 164
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577395c8c84c910d0800000000000000
+      internalID: -3451511531473651851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_63
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 161
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75eaa8fb47c727150800000000000000
+      internalID: 5868890105288765015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_64
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 161
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ba97329455144b0800000000000000
+      internalID: -5457987500780180578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VungNuoc_65
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 165
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b8daacf60d5c170800000000000000
+      internalID: 8198187875258174349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      VungNuoc_0: -5459438692832449560
+      VungNuoc_1: 3501091145792755855
+      VungNuoc_10: 6328516050658951835
+      VungNuoc_11: -376579398492095148
+      VungNuoc_12: 1804116497239175903
+      VungNuoc_13: 7644604172845535140
+      VungNuoc_14: 4805505128350697985
+      VungNuoc_15: 8898255555038979956
+      VungNuoc_16: 83727458498301488
+      VungNuoc_17: -412985057709540083
+      VungNuoc_18: 7377971577785059152
+      VungNuoc_19: -528767488745644654
+      VungNuoc_2: -1960393064182198134
+      VungNuoc_20: -6083312584319459689
+      VungNuoc_21: -4896493497402977876
+      VungNuoc_22: 649122539664278026
+      VungNuoc_23: 3009663645854137216
+      VungNuoc_24: 9143742869437656714
+      VungNuoc_25: -2219919389190714256
+      VungNuoc_26: 7972995235267587046
+      VungNuoc_27: -8899465002156662462
+      VungNuoc_28: 4665483516169868909
+      VungNuoc_29: -1908453887909834671
+      VungNuoc_3: -2423518287101277279
+      VungNuoc_30: -6136059985519001640
+      VungNuoc_31: -3754256377631455460
+      VungNuoc_32: -1995165594424830985
+      VungNuoc_33: 2376880508295518168
+      VungNuoc_34: 1338303287137447970
+      VungNuoc_35: -6793147560758292029
+      VungNuoc_36: -3525688573866225083
+      VungNuoc_37: 383704163539524814
+      VungNuoc_38: -7854501348342782507
+      VungNuoc_39: -761288034725552507
+      VungNuoc_4: 1909246638889742629
+      VungNuoc_40: -694781325824663694
+      VungNuoc_41: -1673589253569702466
+      VungNuoc_42: 6435121013401459911
+      VungNuoc_43: -8378451898910575824
+      VungNuoc_44: -3580323724597234210
+      VungNuoc_45: -4378040908615714765
+      VungNuoc_46: -4211186618327066590
+      VungNuoc_47: 9010318956699268006
+      VungNuoc_48: -6626522534116560491
+      VungNuoc_49: 8412760869322512116
+      VungNuoc_5: -1412248007405377089
+      VungNuoc_50: 1817231887227911976
+      VungNuoc_51: 6505731305048279925
+      VungNuoc_52: -8076695513346649046
+      VungNuoc_53: -7177403650826663015
+      VungNuoc_54: 3998067041034354184
+      VungNuoc_55: -8410078797733402867
+      VungNuoc_56: -5050734174091950450
+      VungNuoc_57: 3915951225964007528
+      VungNuoc_58: 4339851436192562754
+      VungNuoc_59: -2241720223020919750
+      VungNuoc_6: -3657177129868300789
+      VungNuoc_60: 4158546786621097624
+      VungNuoc_61: -2472065702041120435
+      VungNuoc_62: -3451511531473651851
+      VungNuoc_63: 5868890105288765015
+      VungNuoc_64: -5457987500780180578
+      VungNuoc_65: 8198187875258174349
+      VungNuoc_7: -337623649139547049
+      VungNuoc_8: 8026088879507944946
+      VungNuoc_9: 1403008865001214184
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

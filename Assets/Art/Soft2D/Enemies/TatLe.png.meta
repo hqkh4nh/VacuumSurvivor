@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 7bce061655f569c4884c1b231952fcc6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7811715840872672285
+    second: TatLe_0
+  - first:
+      213: -5265586037411435306
+    second: TatLe_1
+  - first:
+      213: 3049555404599145017
+    second: TatLe_2
+  - first:
+      213: 5951233190484194581
+    second: TatLe_3
+  - first:
+      213: -6393256950954677337
+    second: TatLe_4
+  - first:
+      213: -3660832031064135495
+    second: TatLe_5
+  - first:
+      213: 2664727172130868163
+    second: TatLe_6
+  - first:
+      213: 7219974951841007995
+    second: TatLe_7
+  - first:
+      213: 8001493748542171294
+    second: TatLe_8
+  - first:
+      213: 9097820538745209308
+    second: TatLe_9
+  - first:
+      213: 3784360172554624388
+    second: TatLe_10
+  - first:
+      213: 7015003455819388664
+    second: TatLe_11
+  - first:
+      213: -1312669423162878235
+    second: TatLe_12
+  - first:
+      213: -8100877655496232478
+    second: TatLe_13
+  - first:
+      213: -6785539156586028780
+    second: TatLe_14
+  - first:
+      213: 8394708926446415681
+    second: TatLe_15
+  - first:
+      213: -30647780630678660
+    second: TatLe_16
+  - first:
+      213: 8597673870966910701
+    second: TatLe_17
+  - first:
+      213: 341832693220534519
+    second: TatLe_18
+  - first:
+      213: -5250624631088496079
+    second: TatLe_19
+  - first:
+      213: -2866175914920091518
+    second: TatLe_20
+  - first:
+      213: -2593084400943921258
+    second: TatLe_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.4837688, y: 0.4951846}
+  spritePixelsToUnits: 1463.3334
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TatLe_0
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1164
+        width: 34
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e31e7ab4d5379390800000000000000
+      internalID: -7811715840872672285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 43
+        width: 1244
+        height: 1086
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dca5d1b561ece6b0800000000000000
+      internalID: -5265586037411435306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_2
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1089
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9323106bb72325a20800000000000000
+      internalID: 3049555404599145017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_3
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1075
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51533564e07079250800000000000000
+      internalID: 5951233190484194581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_4
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1075
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abac801da69647a0800000000000000
+      internalID: -6393256950954677337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_5
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 686
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8ec06e9ac123dc0800000000000000
+      internalID: -3660832031064135495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_6
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 656
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb0136ae330bf420800000000000000
+      internalID: 2664727172130868163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_7
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 656
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7983b337f0823460800000000000000
+      internalID: 7219974951841007995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_8
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 642
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e986d5aab240b0f60800000000000000
+      internalID: 8001493748542171294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_9
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 640
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd14922e393f14e70800000000000000
+      internalID: 9097820538745209308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_10
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 557
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d114bc68fb48430800000000000000
+      internalID: 3784360172554624388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_11
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 543
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6904ad97c4a5160800000000000000
+      internalID: 7015003455819388664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_12
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 478
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e61cdc4d1678cde0800000000000000
+      internalID: -1312669423162878235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_13
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 517
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e17f3f41b6e39f80800000000000000
+      internalID: -8100877655496232478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_14
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 470
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 411af22a61ce4d1a0800000000000000
+      internalID: -6785539156586028780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_15
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 366
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fa3a1aa4fff7470800000000000000
+      internalID: 8394708926446415681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_16
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 363
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c73ba52810e139ff0800000000000000
+      internalID: -30647780630678660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_17
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 296
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deee3ad45d2115770800000000000000
+      internalID: 8597673870966910701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_18
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 260
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f8660cf50f6eb400800000000000000
+      internalID: 341832693220534519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_19
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 278
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 132cd0f87b80227b0800000000000000
+      internalID: -5250624631088496079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_20
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 244
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2806867e03c4938d0800000000000000
+      internalID: -2866175914920091518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TatLe_21
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 0
+        width: 18
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6978121e973830cd0800000000000000
+      internalID: -2593084400943921258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TatLe_0: -7811715840872672285
+      TatLe_1: -5265586037411435306
+      TatLe_10: 3784360172554624388
+      TatLe_11: 7015003455819388664
+      TatLe_12: -1312669423162878235
+      TatLe_13: -8100877655496232478
+      TatLe_14: -6785539156586028780
+      TatLe_15: 8394708926446415681
+      TatLe_16: -30647780630678660
+      TatLe_17: 8597673870966910701
+      TatLe_18: 341832693220534519
+      TatLe_19: -5250624631088496079
+      TatLe_2: 3049555404599145017
+      TatLe_20: -2866175914920091518
+      TatLe_21: -2593084400943921258
+      TatLe_3: 5951233190484194581
+      TatLe_4: -6393256950954677337
+      TatLe_5: -3660832031064135495
+      TatLe_6: 2664727172130868163
+      TatLe_7: 7219974951841007995
+      TatLe_8: 8001493748542171294
+      TatLe_9: 9097820538745209308
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -65,13 +65,13 @@ namespace VacuumSurvivor
 
         void OnEnable()
         {
-            EnemyBase.EnemyDied += OnEnemyDied;
+            EnemyBase.EnemyReturned += OnEnemyReturned;
             GameEvents.BossPhase += OnBossPhase;
         }
 
         void OnDisable()
         {
-            EnemyBase.EnemyDied -= OnEnemyDied;
+            EnemyBase.EnemyReturned -= OnEnemyReturned;
             GameEvents.BossPhase -= OnBossPhase;
             if (EnemyBase.SpawnRequest == SpawnAt) EnemyBase.SpawnRequest = null;
         }
@@ -86,8 +86,9 @@ namespace VacuumSurvivor
             Instantiate(bossPrefab, position, Quaternion.identity);
         }
 
-        void OnEnemyDied(Vector2 pos, int dust)
+        void OnEnemyReturned(EnemyBase enemy)
         {
+            if (!pools.TryGetValue(enemy.Data, out var pool) || enemy.Pool != pool) return;
             activeCount--;
             if (activeCount < 0) activeCount = 0;
         }

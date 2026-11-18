@@ -17,7 +17,8 @@ MonoBehaviour:
   moveSpeed: 0
   contactDamage: 4
   dustValue: 0
-  bodyColor: {r: 0.45, g: 0.6, b: 0.8, a: 0.75}
+  bodyColor: {r: 1, g: 1, b: 1, a: 1}
+  hitFlashColor: {r: 1, g: 0.55, b: 0.55, a: 1}
   bodyPixels: 56
   swarmMin: 0
   swarmMax: 0
