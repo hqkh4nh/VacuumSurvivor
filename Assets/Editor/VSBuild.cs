@@ -387,7 +387,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "Con mèo";
                 d.maxHealth = 400f; d.moveSpeed = 2f; d.contactDamage = 10f; d.dustValue = 40;
-                d.bodyColor = Palette.Cat; d.bodyPixels = 96;
+                d.bodyColor = Color.white; d.bodyPixels = 96;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.splitsOnDeath = false;
             });
             CreateBossPrefab("Assets/Prefabs/Enemies/ConMeo.prefab", conMeo, tocRoi);
@@ -396,7 +397,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "Con mèo";
                 d.maxHealth = 600f; d.moveSpeed = 2.5f; d.contactDamage = 10f; d.dustValue = 50;
-                d.bodyColor = Palette.Cat; d.bodyPixels = 96;
+                d.bodyColor = Color.white; d.bodyPixels = 96;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.splitsOnDeath = false;
             });
             CreateBossPrefab("Assets/Prefabs/Enemies/ConMeo2.prefab", conMeo2, tocRoi);
@@ -405,7 +407,8 @@ namespace VacuumSurvivor.EditorTools
             {
                 d.enemyName = "Máy hút bụi cũ";
                 d.maxHealth = 800f; d.moveSpeed = 1.5f; d.contactDamage = 12f; d.dustValue = 60;
-                d.bodyColor = new Color(0.5f, 0.5f, 0.58f); d.bodyPixels = 96;
+                d.bodyColor = Color.white; d.bodyPixels = 96;
+                d.hitFlashColor = new Color(1f, 0.55f, 0.55f);
                 d.splitsOnDeath = false;
             });
             CreateVacuumBossPrefab("Assets/Prefabs/Enemies/MayHutBui.prefab", mayHutBui, buiBong);
@@ -635,10 +638,9 @@ namespace VacuumSurvivor.EditorTools
             go.transform.localScale = Vector3.one * 2.5f; // ~8x the robot's footprint
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 6;
-            var ps = go.AddComponent<ProceduralSprite>();
-            ps.Color = Color.white;   // tinted to bodyColor by EnemyBase; white base lets it flash
-            ps.Kind = SpriteKind.Cat;
-            ps.Pixels = data.bodyPixels;
+            string spritePath = "Assets/Art/Soft2D/Bosses/" + System.IO.Path.GetFileNameWithoutExtension(path) + ".png";
+            sr.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+            if (sr.sprite == null) throw new System.InvalidOperationException("Missing boss sprite: " + spritePath);
             var rb = go.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
             rb.freezeRotation = true;
@@ -665,10 +667,9 @@ namespace VacuumSurvivor.EditorTools
             go.transform.localScale = Vector3.one * 2.5f;
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 6;
-            var ps = go.AddComponent<ProceduralSprite>();
-            ps.Color = Color.white;   // tinted to bodyColor by EnemyBase; white base lets it flash
-            ps.Kind = SpriteKind.Vacuum;
-            ps.Pixels = data.bodyPixels;
+            string spritePath = "Assets/Art/Soft2D/Bosses/" + System.IO.Path.GetFileNameWithoutExtension(path) + ".png";
+            sr.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(spritePath);
+            if (sr.sprite == null) throw new System.InvalidOperationException("Missing boss sprite: " + spritePath);
             var rb = go.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
             rb.freezeRotation = true;

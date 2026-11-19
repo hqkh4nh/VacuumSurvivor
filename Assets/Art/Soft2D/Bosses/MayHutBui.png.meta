@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 749d5acadb26764499f5fce14b224775
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9093519118768282858
+    second: MayHutBui_0
+  - first:
+      213: 8212285872274714940
+    second: MayHutBui_1
+  - first:
+      213: -1779847314721447002
+    second: MayHutBui_2
+  - first:
+      213: 2422963866386155244
+    second: MayHutBui_3
+  - first:
+      213: -4211499210989664879
+    second: MayHutBui_4
+  - first:
+      213: 3716364208220819366
+    second: MayHutBui_5
+  - first:
+      213: 6229391813221630575
+    second: MayHutBui_6
+  - first:
+      213: -4626903079603837465
+    second: MayHutBui_7
+  - first:
+      213: 6606962070264060388
+    second: MayHutBui_8
+  - first:
+      213: -7740989644780656854
+    second: MayHutBui_9
+  - first:
+      213: -3416818207367213422
+    second: MayHutBui_10
+  - first:
+      213: -7251282389509141860
+    second: MayHutBui_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.49445763, y: 0.49638844}
+  spritePixelsToUnits: 830.8333
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MayHutBui_0
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1200
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec1860857ba23e70800000000000000
+      internalID: 9093519118768282858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 50
+        width: 1065
+        height: 1133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31b4e28d76e7f170800000000000000
+      internalID: 8212285872274714940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_2
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 793
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3689b1c46bc47e0800000000000000
+      internalID: -1779847314721447002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 743
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce6cd8f8cc810a120800000000000000
+      internalID: 2422963866386155244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_4
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 458
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1958f15f7cfbd85c0800000000000000
+      internalID: -4211499210989664879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_5
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 442
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af4af6ae8d239330800000000000000
+      internalID: 3716364208220819366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 432
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f624dc179de337650800000000000000
+      internalID: 6229391813221630575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_7
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 379
+        width: 56
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e56d0ad920f9cfb0800000000000000
+      internalID: -4626903079603837465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_8
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 400
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9919a6ff4a0bb50800000000000000
+      internalID: 6606962070264060388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_9
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 363
+        width: 36
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a272fdc7eea729490800000000000000
+      internalID: -7740989644780656854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_10
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 66
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e4ac781f50590d0800000000000000
+      internalID: -3416818207367213422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MayHutBui_11
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 54
+        width: 33
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a034fe5154e5b90800000000000000
+      internalID: -7251282389509141860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MayHutBui_0: 9093519118768282858
+      MayHutBui_1: 8212285872274714940
+      MayHutBui_10: -3416818207367213422
+      MayHutBui_11: -7251282389509141860
+      MayHutBui_2: -1779847314721447002
+      MayHutBui_3: 2422963866386155244
+      MayHutBui_4: -4211499210989664879
+      MayHutBui_5: 3716364208220819366
+      MayHutBui_6: 6229391813221630575
+      MayHutBui_7: -4626903079603837465
+      MayHutBui_8: 6606962070264060388
+      MayHutBui_9: -7740989644780656854
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,32 @@
+{
+  "generator": "Built-in imagegen",
+  "references": [
+    "Assets/Art/Soft2D/Robot.png",
+    "Assets/Art/Soft2D/DustBunny.png"
+  ],
+  "prompts": [
+    {
+      "asset": "ConMeo.png",
+      "references": [
+        "Assets/Art/Soft2D/Robot.png",
+        "Assets/Art/Soft2D/DustBunny.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE production Unity top-down 2D boss sprite on a genuinely transparent background. Use the attached robot and dust bunny ONLY as art style references: smooth clean dark plum outlines, soft matte shading, rounded friendly forms, restrained pastel colors, consistent soft cartoon 2D game illustration, not pixel art and not a glossy 3D render. The boss must read clearly on a dark warm wooden floor and remain readable at 150 screen pixels. Near-overhead orthographic game view, not isometric. Compact roughly round overall footprint so it fits a circular collider. Center the object with balanced transparent padding of about 10 percent around all sides; keep all parts connected and fully inside frame. No background, no ground, no floor shadow, no text, logos, labels, border, particle effects or extra objects. Actual alpha transparency required, not a drawn checkerboard. One sprite only, not a sprite sheet, collage or multiple poses. Subject: a large plump domestic cat boss, warm taupe and caramel-brown fur with a creamy muzzle, paws and small chest patch. A soft teal collar with a tiny simple round tag identifies this house cat. Cute sleepy but mildly grumpy expression, small half-open dark eyes, little triangular ears, rounded cheeks. Show the round back and compact loaf-like body from almost overhead, with the head at the lower/front edge facing down-screen, short front paws tucked near the head, and a short thick tail curving snugly along one side of the body, not sticking far out. Make the head/paws readable without a human-like upright sitting pose. The back should occupy most of the silhouette. Simple broad patches of fur shading, no individual fine hair strands. Cozy mischievous antagonist, not fierce or scary, no claws or attacks, neutral idle pose."
+    },
+    {
+      "asset": "ConMeo2.png",
+      "references": [
+        "Assets/Art/Soft2D/Bosses/ConMeo.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: production Unity top-down 2D boss sprite variant on a genuinely transparent background. EDIT the attached cat sprite into the bedroom boss variant. Preserve the exact near-overhead camera, down-screen facing direction, compact round silhouette, short paws, snug curled tail, neutral loaf pose, proportions, placement, smooth dark plum outline and soft matte cartoon shading. CHANGE ONLY these identity details: replace the warm taupe/caramel-brown coat with a cool medium-light slate blue-gray coat; replace the darker warm patches and stripes with muted dark blue-gray patches and stripes; retain a creamy pale muzzle, paws and chest patch; add one small clear cream diamond-shaped forehead marking; change teal collar to muted violet while retaining its small warm gold round tag; make the half-open eyes a little more alert and mildly grumpy, still cute and friendly. Do not add armor, weapons, extra limbs, scenery, shadows, text, particles or new poses. Keep the full cat inside frame, centered, with the same transparent padding. Actual background alpha transparency required. This is the same cat-boss family with a clearly distinguishable cooler color and forehead marking, not a redesign."
+    },
+    {
+      "asset": "MayHutBui.png",
+      "references": [
+        "Assets/Art/Soft2D/Robot.png",
+        "Assets/Art/Soft2D/DustBunny.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: ONE production Unity top-down 2D boss sprite on a genuinely transparent background. Use the attached robot and dust bunny ONLY as art style references: smooth clean dark plum outlines, soft matte shading, rounded friendly forms, restrained pastel colors, consistent soft cartoon 2D game illustration, not pixel art and not a glossy 3D render. The boss must read clearly on a dark warm wooden floor and remain readable at 150 screen pixels. Near-overhead orthographic game view, not isometric. Compact roughly round overall footprint so it fits a circular collider. Center the object with balanced transparent padding of about 10 percent around all sides; keep all parts connected and fully inside frame. No background, no ground, no floor shadow, no text, logos, labels, border, particle effects or extra objects. Actual alpha transparency required, not a drawn checkerboard. One sprite only, not a sprite sheet, collage or multiple poses. Subject: one bulky old handheld vacuum cleaner, a recognizable compact hand vacuum with a broad rounded dusty gray metal/plastic motor housing, muted burgundy panels, a small teal status lens, short ventilation slits and a few restrained scuff marks. A sturdy loop-shaped handle sits toward the rear/top. A short wide tapered suction nozzle points down-screen from the front/lower center, with a dark clearly readable intake mouth. Keep the handle, body and nozzle within a compact oval footprint; the nozzle must not be a long hose. The roundish housing is most of the sprite, nozzle length at most a quarter of the silhouette. Slightly worn household appliance, not a robot face, not a spaceship, not an upright floor vacuum, no wheels or separate cable, no attached dust clouds, no letters or branding. Show almost directly overhead with just a small front edge for readability; no exaggerated perspective. Distinct silhouette from the round player robot."
+    }
+  ]
+}
