@@ -19,18 +19,17 @@ namespace VacuumSurvivor
         GameObject occupant;
         float age;
 
-        void Awake() => sr = GetComponent<SpriteRenderer>();
+        void Awake()
+        {
+            sr = GetComponent<SpriteRenderer>();
+            if (sr != null) baseColor = sr.color;
+        }
 
         void OnEnable()
         {
             age = 0f;
             occupant = null;
-            if (sr != null)
-            {
-                baseColor = sr.color;
-                if (baseColor.a < 0.01f) baseColor.a = 0.5f;
-                sr.color = baseColor;
-            }
+            if (sr != null) sr.color = baseColor;
         }
 
         void Update()

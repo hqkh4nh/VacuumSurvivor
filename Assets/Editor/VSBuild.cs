@@ -695,10 +695,7 @@ namespace VacuumSurvivor.EditorTools
             go.layer = LayerMask.NameToLayer("Pickup");
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 3;
-            var ps = go.AddComponent<ProceduralSprite>();
-            ps.Color = Palette.DustMote;
-            ps.Kind = SpriteKind.DustMote;
-            ps.Pixels = 16;
+            sr.sprite = LoadPickupSprite("Dust");
             var col = go.AddComponent<CircleCollider2D>();
             col.isTrigger = true;
             col.radius = 0.15f;
@@ -737,14 +734,16 @@ namespace VacuumSurvivor.EditorTools
             go.layer = LayerMask.NameToLayer("Pickup");
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 4;
-            var ps = go.AddComponent<ProceduralSprite>();
-            ps.Color = Palette.Moonlight;
-            ps.Kind = SpriteKind.Battery;   // PowerUp.Init swaps the silhouette per drop
-            ps.Pixels = 32;
+            sr.sprite = LoadPickupSprite("Battery");
             var col = go.AddComponent<CircleCollider2D>();
             col.isTrigger = true;
             col.radius = 0.4f;
-            go.AddComponent<PowerUp>();
+            var powerUp = go.AddComponent<PowerUp>();
+            var so = new SerializedObject(powerUp);
+            so.FindProperty("batterySprite").objectReferenceValue = sr.sprite;
+            so.FindProperty("magnetSprite").objectReferenceValue = LoadPickupSprite("Magnet");
+            so.FindProperty("bombSprite").objectReferenceValue = LoadPickupSprite("Bomb");
+            so.ApplyModifiedPropertiesWithoutUndo();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);
@@ -757,11 +756,7 @@ namespace VacuumSurvivor.EditorTools
             go.layer = LayerMask.NameToLayer("Pickup");
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 2;
-            sr.color = new Color(Palette.Accent.r, Palette.Accent.g, Palette.Accent.b, 0.5f);
-            var ps = go.AddComponent<ProceduralSprite>();
-            ps.Color = Color.white;
-            ps.Kind = SpriteKind.Dock;
-            ps.Pixels = 96;
+            sr.sprite = LoadPickupSprite("ChargingDock");
             var col = go.AddComponent<CircleCollider2D>();
             col.isTrigger = true;
             col.radius = 0.9f;
@@ -770,6 +765,14 @@ namespace VacuumSurvivor.EditorTools
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);
             return prefab;
+        }
+
+        static Sprite LoadPickupSprite(string name)
+        {
+            string path = "Assets/Art/Soft2D/Pickups/" + name + ".png";
+            var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+            if (sprite == null) throw new System.InvalidOperationException("Missing pickup sprite: " + path);
+            return sprite;
         }
 
         static void EnsureFolder(string path)

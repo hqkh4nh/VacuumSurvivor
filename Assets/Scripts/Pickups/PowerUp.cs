@@ -8,17 +8,21 @@ namespace VacuumSurvivor
     /// to its pool. Uncollected ones despawn after a lifetime so the floor doesn't fill up.
     public class PowerUp : MonoBehaviour
     {
+        [SerializeField] Sprite batterySprite;
+        [SerializeField] Sprite magnetSprite;
+        [SerializeField] Sprite bombSprite;
+
         public GameObjectPool Pool { get; set; }
 
         PowerUpKind kind;
         float batteryAmount, bombRadius, bombDamage, lifetime, age;
         int enemyMask;
-        ProceduralSprite art;
+        SpriteRenderer art;
 
         void Awake()
         {
             enemyMask = LayerMask.GetMask("Enemy");
-            art = GetComponent<ProceduralSprite>();
+            art = GetComponent<SpriteRenderer>();
         }
 
         public void Init(PowerUpKind k, float battery, float radius, float damage, float life)
@@ -29,7 +33,15 @@ namespace VacuumSurvivor
             bombDamage = damage;
             lifetime = life;
             age = 0f;
-            if (art != null) { art.Kind = SpriteFor(k); art.Apply(); }
+            if (art != null)
+            {
+                switch (k)
+                {
+                    case PowerUpKind.Battery: art.sprite = batterySprite; break;
+                    case PowerUpKind.Magnet: art.sprite = magnetSprite; break;
+                    case PowerUpKind.Bomb: art.sprite = bombSprite; break;
+                }
+            }
         }
 
         void Update()
@@ -69,16 +81,6 @@ namespace VacuumSurvivor
                         if (target != null) target.TakeDamage(bombDamage);
                     }
                     break;
-            }
-        }
-
-        static SpriteKind SpriteFor(PowerUpKind k)
-        {
-            switch (k)
-            {
-                case PowerUpKind.Battery: return SpriteKind.Battery;
-                case PowerUpKind.Magnet: return SpriteKind.Magnet;
-                default: return SpriteKind.Bomb;
             }
         }
 

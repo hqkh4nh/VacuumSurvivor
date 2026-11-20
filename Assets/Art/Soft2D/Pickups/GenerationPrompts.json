@@ -1,0 +1,28 @@
+{
+  "generator": "Built-in imagegen",
+  "references": [
+    "Assets/Art/Soft2D/Robot.png"
+  ],
+  "prompts": [
+    {
+      "asset": "Dust.png",
+      "prompt": "Use case: stylized-concept. Produce ONE production top-down 2D Unity pickup sprite. Reference image is ONLY for style: soft matte shading, clean dark plum outlines, rounded cozy shapes, pastel colors, hand-drawn smooth 2D, not pixel art or 3D. Must remain very readable at 30 screen pixels on dark brown wooden floor. Centered isolated object with 12 percent transparent margin, actual alpha transparent background, no ground shadow, no background, no text, no logo, no border, no other objects, no particle effects. Orthographic almost overhead view. Subject: A tiny collectible experience dust mote: a compact rounded golden-cream four-point twinkle with a plump bright center, broad simple curves, a warm muted ochre outline. Not a dust bunny, no face, no limbs. One contiguous simple sparkle silhouette, no detached sparkles."
+    },
+    {
+      "asset": "ChargingDock.png",
+      "prompt": "Use case: stylized-concept. Produce ONE production top-down 2D Unity pickup sprite. Reference image is ONLY for style: soft matte shading, clean dark plum outlines, rounded cozy shapes, pastel colors, hand-drawn smooth 2D, not pixel art or 3D. Must remain very readable at 30 screen pixels on dark brown wooden floor. Centered isolated object with 12 percent transparent margin, actual alpha transparent background, no ground shadow, no background, no text, no logo, no border, no other objects, no particle effects. Orthographic almost overhead view. Subject: A circular robot vacuum charging pad viewed directly from overhead: soft ivory outer casing, slate inner disc, a clearly readable teal charging arc and two small brass charging contacts at the upper edge. The center is open flat usable space for a robot to stand on. Cozy appliance design. No robot, no cord sticking out, no perspective walls. Round compact silhouette."
+    },
+    {
+      "asset": "Battery.png",
+      "prompt": "Use case: stylized-concept. Produce ONE production top-down 2D Unity pickup sprite. Reference image is ONLY for style: soft matte shading, clean dark plum outlines, rounded cozy shapes, pastel colors, hand-drawn smooth 2D, not pixel art or 3D. Must remain very readable at 30 screen pixels on dark brown wooden floor. Centered isolated object with 12 percent transparent margin, actual alpha transparent background, no ground shadow, no background, no text, no logo, no border, no other objects, no particle effects. Orthographic almost overhead view. Subject: A chunky upright small rechargeable battery pickup, sage mint green casing and cream end caps, a single large simple cream lightning bolt emblem, small rounded terminal at top. Broad simple shapes, gently tilted very slightly, no lettering."
+    },
+    {
+      "asset": "Magnet.png",
+      "prompt": "Use case: stylized-concept. Produce ONE production top-down 2D Unity pickup sprite. Reference image is ONLY for style: soft matte shading, clean dark plum outlines, rounded cozy shapes, pastel colors, hand-drawn smooth 2D, not pixel art or 3D. Must remain very readable at 30 screen pixels on dark brown wooden floor. Centered isolated object with 12 percent transparent margin, actual alpha transparent background, no ground shadow, no background, no text, no logo, no border, no other objects, no particle effects. Orthographic almost overhead view. Subject: A chunky horseshoe U magnet pickup with dusty rose red body and pale ivory pole tips. Clear open U silhouette, rounded soft edges, almost top-down view, no electric arcs or extra pieces."
+    },
+    {
+      "asset": "Bomb.png",
+      "prompt": "Use case: stylized-concept. Produce ONE production top-down 2D Unity pickup sprite. Reference image is ONLY for style: soft matte shading, clean dark plum outlines, rounded cozy shapes, pastel colors, hand-drawn smooth 2D, not pixel art or 3D. Must remain very readable at 30 screen pixels on dark brown wooden floor. Centered isolated object with 12 percent transparent margin, actual alpha transparent background, no ground shadow, no background, no text, no logo, no border, no other objects, no particle effects. Orthographic almost overhead view. Subject: A cute compact spherical slate violet bomb pickup, short curved cream fuse with tiny warm gold tip connected to top, simple broad soft highlight, dark plum outline. No face, no spikes, no explosion. Broad round readable silhouette."
+    }
+  ]
+}

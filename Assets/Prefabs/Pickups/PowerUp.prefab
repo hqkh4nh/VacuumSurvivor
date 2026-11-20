@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7742538220342737317}
   - component: {fileID: 2149190481407160550}
-  - component: {fileID: 7874269809183518327}
   - component: {fileID: 9153748482456568120}
   - component: {fileID: 5890547021872965080}
   m_Layer: 10
@@ -84,32 +83,17 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 378acb9bb144fd54999749e126f82179, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9637931, y: 0.97461355}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &7874269809183518327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6855388926944416509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902e1f8b475c00847989c94780c815fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.ProceduralSprite
-  kind: 17
-  color: {r: 0.682, g: 0.745, b: 0.839, a: 1}
-  pixels: 32
 --- !u!58 &9153748482456568120
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -158,3 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01547bde66e26a49ab4e7e230cd5594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.PowerUp
+  batterySprite: {fileID: 21300000, guid: 378acb9bb144fd54999749e126f82179, type: 3}
+  magnetSprite: {fileID: 21300000, guid: 3611a0be5cd79484a990cf1fbe8f676b, type: 3}
+  bombSprite: {fileID: 21300000, guid: 50106d8e0152e8b4a83ad4408008b099, type: 3}
