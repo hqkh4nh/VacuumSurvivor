@@ -73,7 +73,8 @@ namespace VacuumSurvivor
                 case SpriteKind.Battery: return Battery(body, px);
                 case SpriteKind.Magnet: return Magnet(body, px);
                 case SpriteKind.Bomb: return Bomb(body, px);
-                default: return PlainCircle(body, px); // Led, Ring
+                case SpriteKind.Ring: return SoftRing(body, px);
+                default: return PlainCircle(body, px); // Led
             }
         }
 
@@ -287,6 +288,28 @@ namespace VacuumSurvivor
             RoundedRect(m, px, c * 0.62f, c * 0.78f, c * 0.04f, c * 0.10f, c * 0.03f); // fuse stub
             return Finish(Shade(m, px, body), px, tex =>
                 DrawDot(tex, c * 0.66f, c * 0.90f, c * 0.07f, Palette.Accent)); // spark
+        }
+
+        static Sprite SoftRing(Color body, int px)
+        {
+            var tex = new Texture2D(px, px, TextureFormat.RGBA32, false)
+            {
+                filterMode = FilterMode.Bilinear,
+                wrapMode = TextureWrapMode.Clamp
+            };
+            float r = px * 0.5f;
+            float halfWidth = Mathf.Max(2f, px * 0.016f);
+            for (int y = 0; y < px; y++)
+            for (int x = 0; x < px; x++)
+            {
+                float dx = x - r + 0.5f, dy = y - r + 0.5f;
+                float distance = Mathf.Abs(Mathf.Sqrt(dx * dx + dy * dy) - (r - halfWidth - 0.5f));
+                float alpha = Mathf.Clamp01(halfWidth + 0.5f - distance);
+                tex.SetPixel(x, y, new Color(body.r, body.g, body.b, body.a * alpha));
+            }
+            tex.Apply();
+            // Unit diameter lets each weapon scale the ring to its actual damage range.
+            return Sprite.Create(tex, new Rect(0f, 0f, px, px), new Vector2(0.5f, 0.5f), px);
         }
 
         static Sprite PlainCircle(Color body, int px)

@@ -1,0 +1,20 @@
+{
+  "generator": "Built-in imagegen",
+  "references": [
+    "Assets/Art/Soft2D/Pickups/Battery.png"
+  ],
+  "prompts": [
+    {
+      "asset": "Droplet.png",
+      "prompt": "Use case: stylized-concept. ONE production Unity 2D top-down game sprite. Match the reference ONLY in art style: smooth dark plum outlines, soft matte shading, rounded pastel cozy shapes. Clear readable at small game scale on dark wooden floor. Actual alpha transparent background, centered isolated contiguous shape, 12 percent transparent padding all sides. No background, floor, shadow, text, logos, borders, extra objects, particles, eyes or face. Not pixel art, not photoreal or 3D. Subject: A plump tiny water projectile, horizontal teardrop silhouette. IMPORTANT orientation: rounded broad leading head at the RIGHT, a short pointed taper at the LEFT, aligned perfectly along horizontal X axis. Pale aqua body, muted blue teal outline and a single broad creamy highlight. One droplet only. No detached drops or glow."
+    },
+    {
+      "asset": "Broom.png",
+      "prompt": "Use case: stylized-concept. ONE production Unity 2D top-down game sprite. Match the reference ONLY in art style: smooth dark plum outlines, soft matte shading, rounded pastel cozy shapes. Clear readable at small game scale on dark wooden floor. Actual alpha transparent background, centered isolated contiguous shape, 12 percent transparent padding all sides. No background, floor, shadow, text, logos, borders, extra objects, particles, eyes or face. Not pixel art, not photoreal or 3D. Subject: A small compact household hand broom viewed directly overhead: short warm wooden handle rising straight UP from a broad softly fanned golden cream bristle head in the LOWER half, mint teal binding at the join. Rounded chunky silhouette. Not a long narrow broomstick: entire handle and bristle head fit a roughly square footprint, bristles occupy two thirds height. Only a few broad bristle grooves, readable at 45 pixels. Center of bristle head should sit at canvas center to coincide with the damage point."
+    },
+    {
+      "asset": "TrailPatch.png",
+      "prompt": "Use case: stylized-concept. ONE production Unity 2D top-down game sprite. Match the reference ONLY in art style: smooth dark plum outlines, soft matte shading, rounded pastel cozy shapes. Clear readable at small game scale on dark wooden floor. Actual alpha transparent background, centered isolated contiguous shape, 12 percent transparent padding all sides. No background, floor, shadow, text, logos, borders, extra objects, particles, eyes or face. Not pixel art, not photoreal or 3D. Subject: A top-down small circular wet mop patch for a floor hazard effect. A softly irregular near-round aqua wash with semi-transparent pale mint center, muted blue teal softly defined perimeter, two broad curved milky glints near edges. Mostly translucent so wood floor remains visible through it. Broad simple shapes, readable at 70 pixels. No solid opaque large highlight, no dark thick contour, no face, no detached droplets. Roughly circular, not a thin horizontal puddle, because damage zone is circular."
+    }
+  ]
+}

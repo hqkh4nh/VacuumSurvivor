@@ -180,11 +180,11 @@ namespace VacuumSurvivor.EditorTools
             ringGO.transform.SetParent(player.transform, false);
             var ringSr = ringGO.AddComponent<SpriteRenderer>();
             ringSr.sortingOrder = 1;
-            ringSr.color = new Color(Palette.Accent.r, Palette.Accent.g, Palette.Accent.b, 0.12f);
+            ringSr.color = new Color(0.5f, 0.95f, 0.88f, 0.7f);
             var ringPs = ringGO.AddComponent<ProceduralSprite>();
             ringPs.Color = Color.white;
             ringPs.Kind = SpriteKind.Ring;
-            ringPs.Pixels = 64;
+            ringPs.Pixels = 256;
 
             var suction = player.AddComponent<SuctionWeapon>();
             suction.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/LucHut.asset");
@@ -220,10 +220,7 @@ namespace VacuumSurvivor.EditorTools
                 b.transform.localScale = Vector3.one * 0.6f;
                 var sr = b.AddComponent<SpriteRenderer>();
                 sr.sortingOrder = 9;
-                var ps = b.AddComponent<ProceduralSprite>();
-                ps.Kind = SpriteKind.Broom;
-                ps.Color = Palette.Breadcrumb;
-                ps.Pixels = 24;
+                sr.sprite = LoadWeaponSprite("Broom");
                 brooms[i] = b.transform;
             }
             orbit.Pivot = pivot.transform;
@@ -248,7 +245,7 @@ namespace VacuumSurvivor.EditorTools
             trail.Data = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/ScriptableObjects/Weapons/VetLau.asset");
 
             var poolGO = new GameObject("TrailPool");
-            poolGO.transform.SetParent(player.transform, false);
+            // Floor patches must stay in world space when the player moves.
             var pool = poolGO.AddComponent<GameObjectPool>();
             pool.Prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Weapons/TrailPatch.prefab");
             trail.Pool = pool;
@@ -270,11 +267,11 @@ namespace VacuumSurvivor.EditorTools
             ringGO.transform.SetParent(player.transform, false);
             var sr = ringGO.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 1;
-            sr.color = new Color(Palette.Accent.r, Palette.Accent.g, Palette.Accent.b, 0.22f);
+            sr.color = new Color(1f, 0.8f, 0.42f, 0.95f);
             var ps = ringGO.AddComponent<ProceduralSprite>();
             ps.Color = Color.white;
             ps.Kind = SpriteKind.Ring;
-            ps.Pixels = 64;
+            ps.Pixels = 256;
             ringGO.SetActive(false);
             push.Ring = ringGO.transform;
         }
@@ -292,10 +289,8 @@ namespace VacuumSurvivor.EditorTools
             var go = new GameObject("TrailPatch");   // Default layer; damages via OverlapCircleAll, no collider needed
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 1;
-            var ps = go.AddComponent<ProceduralSprite>();
-            ps.Color = new Color(Palette.Moonlight.r, Palette.Moonlight.g, Palette.Moonlight.b, 0.45f);
-            ps.Kind = SpriteKind.MopTrail;
-            ps.Pixels = 32;
+            sr.sprite = LoadWeaponSprite("TrailPatch");
+            sr.color = new Color(1f, 1f, 1f, 0.6f);
             go.AddComponent<TrailPatch>();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
@@ -711,10 +706,7 @@ namespace VacuumSurvivor.EditorTools
             var go = new GameObject("Droplet");   // Default layer: Pickup↔Enemy collisions are off, triggers must still fire
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sortingOrder = 4;
-            var ps = go.AddComponent<ProceduralSprite>();
-            ps.Color = Palette.Moonlight;
-            ps.Kind = SpriteKind.Droplet;
-            ps.Pixels = 20;
+            sr.sprite = LoadWeaponSprite("Droplet");
             var rb = go.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
             rb.bodyType = RigidbodyType2D.Kinematic;
@@ -765,6 +757,14 @@ namespace VacuumSurvivor.EditorTools
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
             Object.DestroyImmediate(go);
             return prefab;
+        }
+
+        static Sprite LoadWeaponSprite(string name)
+        {
+            string path = "Assets/Art/Soft2D/Weapons/" + name + ".png";
+            var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+            if (sprite == null) throw new System.InvalidOperationException("Missing weapon sprite: " + path);
+            return sprite;
         }
 
         static Sprite LoadPickupSprite(string name)

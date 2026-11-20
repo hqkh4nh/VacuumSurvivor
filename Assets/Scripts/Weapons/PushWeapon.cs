@@ -12,7 +12,7 @@ namespace VacuumSurvivor
         [SerializeField] float[] knockback = { 4f, 5f, 5.5f, 6f, 7f };
         [SerializeField] float[] cycle = { 12f, 11f, 10f, 9f, 8f };
         [SerializeField] float[] radius = { 4f, 4.5f, 5f, 5.5f, 6f };
-        [SerializeField] float pulseTime = 0.35f;
+        [SerializeField] float pulseTime = 0.7f;
 
         public Transform Ring { get => ring; set => ring = value; }
         public override WeaponKind Kind => WeaponKind.Push;
@@ -21,8 +21,25 @@ namespace VacuumSurvivor
         float cooldownLeft;
         float pulseLeft;
         float pulseRadius;
+        SpriteRenderer ringRenderer;
+        Color ringColor;
+        HornPulseEffect pulseEffect;
 
-        void Awake() => enemyMask = LayerMask.GetMask("Enemy");
+        void Awake()
+        {
+            enemyMask = LayerMask.GetMask("Enemy");
+            if (ring != null)
+            {
+                ringRenderer = ring.GetComponent<SpriteRenderer>();
+                if (ringRenderer != null)
+                {
+                    ringColor = ringRenderer.color;
+                    ringRenderer.enabled = false;
+                }
+                pulseEffect = ring.GetComponent<HornPulseEffect>();
+                if (pulseEffect == null) pulseEffect = ring.gameObject.AddComponent<HornPulseEffect>();
+            }
+        }
 
         void Update()
         {
@@ -54,9 +71,21 @@ namespace VacuumSurvivor
             if (ring == null) return;
             if (pulseLeft <= 0f) { ring.gameObject.SetActive(false); return; }
             pulseLeft -= Time.deltaTime;
-            float k = 1f - (pulseLeft / pulseTime);   // 0 → 1 over the pulse
+            float k = Mathf.Clamp01(1f - (pulseLeft / pulseTime));
             ring.gameObject.SetActive(true);
             ring.localScale = Vector3.one * (pulseRadius * 2f * k);
+            if (pulseEffect != null) pulseEffect.Render(pulseRadius, k);
+            if (ringRenderer != null)
+            {
+                var color = ringColor;
+                color.a *= 1f - k;
+                ringRenderer.color = color;
+            }
+        }
+
+        void OnDisable()
+        {
+            if (ring != null) ring.gameObject.SetActive(false);
         }
     }
 }

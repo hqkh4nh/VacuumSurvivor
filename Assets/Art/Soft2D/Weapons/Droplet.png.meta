@@ -1,0 +1,2067 @@
+fileFormatVersion: 2
+guid: fe86ff264a4eb274089cca31392ebb9d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4452974523548671075
+    second: Droplet_0
+  - first:
+      213: -2299190364540356309
+    second: Droplet_1
+  - first:
+      213: 1129163240901109870
+    second: Droplet_2
+  - first:
+      213: 5126818877526633372
+    second: Droplet_3
+  - first:
+      213: 84650847358164672
+    second: Droplet_4
+  - first:
+      213: -3610867229133792599
+    second: Droplet_5
+  - first:
+      213: 4618972342853705778
+    second: Droplet_6
+  - first:
+      213: 164854621204024882
+    second: Droplet_7
+  - first:
+      213: 1887208317088297659
+    second: Droplet_8
+  - first:
+      213: -8333423909521050251
+    second: Droplet_9
+  - first:
+      213: 8429849697629459399
+    second: Droplet_10
+  - first:
+      213: 4823858529113403682
+    second: Droplet_11
+  - first:
+      213: 2451103647140083504
+    second: Droplet_12
+  - first:
+      213: 1610605674208003184
+    second: Droplet_13
+  - first:
+      213: -2672358801107784880
+    second: Droplet_14
+  - first:
+      213: 236040164882802671
+    second: Droplet_15
+  - first:
+      213: -8354007287708913887
+    second: Droplet_16
+  - first:
+      213: -8594064054925706428
+    second: Droplet_17
+  - first:
+      213: -5381597197849233828
+    second: Droplet_18
+  - first:
+      213: 1942290526162871701
+    second: Droplet_19
+  - first:
+      213: 6406566105616359217
+    second: Droplet_20
+  - first:
+      213: -6728328240809559120
+    second: Droplet_21
+  - first:
+      213: -5890024781842302150
+    second: Droplet_22
+  - first:
+      213: -4543446083604020082
+    second: Droplet_23
+  - first:
+      213: 8960771009315505544
+    second: Droplet_24
+  - first:
+      213: 3425839147427270372
+    second: Droplet_25
+  - first:
+      213: -3436564269402197956
+    second: Droplet_26
+  - first:
+      213: -7492558603507880713
+    second: Droplet_27
+  - first:
+      213: -2232471582071586394
+    second: Droplet_28
+  - first:
+      213: 7837833557938238519
+    second: Droplet_29
+  - first:
+      213: -1300627359793121354
+    second: Droplet_30
+  - first:
+      213: 1055385694566632442
+    second: Droplet_31
+  - first:
+      213: 8836960188228232901
+    second: Droplet_32
+  - first:
+      213: 1158793918072368319
+    second: Droplet_33
+  - first:
+      213: -879084236196901933
+    second: Droplet_34
+  - first:
+      213: -8033314098134635511
+    second: Droplet_35
+  - first:
+      213: -1397463849134794755
+    second: Droplet_36
+  - first:
+      213: -853084870533001597
+    second: Droplet_37
+  - first:
+      213: -1199245650780203217
+    second: Droplet_38
+  - first:
+      213: -4497680723985534386
+    second: Droplet_39
+  - first:
+      213: -3363841913560225753
+    second: Droplet_40
+  - first:
+      213: 415255851618429914
+    second: Droplet_41
+  - first:
+      213: 3317525458901728458
+    second: Droplet_42
+  - first:
+      213: -1343638978598132755
+    second: Droplet_43
+  - first:
+      213: -8130507026743200788
+    second: Droplet_44
+  - first:
+      213: 7489750436785226846
+    second: Droplet_45
+  - first:
+      213: 7059530704989326401
+    second: Droplet_46
+  - first:
+      213: -4732392332452413521
+    second: Droplet_47
+  - first:
+      213: 2771323934183667832
+    second: Droplet_48
+  - first:
+      213: 1542237418705834053
+    second: Droplet_49
+  - first:
+      213: 5016530336904909640
+    second: Droplet_50
+  - first:
+      213: -1163820303387706565
+    second: Droplet_51
+  - first:
+      213: -2058240460244596252
+    second: Droplet_52
+  - first:
+      213: 4974084528957247132
+    second: Droplet_53
+  - first:
+      213: 53100768195920092
+    second: Droplet_54
+  - first:
+      213: 4976919982584760721
+    second: Droplet_55
+  - first:
+      213: -5180794074289956603
+    second: Droplet_56
+  - first:
+      213: -1150960890760667232
+    second: Droplet_57
+  - first:
+      213: -8576911251520306384
+    second: Droplet_58
+  - first:
+      213: 8113615356029252554
+    second: Droplet_59
+  - first:
+      213: 2622773383654364974
+    second: Droplet_60
+  - first:
+      213: -2207602923992076202
+    second: Droplet_61
+  - first:
+      213: -5869329701511094449
+    second: Droplet_62
+  - first:
+      213: 6350342226881453462
+    second: Droplet_63
+  - first:
+      213: 7456727757382959258
+    second: Droplet_64
+  - first:
+      213: -3406182999469339325
+    second: Droplet_65
+  - first:
+      213: -2716712479905889022
+    second: Droplet_66
+  - first:
+      213: -4689172931185135544
+    second: Droplet_67
+  - first:
+      213: -5211440720848498413
+    second: Droplet_68
+  - first:
+      213: -7764050141149277182
+    second: Droplet_69
+  - first:
+      213: -4767026745502966076
+    second: Droplet_70
+  - first:
+      213: -3148228481599747978
+    second: Droplet_71
+  - first:
+      213: 457757018300523471
+    second: Droplet_72
+  - first:
+      213: -4522175985360490363
+    second: Droplet_73
+  - first:
+      213: 8991273240819684892
+    second: Droplet_74
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.49661782}
+  spritePixelsToUnits: 2960
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Droplet_0
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 838
+        width: 74
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d936402834bd332c0800000000000000
+      internalID: -4452974523548671075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_1
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 854
+        width: 46
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b29329a8b82a710e0800000000000000
+      internalID: -2299190364540356309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1463
+        height: 849
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e68e65b2cf79baf00800000000000000
+      internalID: 1129163240901109870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_3
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 823
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9bedb62b9e162740800000000000000
+      internalID: 5126818877526633372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_4
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 779
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce18b64f7dbc2100800000000000000
+      internalID: 84650847358164672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_5
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 805
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa9164e26f93edc0800000000000000
+      internalID: -3610867229133792599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_6
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 775
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230262b9fd2e91040800000000000000
+      internalID: 4618972342853705778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_7
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 757
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e8270976ea94200800000000000000
+      internalID: 164854621204024882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_8
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 749
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2f53d27f5b03a10800000000000000
+      internalID: 1887208317088297659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_9
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 749
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575304e4b1bb95c80800000000000000
+      internalID: -8333423909521050251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_10
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 733
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3532103a7dcf470800000000000000
+      internalID: 8429849697629459399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_11
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 692
+        width: 27
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221fa8a36c9c1f240800000000000000
+      internalID: 4823858529113403682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_12
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 686
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037f273d7c1140220800000000000000
+      internalID: 2451103647140083504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_13
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 713
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074856cc3550a5610800000000000000
+      internalID: 1610605674208003184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_14
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 700
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05be49344dfd9ead0800000000000000
+      internalID: -2672358801107784880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_15
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 711
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe760948745964300800000000000000
+      internalID: 236040164882802671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_16
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 709
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12fe51d12aa901c80800000000000000
+      internalID: -8354007287708913887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_17
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 715
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b333d7640cbb880800000000000000
+      internalID: -8594064054925706428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_18
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 711
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5675f98cd9b055b0800000000000000
+      internalID: -5381597197849233828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_19
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 709
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5956b8e51f664fa10800000000000000
+      internalID: 1942290526162871701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_20
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 688
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f125bfde1b8e850800000000000000
+      internalID: 6406566105616359217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_21
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 654
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb315afc1d20a2a0800000000000000
+      internalID: -6728328240809559120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_22
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 596
+        width: 35
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3bba08eaad624ea0800000000000000
+      internalID: -5890024781842302150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_23
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 614
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8484a2fbdf62f0c0800000000000000
+      internalID: -4543446083604020082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_24
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 547
+        width: 141
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8858edbb1cd0b5c70800000000000000
+      internalID: 8960771009315505544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_25
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 588
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee8700cd860b8f20800000000000000
+      internalID: 3425839147427270372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_26
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 571
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c307b72310fde40d0800000000000000
+      internalID: -3436564269402197956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_27
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 531
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fcad1bb5a5150890800000000000000
+      internalID: -7492558603507880713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_28
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 496
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a1087b9ceaa401e0800000000000000
+      internalID: -2232471582071586394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_29
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 499
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7347b85281495cc60800000000000000
+      internalID: 7837833557938238519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_30
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 378
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b7706aae4e33fde0800000000000000
+      internalID: -1300627359793121354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_31
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 446
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afb4ca192bb75ae00800000000000000
+      internalID: 1055385694566632442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_32
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 442
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6ec91987033aa70800000000000000
+      internalID: 8836960188228232901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_33
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 430
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc269ecdecd41010800000000000000
+      internalID: 1158793918072368319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_34
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 420
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db86d57b8ddcc3f0800000000000000
+      internalID: -879084236196901933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_35
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 420
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c2c8bd36fe38090800000000000000
+      internalID: -8033314098134635511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_36
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 346
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7ded588063b9ce0800000000000000
+      internalID: -1397463849134794755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_37
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 360
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ece9084db3924f0800000000000000
+      internalID: -853084870533001597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_38
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 340
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2750da3f6c6b5fe0800000000000000
+      internalID: -1199245650780203217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_39
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 327
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4278b516370591c0800000000000000
+      internalID: -4497680723985534386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_40
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 322
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7282cad1a9b3151d0800000000000000
+      internalID: -3363841913560225753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_41
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 305
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb6e963ff843c500800000000000000
+      internalID: 415255851618429914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_42
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 291
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: accf62fe3d73a0e20800000000000000
+      internalID: 3317525458901728458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_43
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 291
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de32a46c77f6a5de0800000000000000
+      internalID: -1343638978598132755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_44
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 209
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3772bbfe2aa2f80800000000000000
+      internalID: -8130507026743200788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_45
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 142
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5409e00750f0f760800000000000000
+      internalID: 7489750436785226846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_46
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 128
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c0adfe5cd78f160800000000000000
+      internalID: 7059530704989326401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_47
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 120
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf34663f3a235eb0800000000000000
+      internalID: -4732392332452413521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_48
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 80
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8783e8e5f68b57620800000000000000
+      internalID: 2771323934183667832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_49
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 112
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540d64dd2c0276510800000000000000
+      internalID: 1542237418705834053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_50
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 120
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843103043cb4e9540800000000000000
+      internalID: 5016530336904909640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_51
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 120
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b303aa99749dfe0800000000000000
+      internalID: -1163820303387706565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_52
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 80
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9c8c8d439af63e0800000000000000
+      internalID: -2058240460244596252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_53
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 80
+        width: 28
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e4347768f770540800000000000000
+      internalID: 4974084528957247132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_54
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 96
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd04e990ed6acb000800000000000000
+      internalID: 53100768195920092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_55
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 90
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1990285fa52911540800000000000000
+      internalID: 4976919982584760721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_56
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 78
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5099f7b0d3f1a18b0800000000000000
+      internalID: -5180794074289956603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_57
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afd7dbfa27f600f0800000000000000
+      internalID: -1150960890760667232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_58
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 74
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033c41fb8a0b8f880800000000000000
+      internalID: -8576911251520306384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_59
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 80
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac33744bd2a599070800000000000000
+      internalID: 8113615356029252554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_60
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 64
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2751131f76f56420800000000000000
+      internalID: 2622773383654364974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_61
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 70
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650b65646d40d51e0800000000000000
+      internalID: -2207602923992076202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_62
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 69
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f18c7cbb3fb8ea0800000000000000
+      internalID: -5869329701511094449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_63
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 63
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d9e6b1c92f02850800000000000000
+      internalID: 6350342226881453462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_64
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 61
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a904b9d436e9b7760800000000000000
+      internalID: 7456727757382959258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_65
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 45
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34dc7a4db9ecab0d0800000000000000
+      internalID: -3406182999469339325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_66
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 53
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205c65ea46c4c4ad0800000000000000
+      internalID: -2716712479905889022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_67
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 47
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840355a3016bceeb0800000000000000
+      internalID: -4689172931185135544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_68
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 57
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 311d1d9964e3da7b0800000000000000
+      internalID: -5211440720848498413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_69
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 45
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204d976488d804490800000000000000
+      internalID: -7764050141149277182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_70
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce52878e6e18ddb0800000000000000
+      internalID: -4767026745502966076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_71
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 31
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 678ca7240ee3f44d0800000000000000
+      internalID: -3148228481599747978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_72
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 39
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc3ae3535974a5600800000000000000
+      internalID: 457757018300523471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_73
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58039cc96e00e31c0800000000000000
+      internalID: -4522175985360490363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Droplet_74
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 12
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16588def5b67cc70800000000000000
+      internalID: 8991273240819684892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Droplet_0: -4452974523548671075
+      Droplet_1: -2299190364540356309
+      Droplet_10: 8429849697629459399
+      Droplet_11: 4823858529113403682
+      Droplet_12: 2451103647140083504
+      Droplet_13: 1610605674208003184
+      Droplet_14: -2672358801107784880
+      Droplet_15: 236040164882802671
+      Droplet_16: -8354007287708913887
+      Droplet_17: -8594064054925706428
+      Droplet_18: -5381597197849233828
+      Droplet_19: 1942290526162871701
+      Droplet_2: 1129163240901109870
+      Droplet_20: 6406566105616359217
+      Droplet_21: -6728328240809559120
+      Droplet_22: -5890024781842302150
+      Droplet_23: -4543446083604020082
+      Droplet_24: 8960771009315505544
+      Droplet_25: 3425839147427270372
+      Droplet_26: -3436564269402197956
+      Droplet_27: -7492558603507880713
+      Droplet_28: -2232471582071586394
+      Droplet_29: 7837833557938238519
+      Droplet_3: 5126818877526633372
+      Droplet_30: -1300627359793121354
+      Droplet_31: 1055385694566632442
+      Droplet_32: 8836960188228232901
+      Droplet_33: 1158793918072368319
+      Droplet_34: -879084236196901933
+      Droplet_35: -8033314098134635511
+      Droplet_36: -1397463849134794755
+      Droplet_37: -853084870533001597
+      Droplet_38: -1199245650780203217
+      Droplet_39: -4497680723985534386
+      Droplet_4: 84650847358164672
+      Droplet_40: -3363841913560225753
+      Droplet_41: 415255851618429914
+      Droplet_42: 3317525458901728458
+      Droplet_43: -1343638978598132755
+      Droplet_44: -8130507026743200788
+      Droplet_45: 7489750436785226846
+      Droplet_46: 7059530704989326401
+      Droplet_47: -4732392332452413521
+      Droplet_48: 2771323934183667832
+      Droplet_49: 1542237418705834053
+      Droplet_5: -3610867229133792599
+      Droplet_50: 5016530336904909640
+      Droplet_51: -1163820303387706565
+      Droplet_52: -2058240460244596252
+      Droplet_53: 4974084528957247132
+      Droplet_54: 53100768195920092
+      Droplet_55: 4976919982584760721
+      Droplet_56: -5180794074289956603
+      Droplet_57: -1150960890760667232
+      Droplet_58: -8576911251520306384
+      Droplet_59: 8113615356029252554
+      Droplet_6: 4618972342853705778
+      Droplet_60: 2622773383654364974
+      Droplet_61: -2207602923992076202
+      Droplet_62: -5869329701511094449
+      Droplet_63: 6350342226881453462
+      Droplet_64: 7456727757382959258
+      Droplet_65: -3406182999469339325
+      Droplet_66: -2716712479905889022
+      Droplet_67: -4689172931185135544
+      Droplet_68: -5211440720848498413
+      Droplet_69: -7764050141149277182
+      Droplet_7: 164854621204024882
+      Droplet_70: -4767026745502966076
+      Droplet_71: -3148228481599747978
+      Droplet_72: 457757018300523471
+      Droplet_73: -4522175985360490363
+      Droplet_74: 8991273240819684892
+      Droplet_8: 1887208317088297659
+      Droplet_9: -8333423909521050251
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

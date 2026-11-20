@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: b8920e98a684d2a43954673c9e575b10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4788686095843200878
+    second: TrailPatch_0
+  - first:
+      213: 4138651076728066073
+    second: TrailPatch_1
+  - first:
+      213: 7419244161729495890
+    second: TrailPatch_2
+  - first:
+      213: 5755430662481881729
+    second: TrailPatch_3
+  - first:
+      213: -8820735782794395955
+    second: TrailPatch_4
+  - first:
+      213: 5931824563081983806
+    second: TrailPatch_5
+  - first:
+      213: 6413964630801786229
+    second: TrailPatch_6
+  - first:
+      213: -1335301743889012231
+    second: TrailPatch_7
+  - first:
+      213: 3107826807878332642
+    second: TrailPatch_8
+  - first:
+      213: -7549137023777068311
+    second: TrailPatch_9
+  - first:
+      213: 1175485057061814807
+    second: TrailPatch_10
+  - first:
+      213: -4530099325815664709
+    second: TrailPatch_11
+  - first:
+      213: -6027432263868773764
+    second: TrailPatch_12
+  - first:
+      213: -4304686504570024341
+    second: TrailPatch_13
+  - first:
+      213: 7124149893584692786
+    second: TrailPatch_14
+  - first:
+      213: 6923358554219685189
+    second: TrailPatch_15
+  - first:
+      213: -612255237255280879
+    second: TrailPatch_16
+  - first:
+      213: -4293178883619216648
+    second: TrailPatch_17
+  - first:
+      213: -1036482705951394641
+    second: TrailPatch_18
+  - first:
+      213: -7424115647614911876
+    second: TrailPatch_19
+  - first:
+      213: -3077809540725209724
+    second: TrailPatch_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.49920255, y: 0.50239235}
+  spritePixelsToUnits: 684
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TrailPatch_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 62
+        width: 1151
+        height: 1016
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290f96c0e5b2b8db0800000000000000
+      internalID: -4788686095843200878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_1
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 1075
+        width: 216
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9101aad0a317f6930800000000000000
+      internalID: 4138651076728066073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_2
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1032
+        width: 288
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25307c9914376f660800000000000000
+      internalID: 7419244161729495890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_3
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 988
+        width: 33
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18aaf96a1b56fdf40800000000000000
+      internalID: 5755430662481881729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_4
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 1035
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce76f03a83769580800000000000000
+      internalID: -8820735782794395955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_5
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1018
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3730701303125250800000000000000
+      internalID: 5931824563081983806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_6
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 996
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5752cdc59daf20950800000000000000
+      internalID: 6413964630801786229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_7
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 996
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9298f732e087de0800000000000000
+      internalID: -1335301743889012231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_8
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1004
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0360b0408312b20800000000000000
+      internalID: 3107826807878332642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_9
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 973
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eaa409bfd31c3790800000000000000
+      internalID: -7549137023777068311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_10
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 968
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71203f07e69205010800000000000000
+      internalID: 1175485057061814807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_11
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 883
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf45872aaad121c0800000000000000
+      internalID: -4530099325815664709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_12
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 867
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a8f5c6a424a5ca0800000000000000
+      internalID: -6027432263868773764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_13
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 808
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6e8fa96e6ea244c0800000000000000
+      internalID: -4304686504570024341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_14
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 761
+        width: 93
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236a0c535901ed260800000000000000
+      internalID: 7124149893584692786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 787
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5452dec6ce5b41060800000000000000
+      internalID: 6923358554219685189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_16
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 773
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117c6870b15d087f0800000000000000
+      internalID: -612255237255280879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_17
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 469
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f22ba43d809b64c0800000000000000
+      internalID: -4293178883619216648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_18
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 473
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa47eef687cad91f0800000000000000
+      internalID: -1036482705951394641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_19
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 481
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a7e74372e38f890800000000000000
+      internalID: -7424115647614911876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TrailPatch_20
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 409
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48504c6978c6945d0800000000000000
+      internalID: -3077809540725209724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TrailPatch_0: -4788686095843200878
+      TrailPatch_1: 4138651076728066073
+      TrailPatch_10: 1175485057061814807
+      TrailPatch_11: -4530099325815664709
+      TrailPatch_12: -6027432263868773764
+      TrailPatch_13: -4304686504570024341
+      TrailPatch_14: 7124149893584692786
+      TrailPatch_15: 6923358554219685189
+      TrailPatch_16: -612255237255280879
+      TrailPatch_17: -4293178883619216648
+      TrailPatch_18: -1036482705951394641
+      TrailPatch_19: -7424115647614911876
+      TrailPatch_2: 7419244161729495890
+      TrailPatch_20: -3077809540725209724
+      TrailPatch_3: 5755430662481881729
+      TrailPatch_4: -8820735782794395955
+      TrailPatch_5: 5931824563081983806
+      TrailPatch_6: 6413964630801786229
+      TrailPatch_7: -1335301743889012231
+      TrailPatch_8: 3107826807878332642
+      TrailPatch_9: -7549137023777068311
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

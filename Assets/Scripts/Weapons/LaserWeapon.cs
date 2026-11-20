@@ -40,9 +40,12 @@ namespace VacuumSurvivor
                 lr.material = mat;
                 lr.useWorldSpace = true;
                 lr.positionCount = 2;
-                lr.startWidth = lr.endWidth = 0.08f;
+                lr.startWidth = 0.1f;
+                lr.endWidth = 0.035f;
+                lr.numCapVertices = 6;
                 lr.sortingOrder = 8;
-                lr.startColor = lr.endColor = new Color(Palette.Accent.r, Palette.Accent.g, Palette.Accent.b, 0.85f);
+                lr.startColor = new Color(0.68f, 0.96f, 0.91f, 0.9f);
+                lr.endColor = new Color(0.73f, 0.72f, 0.9f, 0.55f);
                 lr.enabled = false;
                 lines[i] = lr;
             }

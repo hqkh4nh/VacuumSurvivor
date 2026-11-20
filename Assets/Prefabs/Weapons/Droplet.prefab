@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6945731616532259988}
   - component: {fileID: 4807061517960100058}
-  - component: {fileID: 1063737695010217156}
   - component: {fileID: 5144605370348150669}
   - component: {fileID: 3369169862552386499}
   - component: {fileID: 4616232409370107411}
@@ -85,32 +84,17 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fe86ff264a4eb274089cca31392ebb9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.59932435, y: 0.29966217}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &1063737695010217156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9221752574997512454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902e1f8b475c00847989c94780c815fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.ProceduralSprite
-  kind: 10
-  color: {r: 0.682, g: 0.745, b: 0.839, a: 1}
-  pixels: 20
 --- !u!50 &5144605370348150669
 Rigidbody2D:
   serializedVersion: 5
