@@ -22,6 +22,12 @@ namespace VacuumSurvivor
             }
         }
 
+        public void Resize(Vector2 dimensions)
+        {
+            size = Vector2.Max(dimensions, Vector2.one * 4f);
+            RefreshLayout();
+        }
+
         void Awake() => Instance = this;
         void OnDestroy() { if (Instance == this) Instance = null; }
 

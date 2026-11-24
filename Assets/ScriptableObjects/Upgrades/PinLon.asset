@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeData
   type: 1
   title: "Pin dung l\u01B0\u1EE3ng l\u1EDBn"
-  description: "+20 pin t\u1ED1i \u0111a, h\u1ED3i lu\xF4n ph\u1EA7n v\u1EEBa t\u0103ng."
+  description: "+20 pin t\u1ed1i \u0111a v\u00e0 n\u1ea1p ngay 20 pin."
+  icon: {fileID: 21300000, guid: 1505d8fae27c4655a81cf0709d22a553, type: 3}
   valuePerLevel:
   - 20
   - 20

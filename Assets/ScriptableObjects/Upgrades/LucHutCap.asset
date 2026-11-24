@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeData
   type: 0
   title: "L\u1EF1c h\xFAt m\u1EA1nh h\u01A1n"
-  description: "T\u0103ng 1 c\u1EA5p L\u1EF1c h\xFAt: s\xE1t th\u01B0\u01A1ng v\xE0
-    b\xE1n k\xEDnh l\u1EDBn h\u01A1n."
+  description: "L\u1ef1c h\u00fat +1 c\u1ea5p. T\u0103ng s\u00e1t th\u01b0\u01a1ng v\u00e0 b\u00e1n k\u00ednh h\u00fat."
+  icon: {fileID: 21300000, guid: b681023553304887855cb98f21cefa5c, type: 3}
   valuePerLevel:
   - 1
   - 1

@@ -32,6 +32,7 @@ namespace VacuumSurvivor
             {
                 label.text = $"Đã dọn sạch {clearedRoom}!";
                 root.SetActive(true);
+                PanelEntrance.Play(root, 0.36f);
                 showing = true;
             }
             else if (!shouldShow && showing)

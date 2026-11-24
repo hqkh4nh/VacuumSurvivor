@@ -50,6 +50,7 @@ namespace VacuumSurvivor.EditorTools
                     waves = AssetDatabase.LoadAssetAtPath<WaveData>("Assets/ScriptableObjects/WaveData_PhongKhach.asset"),
                     bossPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/ConMeo.prefab"),
                     floorTint = Color.white,
+                    roomSize = new Vector2(32f, 24f),
                     duration = 180f,
                 },
                 new LevelConfig
@@ -58,6 +59,7 @@ namespace VacuumSurvivor.EditorTools
                     waves = AssetDatabase.LoadAssetAtPath<WaveData>("Assets/ScriptableObjects/WaveData_PhongNgu.asset"),
                     bossPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/ConMeo2.prefab"),
                     floorTint = new Color(0.82f, 0.88f, 1f),
+                    roomSize = new Vector2(22f, 18f),
                     duration = 180f,
                 },
                 new LevelConfig
@@ -66,6 +68,7 @@ namespace VacuumSurvivor.EditorTools
                     waves = AssetDatabase.LoadAssetAtPath<WaveData>("Assets/ScriptableObjects/WaveData_NhaBep.asset"),
                     bossPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/MayHutBui.prefab"),
                     floorTint = new Color(1f, 0.92f, 0.82f),
+                    roomSize = new Vector2(34f, 18f),
                     duration = 180f,
                 },
             });

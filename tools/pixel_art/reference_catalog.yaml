@@ -1,0 +1,37 @@
+schema_version: 1
+references:
+- path: Assets/Art/Soft2D/Robot.png
+  profile: vacuum_survivor
+  category: characters
+  width: 1262
+  height: 1246
+  purpose: style_reference
+  weight: 1.0
+- path: Assets/Art/Soft2D/DustBunny.png
+  profile: vacuum_survivor
+  category: enemies
+  width: 1263
+  height: 1246
+  purpose: style_reference
+  weight: 1.0
+- path: Assets/Art/Soft2D/Bosses/ConMeo.png
+  profile: vacuum_survivor
+  category: bosses
+  width: 1263
+  height: 1246
+  purpose: style_reference
+  weight: 1.0
+- path: Assets/Art/Soft2D/Pickups/Battery.png
+  profile: vacuum_survivor
+  category: pickups
+  width: 1247
+  height: 1261
+  purpose: style_reference
+  weight: 1.0
+- path: Assets/Art/Soft2D/ParquetFloor.png
+  profile: vacuum_survivor
+  category: tiles
+  width: 1254
+  height: 1254
+  purpose: style_reference
+  weight: 1.0

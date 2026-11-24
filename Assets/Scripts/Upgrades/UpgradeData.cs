@@ -11,6 +11,7 @@ namespace VacuumSurvivor
         public UpgradeType type;
         public string title;
         [TextArea] public string description;
+        public Sprite icon;
         public float[] valuePerLevel = { 1f };
         public int maxLevel = 5;
     }

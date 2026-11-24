@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace VacuumSurvivor
 {
-    /// One room of the three-room campaign: its wave curve, its boss, a floor tint and how long the
-    /// survival timer runs before the boss appears.
+    /// Wave curve, boss, layout and survival timer for a campaign room.
     [System.Serializable]
     public class LevelConfig
     {
@@ -12,6 +12,7 @@ namespace VacuumSurvivor
         public WaveData waves;
         public GameObject bossPrefab;
         public Color floorTint = Color.white;
+        public Vector2 roomSize;
         public float duration = 180f;
     }
 
@@ -76,9 +77,14 @@ namespace VacuumSurvivor
             if (Current == State.Transition)
             {
                 transitionTimer -= Time.unscaledDeltaTime;
-                if (transitionTimer <= 0f) Current = State.Playing;
+                if (transitionTimer <= 0f)
+                {
+                    Current = State.Playing;
+                    Time.timeScale = 1f;
+                }
                 return;
             }
+            if (Keyboard.current?.escapeKey.wasPressedThisFrame == true) TogglePause();
             if (Current != State.Playing) return;
             Elapsed += Time.deltaTime;
             // Surviving the slice no longer wins outright: it summons the boss, and only killing
@@ -87,6 +93,20 @@ namespace VacuumSurvivor
             {
                 bossPhase = true;
                 GameEvents.RaiseBossPhase();
+            }
+        }
+
+        void TogglePause()
+        {
+            if (Current == State.Paused)
+            {
+                Current = State.Playing;
+                Time.timeScale = 1f;
+            }
+            else if (Current == State.Playing && Time.timeScale > 0f)
+            {
+                Current = State.Paused;
+                Time.timeScale = 0f;
             }
         }
 
@@ -104,9 +124,10 @@ namespace VacuumSurvivor
             Elapsed = 0f;
             var stats = Player != null ? Player.GetComponent<PlayerStats>() : null;
             if (stats != null) stats.RechargeFull();
-            ApplyLevel(campaign.Index);
             Current = State.Transition;
             transitionTimer = TransitionDuration;
+            Time.timeScale = 0f;
+            ApplyLevel(campaign.Index);
         }
 
         void ApplyLevel(int index)
@@ -119,6 +140,23 @@ namespace VacuumSurvivor
 
             var floor = FindFirstObjectByType<ProceduralFloor>();
             if (floor != null) floor.GetComponent<SpriteRenderer>().color = cfg.floorTint;
+
+            var room = RoomBounds.Instance;
+            if (room != null && cfg.roomSize.x > 0f && cfg.roomSize.y > 0f)
+            {
+                room.Resize(cfg.roomSize);
+                if (Player != null && Player.TryGetComponent<Rigidbody2D>(out var body))
+                {
+                    body.position = room.Clamp(body.position, RoomBounds.RadiusOf(body.gameObject));
+                    body.linearVelocity = Vector2.zero;
+                }
+                foreach (var pickup in FindObjectsByType<Dust>(FindObjectsSortMode.None))
+                    pickup.transform.position = room.Clamp(pickup.transform.position, RoomBounds.RadiusOf(pickup.gameObject));
+                foreach (var pickup in FindObjectsByType<PowerUp>(FindObjectsSortMode.None))
+                    pickup.transform.position = room.Clamp(pickup.transform.position, RoomBounds.RadiusOf(pickup.gameObject));
+                foreach (var dock in FindObjectsByType<ChargingDock>(FindObjectsSortMode.None))
+                    dock.transform.position = room.Clamp(dock.transform.position, RoomBounds.RadiusOf(dock.gameObject));
+            }
 
             GameEvents.RaiseLevelChanged(index, cfg.name);
         }

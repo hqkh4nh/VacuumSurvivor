@@ -25,6 +25,11 @@ namespace VacuumSurvivor
         void OnEnable() => GameEvents.PlayerLevelChanged += OnLevelUp;
         void OnDisable() => GameEvents.PlayerLevelChanged -= OnLevelUp;
 
+        void Update()
+        {
+            if (pending > 0) TryShowNext();
+        }
+
         void OnLevelUp(int level)
         {
             pending++;

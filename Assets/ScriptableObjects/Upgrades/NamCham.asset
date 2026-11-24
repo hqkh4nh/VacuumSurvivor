@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeData
   type: 3
   title: "Nam ch\xE2m"
-  description: "+35% b\xE1n k\xEDnh nh\u1EB7t b\u1EE5i."
+  description: "+35% b\u00e1n k\u00ednh nh\u1eb7t b\u1ee5i."
+  icon: {fileID: 21300000, guid: 2779e76d7f5d4b338e6f5fc886005729, type: 3}
   valuePerLevel:
   - 0.35
   - 0.35

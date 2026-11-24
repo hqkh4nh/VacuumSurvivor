@@ -35,6 +35,7 @@ namespace VacuumSurvivor
             message.color = color;
             stats.text = Summary(won);
             root.SetActive(true);
+            PanelEntrance.Play(root, 0.28f);
         }
 
         static string Summary(bool won)

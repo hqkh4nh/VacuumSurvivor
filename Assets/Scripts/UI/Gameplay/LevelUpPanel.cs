@@ -12,6 +12,7 @@ namespace VacuumSurvivor
         [SerializeField] GameObject root;
         [SerializeField] Text[] titles = new Text[3];
         [SerializeField] Text[] descs = new Text[3];
+        [SerializeField] Image[] icons = new Image[3];
         [SerializeField] Button[] buttons = new Button[3];
         Action<int> onPick;
 
@@ -27,10 +28,17 @@ namespace VacuumSurvivor
                 bool has = i < options.Count;
                 buttons[i].gameObject.SetActive(has);
                 if (!has) continue;
-                titles[i].text = options[i].title;
-                descs[i].text = options[i].description;
+                var option = options[i];
+                titles[i].text = option.title;
+                descs[i].text = option.description;
+                if (i < icons.Length && icons[i] != null)
+                {
+                    icons[i].sprite = option.icon;
+                    icons[i].enabled = option.icon != null;
+                }
             }
             root.SetActive(true);
+            PanelEntrance.Play(root);
             Time.timeScale = 0f;
         }
 

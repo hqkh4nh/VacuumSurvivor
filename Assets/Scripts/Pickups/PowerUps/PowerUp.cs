@@ -18,6 +18,7 @@ namespace VacuumSurvivor
         float batteryAmount, bombRadius, bombDamage, lifetime, age;
         int enemyMask;
         SpriteRenderer art;
+        Color signalColor;
 
         void Awake()
         {
@@ -33,8 +34,15 @@ namespace VacuumSurvivor
             bombDamage = damage;
             lifetime = life;
             age = 0f;
+            signalColor = k switch
+            {
+                PowerUpKind.Battery => BatteryColor.Green,
+                PowerUpKind.Magnet => new Color(0.58f, 0.95f, 1f),
+                _ => new Color(1f, 0.72f, 0.43f)
+            };
             if (art != null)
             {
+                art.color = Color.white;
                 switch (k)
                 {
                     case PowerUpKind.Battery: art.sprite = batterySprite; break;
@@ -47,7 +55,18 @@ namespace VacuumSurvivor
         void Update()
         {
             age += Time.deltaTime;
-            if (age >= lifetime) Despawn();
+            if (age >= lifetime)
+            {
+                Despawn();
+                return;
+            }
+            if (art == null) return;
+
+            float pulse = 0.5f + 0.5f * Mathf.Cos(age * 5f);
+            var color = Color.Lerp(Color.white, signalColor, 0.38f * pulse);
+            if (lifetime - age < 1.4f)
+                color.a = Mathf.Lerp(0.55f, 1f, 0.5f + 0.5f * Mathf.Cos(age * 14f));
+            art.color = color;
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -55,6 +74,7 @@ namespace VacuumSurvivor
             var stats = other.GetComponent<PlayerStats>();
             if (stats == null) return;
             Apply(stats);
+            WorldFeedback.Pickup(transform.position, signalColor);
             GameEvents.RaisePowerUp(kind);
             Despawn();
         }

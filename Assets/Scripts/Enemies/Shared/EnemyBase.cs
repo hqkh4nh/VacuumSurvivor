@@ -28,6 +28,7 @@ namespace VacuumSurvivor
         protected Transform player;
 
         float flashUntil;
+        float nextSpark;
 
         protected virtual void Awake()
         {
@@ -37,6 +38,8 @@ namespace VacuumSurvivor
 
         protected virtual void OnEnable()
         {
+            flashUntil = 0f;
+            nextSpark = 0f;
             health = new Health(data.maxHealth);
             player = GameManager.Instance != null ? GameManager.Instance.Player : null;
             sr.color = data.bodyColor;
@@ -73,10 +76,17 @@ namespace VacuumSurvivor
             health.Damage(amount);
             sr.color = data.hitFlashColor;
             flashUntil = Time.time + 0.1f;
+            Vector2 away = Vector2.right;
             if (player != null)
             {
-                Vector2 away = ((Vector2)transform.position - (Vector2)player.position).normalized;
+                away = ((Vector2)transform.position - (Vector2)player.position).normalized;
                 rb.AddForce(away * knockback, ForceMode2D.Impulse);
+            }
+
+            if (amount > 0f && (health.IsDead || Time.time >= nextSpark))
+            {
+                nextSpark = Time.time + 0.24f;
+                WorldFeedback.Hit(transform.position, away, Color.white, health.IsDead ? 1.05f : 0.65f);
             }
             if (health.IsDead) Die();
         }

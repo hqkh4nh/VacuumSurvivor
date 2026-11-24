@@ -772,6 +772,7 @@ Hệ thống âm thanh do `AudioManager` quản lý (nhạc nền + hiệu ứng
 - Chế độ chơi bất tận (endless) sau khi hoàn thành 3 màn.
 - Bảng xếp hạng trực tuyến thay cho bảng điểm cao cục bộ.
 - Thêm boss và nâng cấp đánh đổi để tăng chiều sâu chiến thuật.
+- **Túi chứa rác nhiệm vụ (đang cân nhắc, thực hiện nếu còn thời gian).** Robot có túi chứa hữu hạn để gom rác tại các khu bẩn và mang về trạm. Người chơi cân nhắc quay về đổ túi và sạc pin hay đi tiếp để gom thêm. Bụi từ quái vẫn dùng để lên cấp. Có thể thử ở một phòng sau khi bản hiện tại đã hoàn thiện và chơi thử ổn định. Ý tưởng này nằm ngoài phạm vi bản nộp hiện tại.
 
 ---
 

@@ -45,6 +45,7 @@ namespace VacuumSurvivor
             battery.Damage(amount);
             GameEvents.RaiseBattery(battery.Current, battery.Max);
             GameEvents.RaisePlayerHurt();
+            WorldFeedback.Hit(transform.position, Vector2.up, new Color(1f, 0.64f, 0.55f), 1.25f);
             if (battery.IsDead) Die();
         }
 

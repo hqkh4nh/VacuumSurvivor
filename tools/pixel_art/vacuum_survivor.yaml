@@ -1,0 +1,5 @@
+schema_version: 1
+name: vacuum_survivor
+request_defaults:
+  style:
+    dithering: 'off'

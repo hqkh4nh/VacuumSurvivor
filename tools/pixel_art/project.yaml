@@ -1,0 +1,7 @@
+schema_version: 1
+work_dir: Temp/pixel_art_work
+reference_catalog: reference_catalog.yaml
+promotion_roots:
+  - Assets/Art
+profiles:
+  vacuum_survivor: vacuum_survivor.yaml

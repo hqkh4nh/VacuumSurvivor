@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeData
   type: 7
   title: "V\u1EC7t lau s\xE0n"
-  description: "\u0110\u1EC3 l\u1EA1i v\u1EC7t n\u01B0\u1EDBc ph\xEDa sau, r\xE1c
-    \u0111i qua b\u1ECB m\u1EA5t m\xE1u. Ch\u1ECDn l\u1EA1i \u0111\u1EC3 l\xEAn c\u1EA5p."
+  description: "\u0110\u1ec3 l\u1ea1i v\u1ec7t n\u01b0\u1edbc g\u00e2y s\u00e1t th\u01b0\u01a1ng l\u00ean r\u00e1c \u0111i qua."
+  icon: {fileID: 21300000, guid: c6b38c7538ed4256a893f584c5d07ce5, type: 3}
   valuePerLevel:
   - 0
   - 0

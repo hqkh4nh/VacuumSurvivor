@@ -1674,16 +1674,19 @@ MonoBehaviour:
     waves: {fileID: 11400000, guid: 43566d3c8466aae44a788529fdc8204a, type: 2}
     bossPrefab: {fileID: 421624873975310295, guid: 5916c7e0abed7a946adfc2116c35df6b, type: 3}
     floorTint: {r: 1, g: 1, b: 1, a: 1}
+    roomSize: {x: 32, y: 24}
     duration: 180
   - name: "Ph\xF2ng ng\u1EE7"
     waves: {fileID: 11400000, guid: 09a5effa9cfb5fb4caa72b801aa9be44, type: 2}
     bossPrefab: {fileID: 4244172435437717183, guid: 9c8d2350cbb234a44bbd7fc3b9882189, type: 3}
     floorTint: {r: 0.82, g: 0.88, b: 1, a: 1}
+    roomSize: {x: 22, y: 18}
     duration: 180
   - name: "Nh\xE0 b\u1EBFp"
     waves: {fileID: 11400000, guid: bf6ff79466a96c241bbb0a7e4b0531ae, type: 2}
     bossPrefab: {fileID: 2415080519861395408, guid: dc3910e43dfc4754faea70b32e8cb142, type: 3}
     floorTint: {r: 1, g: 0.92, b: 0.82, a: 1}
+    roomSize: {x: 34, y: 18}
     duration: 180
 --- !u!4 &1549475529
 Transform:

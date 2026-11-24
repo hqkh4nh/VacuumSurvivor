@@ -12,10 +12,21 @@ namespace VacuumSurvivor
         [SerializeField] GameObject highScores;
         [SerializeField] Text highScoreText;
 
+        RectTransform portrait;
+        Vector2 portraitRest;
+
         void Awake()
         {
             instructions.SetActive(false);
             highScores.SetActive(false);
+            portrait = transform.Find("RobotPortrait") as RectTransform;
+            if (portrait != null) portraitRest = portrait.anchoredPosition;
+        }
+
+        void Update()
+        {
+            if (portrait == null || instructions.activeSelf || highScores.activeSelf) return;
+            portrait.anchoredPosition = portraitRest + Vector2.up * (4f * Mathf.Sin(Time.unscaledTime * 2.3f));
         }
 
         public void PlayGame()
@@ -24,7 +35,11 @@ namespace VacuumSurvivor
             SceneManager.LoadScene("Game");
         }
 
-        public void ShowInstructions() => instructions.SetActive(true);
+        public void ShowInstructions()
+        {
+            instructions.SetActive(true);
+            PanelEntrance.Play(instructions);
+        }
         public void CloseInstructions() => instructions.SetActive(false);
         public void CloseHighScores() => highScores.SetActive(false);
         public void QuitGame() => Application.Quit();
@@ -39,6 +54,7 @@ namespace VacuumSurvivor
                     sb.Append($"{i + 1}. {entries[i].score} điểm · Cấp {entries[i].level} · {entries[i].date}\n");
             highScoreText.text = sb.ToString();
             highScores.SetActive(true);
+            PanelEntrance.Play(highScores);
         }
 
     }

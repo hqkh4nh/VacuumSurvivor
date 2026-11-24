@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeData
   type: 8
   title: "Tia qu\xE9t LIDAR"
-  description: "Qu\xE9t m\u1ED9t tia laser xoay v\xF2ng, g\xE2y s\xE1t th\u01B0\u01A1ng
-    r\xE1c tr\xEAn \u0111\u01B0\u1EDDng. Ch\u1ECDn l\u1EA1i \u0111\u1EC3 l\xEAn c\u1EA5p."
+  description: "Tia laser xoay quanh robot, g\u00e2y s\u00e1t th\u01b0\u01a1ng l\u00ean r\u00e1c tr\u00ean \u0111\u01b0\u1eddng qu\u00e9t."
+  icon: {fileID: 21300000, guid: 86a6795591244997b4d0d7ff8716298d, type: 3}
   valuePerLevel:
   - 0
   - 0
