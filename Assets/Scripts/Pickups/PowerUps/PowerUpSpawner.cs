@@ -34,7 +34,7 @@ namespace VacuumSurvivor
             if (powerUpPrefab == null) return;
             if (!PowerUpRoll.ShouldDrop(rng.NextDouble(), dropChance)) return;
 
-            if (RoomBounds.Instance != null) pos = RoomBounds.Instance.Clamp(pos, RoomBounds.RadiusOf(powerUpPrefab));
+            if (RoomBounds.Instance != null) pos = RoomBounds.Instance.ClearPosition(pos, RoomBounds.RadiusOf(powerUpPrefab));
             var go = pool.Get(pos);
             var pu = go.GetComponent<PowerUp>();
             pu.Pool = pool;

@@ -96,7 +96,7 @@ namespace VacuumSurvivor
             }
         }
 
-        void TogglePause()
+        public void TogglePause()
         {
             if (Current == State.Paused)
             {
@@ -145,17 +145,18 @@ namespace VacuumSurvivor
             if (room != null && cfg.roomSize.x > 0f && cfg.roomSize.y > 0f)
             {
                 room.Resize(cfg.roomSize);
+                room.Furnish(index);
                 if (Player != null && Player.TryGetComponent<Rigidbody2D>(out var body))
                 {
-                    body.position = room.Clamp(body.position, RoomBounds.RadiusOf(body.gameObject));
+                    body.position = room.ClearPosition(body.position, RoomBounds.RadiusOf(body.gameObject));
                     body.linearVelocity = Vector2.zero;
                 }
                 foreach (var pickup in FindObjectsByType<Dust>(FindObjectsSortMode.None))
-                    pickup.transform.position = room.Clamp(pickup.transform.position, RoomBounds.RadiusOf(pickup.gameObject));
+                    pickup.transform.position = room.ClearPosition(pickup.transform.position, RoomBounds.RadiusOf(pickup.gameObject));
                 foreach (var pickup in FindObjectsByType<PowerUp>(FindObjectsSortMode.None))
-                    pickup.transform.position = room.Clamp(pickup.transform.position, RoomBounds.RadiusOf(pickup.gameObject));
+                    pickup.transform.position = room.ClearPosition(pickup.transform.position, RoomBounds.RadiusOf(pickup.gameObject));
                 foreach (var dock in FindObjectsByType<ChargingDock>(FindObjectsSortMode.None))
-                    dock.transform.position = room.Clamp(dock.transform.position, RoomBounds.RadiusOf(dock.gameObject));
+                    dock.transform.position = room.ClearPosition(dock.transform.position, RoomBounds.RadiusOf(dock.gameObject));
             }
 
             GameEvents.RaiseLevelChanged(index, cfg.name);

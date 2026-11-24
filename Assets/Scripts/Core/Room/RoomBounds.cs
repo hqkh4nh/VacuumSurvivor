@@ -9,6 +9,17 @@ namespace VacuumSurvivor
 
         [SerializeField] Vector2 size = new Vector2(32f, 24f);
         [SerializeField] float wallThickness = 0.5f;
+        RoomFurniture furniture;
+
+        internal void Furnish(int index)
+        {
+            if (furniture != null)
+            {
+                furniture.gameObject.SetActive(false);
+                Destroy(furniture.gameObject);
+            }
+            furniture = RoomFurniture.Build(this, index);
+        }
 
         public Vector2 Size => size;
         Vector2 Scale => new Vector2(Mathf.Abs(transform.lossyScale.x), Mathf.Abs(transform.lossyScale.y));
@@ -63,6 +74,12 @@ namespace VacuumSurvivor
         }
 
         public Vector2 Clamp(Vector2 point, float radius = 0f) => RoomGeometry.Clamp(Area, point, Vector2.one * radius);
+
+        public Vector2 ClearPosition(Vector2 point, float radius = 0f)
+        {
+            var position = Clamp(point, radius);
+            return furniture != null ? furniture.ClearPosition(position, radius) : position;
+        }
 
         public static float RadiusOf(GameObject body)
         {

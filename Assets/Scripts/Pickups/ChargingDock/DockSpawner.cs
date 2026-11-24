@@ -12,6 +12,9 @@ namespace VacuumSurvivor
         GameObjectPool pool;
         float timer;
         Transform player;
+        GameObject activeDock;
+
+        public Transform ActiveDock => activeDock != null && activeDock.activeInHierarchy ? activeDock.transform : null;
 
         public void Configure(GameObject prefab) => dockPrefab = prefab;
 
@@ -34,9 +37,10 @@ namespace VacuumSurvivor
             timer = 0f;
 
             Vector2 pos = (Vector2)player.position + Random.insideUnitCircle.normalized * spawnRadius;
-            if (RoomBounds.Instance != null) pos = RoomBounds.Instance.Clamp(pos, RoomBounds.RadiusOf(dockPrefab));
+            if (RoomBounds.Instance != null) pos = RoomBounds.Instance.ClearPosition(pos, RoomBounds.RadiusOf(dockPrefab));
             var go = pool.Get(pos);
             go.GetComponent<ChargingDock>().Pool = pool;
+            activeDock = go;
         }
     }
 }

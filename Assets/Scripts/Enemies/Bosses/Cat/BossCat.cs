@@ -99,7 +99,7 @@ namespace VacuumSurvivor
         {
             Vector2 around = player != null ? (Vector2)player.position : Vector2.zero;
             roamTarget = around + Random.insideUnitCircle * roamRadius;
-            if (RoomBounds.Instance != null) roamTarget = RoomBounds.Instance.Clamp(roamTarget, RoomBounds.RadiusOf(gameObject));
+            if (RoomBounds.Instance != null) roamTarget = RoomBounds.Instance.ClearPosition(roamTarget, RoomBounds.RadiusOf(gameObject));
         }
 
         public override void TakeDamage(float amount)

@@ -82,7 +82,7 @@ namespace VacuumSurvivor
             if (bossPrefab == null) return;
             if (player == null && GameManager.Instance != null) player = GameManager.Instance.Player;
             Vector2 position = player != null ? RingPosition(RoomBounds.RadiusOf(bossPrefab)) : Vector2.zero;
-            if (RoomBounds.Instance != null) position = RoomBounds.Instance.Clamp(position, RoomBounds.RadiusOf(bossPrefab));
+            if (RoomBounds.Instance != null) position = RoomBounds.Instance.ClearPosition(position, RoomBounds.RadiusOf(bossPrefab));
             Instantiate(bossPrefab, position, Quaternion.identity);
         }
 
@@ -138,7 +138,7 @@ namespace VacuumSurvivor
         public GameObject SpawnAt(EnemyData data, Vector2 pos)
         {
             if (!pools.TryGetValue(data, out var pool)) return null;
-            if (RoomBounds.Instance != null) pos = RoomBounds.Instance.Clamp(pos, RoomBounds.RadiusOf(pool.Prefab));
+            if (RoomBounds.Instance != null) pos = RoomBounds.Instance.ClearPosition(pos, RoomBounds.RadiusOf(pool.Prefab));
             var obj = pool.Get(pos);
             obj.GetComponent<EnemyBase>().Pool = pool;
             activeCount++;

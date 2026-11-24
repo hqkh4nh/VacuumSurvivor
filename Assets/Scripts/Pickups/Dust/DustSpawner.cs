@@ -29,7 +29,7 @@ namespace VacuumSurvivor
             for (int i = 0; i < n; i++)
             {
                 Vector2 position = pos + Random.insideUnitCircle * 0.3f;
-                if (RoomBounds.Instance != null) position = RoomBounds.Instance.Clamp(position, RoomBounds.RadiusOf(dustPrefab));
+                if (RoomBounds.Instance != null) position = RoomBounds.Instance.ClearPosition(position, RoomBounds.RadiusOf(dustPrefab));
                 var go = pool.Get(position);
                 var dust = go.GetComponent<Dust>();
                 dust.Pool = pool;

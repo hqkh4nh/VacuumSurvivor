@@ -73,6 +73,12 @@ namespace VacuumSurvivor
 
         void Start()
         {
+            if (GameManager.Instance != null)
+            {
+                var plate = transform.Find("RoomPlate");
+                var frame = plate != null ? plate.GetComponent<Image>()?.sprite : null;
+                gameObject.AddComponent<GameplayOverlay>().Configure(timerLabel.font, frame);
+            }
             var player = GameManager.Instance != null ? GameManager.Instance.Player : null;
             if (player == null) return;
             var stats = player.GetComponent<PlayerStats>();
