@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: fb34028fb445fca478870cd9ba79849d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1350248803566446368
+    second: MediaConsole_0
+  - first:
+      213: -324665187256112595
+    second: MediaConsole_1
+  - first:
+      213: 1370355084001311014
+    second: MediaConsole_2
+  - first:
+      213: -5643727590386733465
+    second: MediaConsole_3
+  - first:
+      213: -7224598302155041251
+    second: MediaConsole_4
+  - first:
+      213: -4051843494848426077
+    second: MediaConsole_5
+  - first:
+      213: -1838347708140722244
+    second: MediaConsole_6
+  - first:
+      213: -1881742177000056402
+    second: MediaConsole_7
+  - first:
+      213: 6618514680193084747
+    second: MediaConsole_8
+  - first:
+      213: 2984526140519666316
+    second: MediaConsole_9
+  - first:
+      213: 6991320469936339449
+    second: MediaConsole_10
+  - first:
+      213: 3942810139055347033
+    second: MediaConsole_11
+  - first:
+      213: 6876360737925512146
+    second: MediaConsole_12
+  - first:
+      213: -3690821193053720989
+    second: MediaConsole_13
+  - first:
+      213: 6787156215883438213
+    second: MediaConsole_14
+  - first:
+      213: -60303559843827833
+    second: MediaConsole_15
+  - first:
+      213: -4831323680656271801
+    second: MediaConsole_16
+  - first:
+      213: -178141362864931416
+    second: MediaConsole_17
+  - first:
+      213: -4821216929857348509
+    second: MediaConsole_18
+  - first:
+      213: 4648487223559518142
+    second: MediaConsole_19
+  - first:
+      213: -8143294182116092486
+    second: MediaConsole_20
+  - first:
+      213: -344382481926668728
+    second: MediaConsole_21
+  - first:
+      213: 9208049128575812326
+    second: MediaConsole_22
+  - first:
+      213: -2777323467476592819
+    second: MediaConsole_23
+  - first:
+      213: -5251386748821036390
+    second: MediaConsole_24
+  - first:
+      213: 5328069980160640360
+    second: MediaConsole_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MediaConsole_0
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 675
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02769f6022c0db210800000000000000
+      internalID: 1350248803566446368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_1
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 659
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ae9aa7bbe8e7bf0800000000000000
+      internalID: -324665187256112595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_2
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 642
+        width: 86
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6297c0e30ba740310800000000000000
+      internalID: 1370355084001311014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_3
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 644
+        width: 172
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e6de588a37da1b0800000000000000
+      internalID: -5643727590386733465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_4
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 656
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16982b2f121dbb90800000000000000
+      internalID: -7224598302155041251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_5
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 654
+        width: 46
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af051c1fc5f4c7c0800000000000000
+      internalID: -4051843494848426077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_6
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 642
+        width: 187
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb76e9adf70ec76e0800000000000000
+      internalID: -1838347708140722244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_7
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 651
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea99a0db575b2e5e0800000000000000
+      internalID: -1881742177000056402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_8
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 681
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ded950900b9db50800000000000000
+      internalID: 6618514680193084747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_9
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 649
+        width: 60
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c82da8c46ba2b6920800000000000000
+      internalID: 2984526140519666316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_10
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 664
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9f8710de8260160800000000000000
+      internalID: 6991320469936339449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_11
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 649
+        width: 65
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 955d33b7eeca7b630800000000000000
+      internalID: 3942810139055347033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_12
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 657
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db3e7b98adbd6f50800000000000000
+      internalID: 6876360737925512146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_13
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 659
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36eac820ea197ccc0800000000000000
+      internalID: -3690821193053720989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_14
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 648
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58811d25e92d03e50800000000000000
+      internalID: 6787156215883438213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_15
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 649
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f21d85b32c92ff0800000000000000
+      internalID: -60303559843827833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_16
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 665
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746dc8bb5b0b3fcb0800000000000000
+      internalID: -4831323680656271801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_17
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 659
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8adb1a2df5d178df0800000000000000
+      internalID: -178141362864931416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_18
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 651
+        width: 57
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36cd0c60fb8971db0800000000000000
+      internalID: -4821216929857348509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_19
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 657
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb7f437408eb28040800000000000000
+      internalID: 4648487223559518142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_20
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 640
+        width: 97
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5177d16153dfe80800000000000000
+      internalID: -8143294182116092486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1998
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84eb4e115f1883bf0800000000000000
+      internalID: -344382481926668728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_22
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 642
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e24b1765ef89cf70800000000000000
+      internalID: 9208049128575812326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_23
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 648
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4793be6507f479d0800000000000000
+      internalID: -2777323467476592819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_24
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 650
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92245233935f17b0800000000000000
+      internalID: -5251386748821036390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediaConsole_25
+      rect:
+        serializedVersion: 2
+        x: 2091
+        y: 601
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865c5e9ea6b11f940800000000000000
+      internalID: 5328069980160640360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MediaConsole_0: 1350248803566446368
+      MediaConsole_1: -324665187256112595
+      MediaConsole_10: 6991320469936339449
+      MediaConsole_11: 3942810139055347033
+      MediaConsole_12: 6876360737925512146
+      MediaConsole_13: -3690821193053720989
+      MediaConsole_14: 6787156215883438213
+      MediaConsole_15: -60303559843827833
+      MediaConsole_16: -4831323680656271801
+      MediaConsole_17: -178141362864931416
+      MediaConsole_18: -4821216929857348509
+      MediaConsole_19: 4648487223559518142
+      MediaConsole_2: 1370355084001311014
+      MediaConsole_20: -8143294182116092486
+      MediaConsole_21: -344382481926668728
+      MediaConsole_22: 9208049128575812326
+      MediaConsole_23: -2777323467476592819
+      MediaConsole_24: -5251386748821036390
+      MediaConsole_25: 5328069980160640360
+      MediaConsole_3: -5643727590386733465
+      MediaConsole_4: -7224598302155041251
+      MediaConsole_5: -4051843494848426077
+      MediaConsole_6: -1838347708140722244
+      MediaConsole_7: -1881742177000056402
+      MediaConsole_8: 6618514680193084747
+      MediaConsole_9: 2984526140519666316
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

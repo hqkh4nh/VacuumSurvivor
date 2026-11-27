@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.TestTools.Utils;
 using VacuumSurvivor;
 
 public class PngArtTests
@@ -35,17 +36,17 @@ public class PngArtTests
     }
 
     [Test]
-    public void Game_scene_uses_robot_and_tiled_floor_PNGs_with_the_original_colliders()
+    public void Game_scene_uses_robot_and_authored_floor_PNGs_with_the_original_colliders()
     {
         var scene = EditorSceneManager.OpenPreviewScene("Assets/Scenes/Game.unity");
         try
         {
             PlayerController player = null;
-            ProceduralFloor floor = null;
+            RoomLayout floor = null;
             foreach (var root in scene.GetRootGameObjects())
             {
                 if (root.GetComponent<PlayerController>() != null) player = root.GetComponent<PlayerController>();
-                if (root.GetComponent<ProceduralFloor>() != null) floor = root.GetComponent<ProceduralFloor>();
+                if (root.GetComponent<RoomBounds>() != null) floor = root.GetComponentInChildren<RoomLayout>();
             }
             Assert.That(player, Is.Not.Null);
             Assert.That(player.GetComponent<SpriteRenderer>().sprite, Is.SameAs(AssetDatabase.LoadAssetAtPath<Sprite>(Art + "Robot.png")));
@@ -54,34 +55,13 @@ public class PngArtTests
             Assert.That(player.GetComponent<CircleCollider2D>().radius, Is.EqualTo(0.45f));
             Assert.That(player.GetComponent<BatteryLED>(), Is.Not.Null);
             Assert.That(floor, Is.Not.Null);
-            var renderer = floor.GetComponent<SpriteRenderer>();
-            Assert.That(renderer.sprite, Is.SameAs(AssetDatabase.LoadAssetAtPath<Sprite>(Art + "ParquetFloor.png")));
+            var renderer = floor.Floor;
+            Assert.That(renderer.sprite, Is.SameAs(AssetDatabase.LoadAssetAtPath<Sprite>(Art + "Rooms/LivingFloor.png")));
             Assert.That(renderer.sprite, Is.Not.Null);
-            Assert.That(renderer.drawMode, Is.EqualTo(SpriteDrawMode.Tiled));
-            Assert.That(renderer.size, Is.EqualTo(new Vector2(32f, 24f)));
+            Assert.That(renderer.drawMode, Is.EqualTo(SpriteDrawMode.Simple));
+            Assert.That((Vector2)renderer.bounds.size, Is.EqualTo(new Vector2(32f, 24f)).Using(Vector2ComparerWithEqualsOperator.Instance));
         }
         finally { EditorSceneManager.ClosePreviewScene(scene); }
-    }
-
-    [Test]
-    public void Floor_startup_preserves_an_authored_sprite()
-    {
-        var go = new GameObject("Floor test");
-        var texture = new Texture2D(4, 4);
-        var sprite = Sprite.Create(texture, new Rect(0, 0, 4, 4), Vector2.one * 0.5f, 1f, 0, SpriteMeshType.FullRect);
-        try
-        {
-            go.AddComponent<SpriteRenderer>().sprite = sprite;
-            var floor = go.AddComponent<ProceduralFloor>();
-            typeof(ProceduralFloor).GetMethod("Awake", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(floor, null);
-            Assert.That(go.GetComponent<SpriteRenderer>().sprite, Is.SameAs(sprite));
-        }
-        finally
-        {
-            Object.DestroyImmediate(go);
-            Object.DestroyImmediate(sprite);
-            Object.DestroyImmediate(texture);
-        }
     }
 
     [Test]

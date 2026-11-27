@@ -11,8 +11,6 @@ namespace VacuumSurvivor
         public string name = "Phòng khách";
         public WaveData waves;
         public GameObject bossPrefab;
-        public Color floorTint = Color.white;
-        public Vector2 roomSize;
         public float duration = 180f;
     }
 
@@ -138,14 +136,10 @@ namespace VacuumSurvivor
             var spawner = FindFirstObjectByType<EnemySpawner>();
             if (spawner != null) { spawner.Reconfigure(cfg.waves, cfg.bossPrefab); spawner.ClearLive(); }
 
-            var floor = FindFirstObjectByType<ProceduralFloor>();
-            if (floor != null) floor.GetComponent<SpriteRenderer>().color = cfg.floorTint;
-
             var room = RoomBounds.Instance;
-            if (room != null && cfg.roomSize.x > 0f && cfg.roomSize.y > 0f)
+            if (room != null)
             {
-                room.Resize(cfg.roomSize);
-                room.Furnish(index);
+                room.SelectLayout(index);
                 if (Player != null && Player.TryGetComponent<Rigidbody2D>(out var body))
                 {
                     body.position = room.ClearPosition(body.position, RoomBounds.RadiusOf(body.gameObject));

@@ -63,14 +63,15 @@ public class RoomBoundsTests
         var room = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Maps/Room.prefab");
         Assert.That(room, Is.Not.Null);
         Assert.That(room.GetComponent("RoomBounds"), Is.Not.Null);
-        Assert.That(room.GetComponent<SpriteRenderer>().size, Is.EqualTo(new Vector2(32f, 24f)));
-        var walls = room.GetComponentsInChildren<BoxCollider2D>();
-        Assert.That(walls.Length, Is.EqualTo(4));
-        foreach (var wall in walls) Assert.That(wall.isTrigger, Is.False);
-        Assert.That(room.transform.Find("NorthWall").localPosition.y, Is.EqualTo(12.25f));
-        Assert.That(room.transform.Find("SouthWall").localPosition.y, Is.EqualTo(-12.25f));
-        Assert.That(room.transform.Find("EastWall").localPosition.x, Is.EqualTo(16.25f));
-        Assert.That(room.transform.Find("WestWall").localPosition.x, Is.EqualTo(-16.25f));
+        Assert.That(room.GetComponent<RoomBounds>().Size, Is.EqualTo(new Vector2(32f, 24f)));
+        var layout = room.GetComponentInChildren<RoomLayout>();
+        var walls = new SerializedObject(layout).FindProperty("walls");
+        Assert.That(walls.arraySize, Is.EqualTo(4));
+        for (int i = 0; i < walls.arraySize; i++) Assert.That(((BoxCollider2D)walls.GetArrayElementAtIndex(i).objectReferenceValue).isTrigger, Is.False);
+        Assert.That(layout.transform.Find("NorthWall").localPosition.y, Is.EqualTo(12.25f));
+        Assert.That(layout.transform.Find("SouthWall").localPosition.y, Is.EqualTo(-12.25f));
+        Assert.That(layout.transform.Find("EastWall").localPosition.x, Is.EqualTo(16.25f));
+        Assert.That(layout.transform.Find("WestWall").localPosition.x, Is.EqualTo(-16.25f));
     }
 
     [Test]
@@ -79,13 +80,13 @@ public class RoomBoundsTests
         var scene = EditorSceneManager.OpenPreviewScene("Assets/Scenes/Game.unity");
         try
         {
-            ProceduralFloor floor = null;
+            RoomBounds room = null;
             foreach (var root in scene.GetRootGameObjects())
-                if (root.GetComponent<ProceduralFloor>() != null) floor = root.GetComponent<ProceduralFloor>();
-            Assert.That(floor, Is.Not.Null);
-            Assert.That(floor.GetComponent<SpriteRenderer>().size, Is.EqualTo(new Vector2(32f, 24f)));
-            Assert.That(floor.GetComponent("RoomBounds"), Is.Not.Null);
-            Assert.That(PrefabUtility.GetCorrespondingObjectFromSource(floor), Is.Not.Null);
+                if (root.GetComponent<RoomBounds>() != null) room = root.GetComponent<RoomBounds>();
+            Assert.That(room, Is.Not.Null);
+            Assert.That(room.Size, Is.EqualTo(new Vector2(32f, 24f)));
+            Assert.That(room.GetComponentInChildren<RoomLayout>(), Is.Not.Null);
+            Assert.That(PrefabUtility.GetCorrespondingObjectFromSource(room), Is.Not.Null);
         }
         finally { EditorSceneManager.ClosePreviewScene(scene); }
     }

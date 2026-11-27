@@ -2,83 +2,47 @@ using UnityEngine;
 
 namespace VacuumSurvivor
 {
-    /// Owns the room's playable rectangle; the existing floor and walls follow its Inspector size.
+    /// Owns the playable rectangle and selects existing room prefabs.
     public class RoomBounds : MonoBehaviour
     {
         public static RoomBounds Instance { get; private set; }
 
         [SerializeField] Vector2 size = new Vector2(32f, 24f);
         [SerializeField] float wallThickness = 0.5f;
-        RoomFurniture furniture;
+        [SerializeField] RoomLayout[] layouts;
+        [SerializeField] int selectedLayout;
 
-        internal void Furnish(int index)
+        public RoomLayout ActiveLayout => layouts != null && layouts.Length > 0 ? layouts[selectedLayout] : null;
+        public Vector2 Size => ActiveLayout != null ? ActiveLayout.Size : size;
+
+        public void SelectLayout(int index)
         {
-            if (furniture != null)
-            {
-                furniture.gameObject.SetActive(false);
-                Destroy(furniture.gameObject);
-            }
-            furniture = RoomFurniture.Build(this, index);
+            if (layouts == null || layouts.Length == 0) return;
+            selectedLayout = Mathf.Clamp(index, 0, layouts.Length - 1);
+            for (int i = 0; i < layouts.Length; i++) layouts[i].gameObject.SetActive(i == selectedLayout);
+            Physics2D.SyncTransforms();
         }
 
-        public Vector2 Size => size;
         Vector2 Scale => new Vector2(Mathf.Abs(transform.lossyScale.x), Mathf.Abs(transform.lossyScale.y));
-        public Rect Area => new Rect((Vector2)transform.position - Vector2.Scale(size, Scale) * 0.5f, Vector2.Scale(size, Scale));
+        public Rect Area => new Rect((Vector2)transform.position - Vector2.Scale(Size, Scale) * 0.5f, Vector2.Scale(Size, Scale));
         public Rect OuterArea
         {
             get
             {
-                Vector2 outerSize = Vector2.Scale(size + Vector2.one * (wallThickness * 2f), Scale);
+                Vector2 outerSize = Vector2.Scale(Size + Vector2.one * (wallThickness * 2f), Scale);
                 return new Rect((Vector2)transform.position - outerSize * 0.5f, outerSize);
             }
         }
 
-        public void Resize(Vector2 dimensions)
-        {
-            size = Vector2.Max(dimensions, Vector2.one * 4f);
-            RefreshLayout();
-        }
-
-        void Awake() => Instance = this;
+        void Awake() { Instance = this; SelectLayout(0); }
         void OnDestroy() { if (Instance == this) Instance = null; }
-
-        void OnValidate()
-        {
-            size = Vector2.Max(size, Vector2.one * 4f);
-            wallThickness = Mathf.Max(0.1f, wallThickness);
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.delayCall -= RefreshLayout;
-            UnityEditor.EditorApplication.delayCall += RefreshLayout;
-#endif
-        }
-
-        /// Resizes the existing floor and four walls to match the room settings.
-        public void RefreshLayout()
-        {
-            if (this == null) return;
-            var floor = GetComponent<SpriteRenderer>();
-            if (floor != null) floor.size = size;
-            FitWall("NorthWall", new Vector2(0f, (size.y + wallThickness) * 0.5f), new Vector2(size.x, wallThickness));
-            FitWall("SouthWall", new Vector2(0f, -(size.y + wallThickness) * 0.5f), new Vector2(size.x, wallThickness));
-            FitWall("EastWall", new Vector2((size.x + wallThickness) * 0.5f, 0f), new Vector2(wallThickness, size.y + wallThickness * 2f));
-            FitWall("WestWall", new Vector2(-(size.x + wallThickness) * 0.5f, 0f), new Vector2(wallThickness, size.y + wallThickness * 2f));
-        }
-
-        void FitWall(string name, Vector2 position, Vector2 dimensions)
-        {
-            var wall = transform.Find(name);
-            if (wall == null) return;
-            wall.localPosition = position;
-            wall.GetComponent<BoxCollider2D>().size = dimensions;
-            wall.GetComponent<SpriteRenderer>().size = dimensions;
-        }
 
         public Vector2 Clamp(Vector2 point, float radius = 0f) => RoomGeometry.Clamp(Area, point, Vector2.one * radius);
 
         public Vector2 ClearPosition(Vector2 point, float radius = 0f)
         {
             var position = Clamp(point, radius);
-            return furniture != null ? furniture.ClearPosition(position, radius) : position;
+            return ActiveLayout != null ? ActiveLayout.ClearPosition(position, radius, Area) : position;
         }
 
         public static float RadiusOf(GameObject body)
