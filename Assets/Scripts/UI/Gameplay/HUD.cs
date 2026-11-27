@@ -14,6 +14,7 @@ namespace VacuumSurvivor
         [SerializeField] Text weaponLabel;
         [SerializeField] GameObject bossBar;
         [SerializeField] Image bossFill;
+        [SerializeField] Image bossDamageTrail;
         [SerializeField] Text bossLabel;
 
         static readonly Color Mint = new Color(0.59f, 0.98f, 0.83f);
@@ -26,7 +27,6 @@ namespace VacuumSurvivor
         float bossMax = 1f;
         float bossTarget = 1f;
         float bossTrail = 1f;
-        Image bossDamageTrail;
         bool batteryHit;
         float batteryHitUntil;
         string room = "Phòng khách";
@@ -41,10 +41,6 @@ namespace VacuumSurvivor
             SetBar(dustFill, 0f);
             dustFill.color = DustColor;
             bossBar.SetActive(false);
-            bossDamageTrail = Instantiate(bossFill, bossFill.transform.parent, false);
-            bossDamageTrail.name = "Recent Damage";
-            bossDamageTrail.transform.SetSiblingIndex(bossFill.transform.GetSiblingIndex());
-            bossDamageTrail.color = new Color(1f, 0.76f, 0.48f);
         }
 
         void OnEnable()
@@ -73,12 +69,6 @@ namespace VacuumSurvivor
 
         void Start()
         {
-            if (GameManager.Instance != null)
-            {
-                var plate = transform.Find("RoomPlate");
-                var frame = plate != null ? plate.GetComponent<Image>()?.sprite : null;
-                gameObject.AddComponent<GameplayOverlay>().Configure(timerLabel.font, frame);
-            }
             var player = GameManager.Instance != null ? GameManager.Instance.Player : null;
             if (player == null) return;
             var stats = player.GetComponent<PlayerStats>();
