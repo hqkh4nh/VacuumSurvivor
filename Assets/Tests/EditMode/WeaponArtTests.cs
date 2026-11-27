@@ -9,7 +9,7 @@ public class WeaponArtTests
     const string Art = "Assets/Art/Soft2D/Weapons/";
     const System.Reflection.BindingFlags Private = System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic;
 
-    [TestCase("Droplet", 4)]
+    [TestCase("Droplet", 14)]
     [TestCase("TrailPatch", 1)]
     public void Weapon_prefabs_use_imported_sprites(string name, int order)
     {

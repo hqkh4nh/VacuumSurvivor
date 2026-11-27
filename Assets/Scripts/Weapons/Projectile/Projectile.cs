@@ -14,9 +14,13 @@ namespace VacuumSurvivor
         float damage;
         float dieAt;
         GameObjectPool pool;
+        TrailRenderer streak;
+
+        void Awake() => streak = GetComponent<TrailRenderer>();
 
         public void Launch(Vector2 direction, float speed, float dmg, GameObjectPool owner)
         {
+            if (streak != null) streak.Clear();
             velocity = direction.normalized * speed;
             damage = dmg;
             pool = owner;

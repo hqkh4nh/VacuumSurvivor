@@ -21,6 +21,7 @@ namespace VacuumSurvivor
         float sweepLeft;
         float angle;
         LineRenderer[] lines;
+        Material material;
 
         void Awake()
         {
@@ -30,22 +31,23 @@ namespace VacuumSurvivor
 
         void BuildLines(int n)
         {
+            if (lines != null) return;
             lines = new LineRenderer[n];
-            var mat = new Material(Shader.Find("Sprites/Default"));
+            material = new Material(Resources.Load<Material>("Materials/WeaponStroke"));
             for (int i = 0; i < n; i++)
             {
                 var go = new GameObject("Beam" + i);
                 go.transform.SetParent(transform, false);
                 var lr = go.AddComponent<LineRenderer>();
-                lr.material = mat;
+                lr.sharedMaterial = material;
                 lr.useWorldSpace = true;
                 lr.positionCount = 2;
-                lr.startWidth = 0.1f;
-                lr.endWidth = 0.035f;
+                lr.startWidth = 0.18f;
+                lr.endWidth = 0.075f;
                 lr.numCapVertices = 6;
-                lr.sortingOrder = 8;
-                lr.startColor = new Color(0.68f, 0.96f, 0.91f, 0.9f);
-                lr.endColor = new Color(0.73f, 0.72f, 0.9f, 0.55f);
+                lr.sortingOrder = 15;
+                lr.startColor = new Color(0.22f, 1f, 0.67f, 1f);
+                lr.endColor = new Color(0.55f, 1f, 0.8f, 0.85f);
                 lr.enabled = false;
                 lines[i] = lr;
             }
@@ -110,6 +112,13 @@ namespace VacuumSurvivor
                 lines[i].SetPosition(0, origin);
                 lines[i].SetPosition(1, origin + new Vector3(Mathf.Cos(a), Mathf.Sin(a), 0f) * t.Range);
             }
+        }
+
+        void OnDestroy()
+        {
+            if (material == null) return;
+            if (Application.isPlaying) Destroy(material);
+            else DestroyImmediate(material);
         }
 
         void HideBeams()

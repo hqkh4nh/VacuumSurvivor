@@ -216,8 +216,8 @@ namespace VacuumSurvivor.EditorTools
                 b.transform.SetParent(pivot.transform, false);
                 b.transform.localScale = Vector3.one * 0.6f;
                 var sr = b.AddComponent<SpriteRenderer>();
-                sr.sortingOrder = 9;
                 sr.sprite = LoadWeaponSprite("Broom");
+                ConfigureWeaponVisual(b, "Broom");
                 brooms[i] = b.transform;
             }
             orbit.Pivot = pivot.transform;
@@ -281,13 +281,31 @@ namespace VacuumSurvivor.EditorTools
             PrefabUtility.SavePrefabAsset(prefab);
         }
 
+        internal static void ConfigureWeaponVisual(GameObject go, string kind)
+        {
+            var renderer = go.GetComponent<SpriteRenderer>();
+            renderer.sharedMaterial = Resources.Load<Material>("Materials/WeaponSprite");
+            renderer.sortingOrder = kind == "TrailPatch" ? 1 : kind == "Broom" ? 13 : 14;
+            if (kind == "TrailPatch") { renderer.color = new Color(0.65f, 0.9f, 1f, 0.82f); return; }
+            var streak = go.GetComponent<TrailRenderer>();
+            if (streak == null) streak = go.AddComponent<TrailRenderer>();
+            streak.sharedMaterial = Resources.Load<Material>("Materials/WeaponStroke");
+            streak.sortingOrder = kind == "Broom" ? 12 : 13;
+            streak.time = kind == "Broom" ? 0.12f : 0.09f;
+            streak.minVertexDistance = 0.04f;
+            streak.startWidth = kind == "Broom" ? 0.19f : 0.17f;
+            streak.endWidth = 0.015f;
+            streak.numCapVertices = 4; streak.numCornerVertices = 3;
+            streak.startColor = kind == "Broom" ? new Color(0.8f,0.48f,1f,0.8f) : new Color(0.2f,0.75f,1f,0.95f);
+            streak.endColor = new Color(0.6f,0.9f,1f,0f);
+        }
+
         static GameObject CreateTrailPatchPrefab(string path)
         {
             var go = new GameObject("TrailPatch");   // Default layer; damages via OverlapCircleAll, no collider needed
             var sr = go.AddComponent<SpriteRenderer>();
-            sr.sortingOrder = 1;
             sr.sprite = LoadWeaponSprite("TrailPatch");
-            sr.color = new Color(1f, 1f, 1f, 0.6f);
+            ConfigureWeaponVisual(go, "TrailPatch");
             go.AddComponent<TrailPatch>();
 
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, path);
@@ -702,8 +720,8 @@ namespace VacuumSurvivor.EditorTools
         {
             var go = new GameObject("Droplet");   // Default layer: Pickup↔Enemy collisions are off, triggers must still fire
             var sr = go.AddComponent<SpriteRenderer>();
-            sr.sortingOrder = 4;
             sr.sprite = LoadWeaponSprite("Droplet");
+            ConfigureWeaponVisual(go, "Droplet");
             var rb = go.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
             rb.bodyType = RigidbodyType2D.Kinematic;

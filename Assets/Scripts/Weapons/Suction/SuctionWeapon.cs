@@ -51,7 +51,7 @@ namespace VacuumSurvivor
             {
                 var color = ringColor;
                 float strength = Overdrive > 1f ? 1.5f : 1f;
-                color.a = Mathf.Clamp01(ringColor.a * 0.06f * (0.85f + 0.15f * Mathf.Sin(Time.time * 2.5f)) * strength);
+                color.a = Mathf.Clamp01(ringColor.a * 0.32f * (0.85f + 0.15f * Mathf.Sin(Time.time * 2.5f)) * strength);
                 ringRenderer.color = color;
             }
             if (flowEffect != null) flowEffect.Render(t.Radius, Time.time, Overdrive);

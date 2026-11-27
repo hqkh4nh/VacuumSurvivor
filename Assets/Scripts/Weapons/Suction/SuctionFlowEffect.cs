@@ -15,13 +15,13 @@ namespace VacuumSurvivor
         void Build()
         {
             if (flows != null) return;
-            material = new Material(Shader.Find("Sprites/Default"));
+            material = new Material(Resources.Load<Material>("Materials/WeaponStroke"));
             flows = new LineRenderer[FlowCount];
             dust = new LineRenderer[DustCount];
             for (int i = 0; i < FlowCount; i++)
-                flows[i] = EffectLines.Create(transform, "Flow" + i, material, Points, 2);
+                flows[i] = EffectLines.Create(transform, "Flow" + i, material, Points, 8);
             for (int i = 0; i < DustCount; i++)
-                dust[i] = EffectLines.Create(transform, "Dust" + i, material, 2, 3);
+                dust[i] = EffectLines.Create(transform, "Dust" + i, material, 2, 9);
         }
 
         public void Render(float radius, float time, float strength)
@@ -34,9 +34,9 @@ namespace VacuumSurvivor
                 float tail = Mathf.Max(0f, progress - 0.32f);
                 float fade = Mathf.Clamp01(progress * 8f) * Mathf.Clamp01((1f - progress) * 7f);
                 var line = flows[i];
-                line.widthMultiplier = radius * 0.035f;
-                line.startColor = new Color(0.4f, 0.86f, 0.83f, 0.08f * fade * brightness);
-                line.endColor = new Color(0.83f, 1f, 0.94f, 0.85f * fade * brightness);
+                line.widthMultiplier = radius * 0.055f;
+                line.startColor = new Color(0.05f, 0.8f, 0.93f, 0.28f * fade * brightness);
+                line.endColor = new Color(0.48f, 1f, 1f, 0.95f * fade * brightness);
                 for (int point = 0; point < Points; point++)
                 {
                     float u = Mathf.Lerp(tail, progress, point / (float)(Points - 1));
@@ -51,9 +51,9 @@ namespace VacuumSurvivor
                 float distance = Mathf.Lerp(0.48f, 0.04f, progress);
                 float fade = Mathf.Clamp01(progress * 10f) * Mathf.Clamp01((1f - progress) * 8f);
                 var line = dust[i];
-                line.widthMultiplier = radius * 0.026f;
-                line.startColor = new Color(0.85f, 0.94f, 0.76f, 0.15f * fade);
-                line.endColor = new Color(1f, 0.93f, 0.7f, Mathf.Min(1f, fade * brightness));
+                line.widthMultiplier = radius * 0.042f;
+                line.startColor = new Color(0.1f, 0.85f, 1f, 0.35f * fade);
+                line.endColor = new Color(0.8f, 1f, 1f, Mathf.Min(1f, fade * brightness));
                 line.SetPosition(0, EffectLines.Polar(angle - 0.035f, Mathf.Min(0.49f, distance + 0.024f)));
                 line.SetPosition(1, EffectLines.Polar(angle, distance));
             }

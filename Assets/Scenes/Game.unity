@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35d1e44390b649847897ffef568d908a, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.GameObjectPool
   prefab: {fileID: 5266017712144469228, guid: 9ad7933a7d93a8e4aabda1a0fac8e105, type: 3}
   initialSize: 32
@@ -281,6 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329205704}
   - component: {fileID: 329205706}
+  - component: {fileID: 329205707}
   m_Layer: 0
   m_Name: Broom3
   m_TagString: Untagged
@@ -329,7 +330,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 4b7b764ac77364f4c89205b1b8867b89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -350,7 +351,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 13
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: efe16d7a8f8402046a02e72e979f0541, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -363,6 +364,125 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!96 &329205707
+TrailRenderer:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329205703}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d8c25f0b251c3da4283c2ffc96ee99d0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 12
+  m_MaskInteraction: 0
+  m_Time: 0.12
+  m_PreviewTimeScale: 1
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.19
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.015
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.8, g: 0.47843137, b: 1, a: 0.8}
+      key1: {r: 0.6, g: 0.9019608, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 3
+    numCapVertices: 4
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.04
+  m_Autodestruct: 0
+  m_Emitting: 1
+  m_ApplyActiveColorSpace: 1
 --- !u!1 &355903126
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +526,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 902e1f8b475c00847989c94780c815fa, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.ProceduralSprite
   kind: 7
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -481,6 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373273819}
   - component: {fileID: 373273821}
+  - component: {fileID: 373273822}
   m_Layer: 0
   m_Name: Broom0
   m_TagString: Untagged
@@ -529,7 +650,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 4b7b764ac77364f4c89205b1b8867b89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -550,7 +671,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 13
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: efe16d7a8f8402046a02e72e979f0541, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -563,6 +684,125 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!96 &373273822
+TrailRenderer:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373273818}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d8c25f0b251c3da4283c2ffc96ee99d0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 12
+  m_MaskInteraction: 0
+  m_Time: 0.12
+  m_PreviewTimeScale: 1
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.19
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.015
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.8, g: 0.47843137, b: 1, a: 0.8}
+      key1: {r: 0.6, g: 0.9019608, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 3
+    numCapVertices: 4
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.04
+  m_Autodestruct: 0
+  m_Emitting: 1
+  m_ApplyActiveColorSpace: 1
 --- !u!224 &374793559 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 100002, guid: b1f5757e58604ab09edf0629e6d6128e, type: 3}
@@ -611,7 +851,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 902e1f8b475c00847989c94780c815fa, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.ProceduralSprite
   kind: 8
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -703,7 +943,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdec9e1f41a863d4a8bfcf155f900fa9, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.DockSpawner
   dockPrefab: {fileID: 4728517594904555832, guid: e11b6731af7483248b6024dafc6e42a5, type: 3}
   interval: 30
@@ -751,7 +991,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
   m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
@@ -782,7 +1022,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
@@ -862,7 +1102,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f0b982b5d4ed2147b1263f2d89c53ab, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.PlayerMagnet
   baseRadius: 1.5
   collectDistance: 0.35
@@ -876,7 +1116,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5f9a8e3745ade04e9a1e7550b99295b, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.WeaponManager
 --- !u!114 &976401575
 MonoBehaviour:
@@ -888,7 +1128,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95951790c54dc1e4f96da4a20be4b7f9, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.PushWeapon
   data: {fileID: 11400000, guid: 662b107460fa80443b7f319a33ae63bf, type: 2}
   owned: 0
@@ -928,7 +1168,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e3910f580c63ec4f9f5f81aeb3f6fbc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.LaserWeapon
   data: {fileID: 11400000, guid: 92c29eb9877bbd74eb6c267ec9c1b6b6, type: 2}
   owned: 0
@@ -958,7 +1198,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1d426407d08b1f46bd7a50a5911df26, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.TrailWeapon
   data: {fileID: 11400000, guid: fd3290fa868a23343bac686c42dec6d9, type: 2}
   owned: 0
@@ -997,7 +1237,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a0f89d13441ab743b7a5bb3b6b25e85, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.ProjectileWeapon
   data: {fileID: 11400000, guid: 8e6aa582dfc05954cae75a6c9d96c974, type: 2}
   owned: 0
@@ -1033,7 +1273,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a84aa541e1313046abfeed0ee077670, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.OrbitWeapon
   data: {fileID: 11400000, guid: 164ed4a481fc8ae42848a7fd45e98dcf, type: 2}
   owned: 0
@@ -1073,7 +1313,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 111cd4faf4b0dec499294393d92448bc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.SuctionWeapon
   data: {fileID: 11400000, guid: d732b7cbcb805624c8017c0798bad3ce, type: 2}
   owned: 1
@@ -1089,7 +1329,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05306797bf9d9fa498991bce9b9ded9f, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.BatteryLED
   stats: {fileID: 0}
   led: {fileID: 0}
@@ -1105,7 +1345,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3135107d8f462d64fb82ce25c6483b52, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.PlayerController
   moveSpeed: 5
 --- !u!114 &976401583
@@ -1118,7 +1358,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8126246488763084eba7b624442586d5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.PlayerStats
   maxBattery: 100
   drainPerSecond: 0.25
@@ -1273,7 +1513,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bf17599221bd6847bcc5f3c9d3608a5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.UpgradeManager
   catalog:
   - {fileID: 11400000, guid: 97528e34a7cf47c4b9fd4ee42a050d27, type: 2}
@@ -1339,7 +1579,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d40a9517d0da0904ab5ba41bb8804401, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.CameraFollow
   target: {fileID: 976401572}
   smooth: 8
@@ -1441,7 +1681,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2952171607b3e5b44a813c7aa7acb86d, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.DustSpawner
   dustPrefab: {fileID: 5963742369502633937, guid: 9cccdb574f2f9f1469a18b0ef9a12442, type: 3}
 --- !u!4 &1183343728
@@ -1486,7 +1726,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a71c8796075d2049bb3d26f0c685e3b, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.RunTracker
 --- !u!4 &1470091898
 Transform:
@@ -1530,7 +1770,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5474673ed6202a489bc1b3675903026, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.Sfx
 --- !u!4 &1509272120
 Transform:
@@ -1557,6 +1797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1538736287}
   - component: {fileID: 1538736289}
+  - component: {fileID: 1538736290}
   m_Layer: 0
   m_Name: Broom1
   m_TagString: Untagged
@@ -1605,7 +1846,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 4b7b764ac77364f4c89205b1b8867b89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1626,7 +1867,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 13
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: efe16d7a8f8402046a02e72e979f0541, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1639,6 +1880,125 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!96 &1538736290
+TrailRenderer:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538736286}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d8c25f0b251c3da4283c2ffc96ee99d0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 12
+  m_MaskInteraction: 0
+  m_Time: 0.12
+  m_PreviewTimeScale: 1
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.19
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.015
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.8, g: 0.47843137, b: 1, a: 0.8}
+      key1: {r: 0.6, g: 0.9019608, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 3
+    numCapVertices: 4
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.04
+  m_Autodestruct: 0
+  m_Emitting: 1
+  m_ApplyActiveColorSpace: 1
 --- !u!1 &1549475527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +2026,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d53ef6f5e892824ba6e65abb8366d43, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.GameManager
   sliceDuration: 180
   levels:
@@ -1724,7 +2084,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df2ad1f95ddf1c40bd8dc672c1e9d0b, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.PowerUpSpawner
   powerUpPrefab: {fileID: 6855388926944416509, guid: 76cfa867d4c6bf1429bc3bae6cf94571, type: 3}
   dropChance: 0.05
@@ -1789,7 +2149,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35d1e44390b649847897ffef568d908a, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.GameObjectPool
   prefab: {fileID: 9221752574997512454, guid: d9e2c388023095947b2b805fe44eb5ce, type: 3}
   initialSize: 32
@@ -1803,6 +2163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1744673964}
   - component: {fileID: 1744673966}
+  - component: {fileID: 1744673967}
   m_Layer: 0
   m_Name: Broom2
   m_TagString: Untagged
@@ -1851,7 +2212,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 4b7b764ac77364f4c89205b1b8867b89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1872,7 +2233,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 13
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: efe16d7a8f8402046a02e72e979f0541, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1885,6 +2246,125 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!96 &1744673967
+TrailRenderer:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744673963}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d8c25f0b251c3da4283c2ffc96ee99d0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 12
+  m_MaskInteraction: 0
+  m_Time: 0.12
+  m_PreviewTimeScale: 1
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.19
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.015
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.8, g: 0.47843137, b: 1, a: 0.8}
+      key1: {r: 0.6, g: 0.9019608, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 3
+    numCapVertices: 4
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.04
+  m_Autodestruct: 0
+  m_Emitting: 1
+  m_ApplyActiveColorSpace: 1
 --- !u!1 &1781632358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,7 +2392,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 041fbd80dfe3452459eb05132d61fc53, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.EnemySpawner
   waves: {fileID: 11400000, guid: 43566d3c8466aae44a788529fdc8204a, type: 2}
   enemyPrefabs:
@@ -1989,7 +2469,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 902e1f8b475c00847989c94780c815fa, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: VacuumSurvivor::VacuumSurvivor.ProceduralSprite
   kind: 8
   color: {r: 1, g: 1, b: 1, a: 1}
