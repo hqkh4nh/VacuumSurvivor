@@ -8,6 +8,8 @@ namespace VacuumSurvivor
     {
         public static event Action<float, float> BatteryChanged;   // current, max
         public static event Action<int, int> DustChanged;          // current, needed-for-next
+        public static event Action<int> DustCollected;
+        public static event Action DockEngaged;
         public static event Action<int> PlayerLevelChanged;        // new level
         public static event Action<string> WeaponsChanged;         // summary of owned weapons + levels
         public static event Action Won;
@@ -22,6 +24,8 @@ namespace VacuumSurvivor
 
         public static void RaiseBattery(float current, float max) => BatteryChanged?.Invoke(current, max);
         public static void RaiseDust(int current, int needed) => DustChanged?.Invoke(current, needed);
+        public static void RaiseDustCollected(int amount) => DustCollected?.Invoke(amount);
+        public static void RaiseDockEngaged() => DockEngaged?.Invoke();
         public static void RaisePlayerLevel(int level) => PlayerLevelChanged?.Invoke(level);
         public static void RaiseWeapons(string summary) => WeaponsChanged?.Invoke(summary);
         public static void RaiseWon() => Won?.Invoke();

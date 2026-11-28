@@ -44,7 +44,7 @@ namespace VacuumSurvivor
             if (t == null) return "";
             var s = t.Last;
             return $"Thời gian: {s.seconds}s    Rác dọn: {s.kills}\n" +
-                   $"Bụi: {s.dust}    Cấp: {t.Level}\n" +
+                   $"Bụi đã nhặt: {s.dust * 12} g    Cấp: {t.Level}\n" +
                    $"Điểm: {s.Score(won)}";
         }
 

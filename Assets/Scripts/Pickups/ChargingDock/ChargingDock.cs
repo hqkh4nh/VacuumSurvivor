@@ -49,9 +49,11 @@ namespace VacuumSurvivor
         {
             var stats = other.GetComponent<PlayerStats>();
             if (stats == null) return;
+            bool entering = occupant != other.gameObject;
             occupant = other.gameObject;
             stats.Charge(chargePerSecond);
             SetBuffs(occupant, slowMultiplier, overdrive);
+            if (entering) GameEvents.RaiseDockEngaged();
         }
 
         void OnTriggerExit2D(Collider2D other)

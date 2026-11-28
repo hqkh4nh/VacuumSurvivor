@@ -1,8 +1,31 @@
 using NUnit.Framework;
 using VacuumSurvivor;
+using UnityEngine;
 
 public class RunStatsTests
 {
+    [Test]
+    public void DustCollectionReportsFullPickupEvenWhenItSpansLevels()
+    {
+        var robot = new GameObject("Robot");
+        var stats = robot.AddComponent<PlayerStats>();
+        int collected = 0;
+        void Record(int amount) => collected += amount;
+
+        GameEvents.DustCollected += Record;
+        try
+        {
+            stats.AddDust(100);
+            Assert.Greater(stats.Level, 2);
+            Assert.AreEqual(100, collected);
+        }
+        finally
+        {
+            GameEvents.DustCollected -= Record;
+            Object.DestroyImmediate(robot);
+        }
+    }
+
     [Test]
     public void Score_without_win_bonus()
     {

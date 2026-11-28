@@ -167,6 +167,7 @@ namespace VacuumSurvivor
             if (Current != State.Playing) return;
             Current = State.Won;
             Time.timeScale = 0f;
+            RunTracker.Instance?.FinishRun(true);
             GameEvents.RaiseWon();
         }
 
@@ -175,6 +176,7 @@ namespace VacuumSurvivor
             if (Current != State.Playing) return;
             Current = State.Lost;
             Time.timeScale = 0f;
+            RunTracker.Instance?.FinishRun(false);
             GameEvents.RaiseLost();
         }
 

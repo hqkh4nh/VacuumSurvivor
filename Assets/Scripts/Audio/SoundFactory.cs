@@ -31,6 +31,13 @@ namespace VacuumSurvivor
             Clip("sfx_lose", ToneSynth.Arp(new[] { 330f, 247f, 196f }, 0.18f, Rate, ToneSynth.Wave.Square), Rate);
         public static AudioClip PowerUp() =>
             Clip("sfx_powerup", ToneSynth.Arp(new[] { 784f, 1047f }, 0.07f, Rate, ToneSynth.Wave.Sine), Rate);
+        public static AudioClip LowBattery() =>
+            Clip("sfx_low_battery", ToneSynth.Arp(new[] { 880f, 660f, 880f }, 0.1f, Rate, ToneSynth.Wave.Sine), Rate);
+        public static AudioClip DockEngaged() =>
+            Clip("sfx_dock_engaged", ToneSynth.Arp(new[] { 392f, 523f, 659f }, 0.1f, Rate, ToneSynth.Wave.Sine), Rate);
+        public static AudioClip BossMusicLoop() =>
+            Clip("music_boss", ToneSynth.Arp(new[] { 147f, 220f, 147f, 196f, 139f, 208f, 139f, 175f },
+                0.18f, Rate, ToneSynth.Wave.Sine), Rate);
 
         public static AudioClip MusicLoop()
         {

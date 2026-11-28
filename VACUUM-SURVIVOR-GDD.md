@@ -772,6 +772,10 @@ Hệ thống âm thanh do `AudioManager` quản lý (nhạc nền + hiệu ứng
 - Chế độ chơi bất tận (endless) sau khi hoàn thành 3 màn.
 - Bảng xếp hạng trực tuyến thay cho bảng điểm cao cục bộ.
 - Thêm boss và nâng cấp đánh đổi để tăng chiều sâu chiến thuật.
+- **Đấu tầm xa tại Nhà bếp (đề xuất).** Thử một biến thể Vụn bánh mì bắn xa và một phát xịt chủ động cho robot.
+  - Vụn bánh mì bắn xa đứng ngoài tầm hút, dừng lại và báo hướng khoảng nửa giây trước khi bắn một viên vụn chậm. Viên đạn giữ nguyên hướng sau khi rời địch và bị đồ đạc chặn.
+  - Sau khi chọn Vòi xịt nước lau, robot có thêm một phát xịt mạnh theo hướng con trỏ với hồi chiêu riêng. Phát xịt ngắt đòn nếu trúng địch trong lúc nó đang chuẩn bị bắn. Sáu vũ khí hiện có vẫn tự động tấn công.
+  - Bắt đầu với một con bắn xa ở góc nhìn ra lối về ụ sạc. Khi pin thấp, người chơi có thể vòng sau quầy, đợi địch bắn xong rồi băng qua, hoặc dùng phát xịt để ngắt đòn và chạy về sạc.
 - **Túi chứa rác nhiệm vụ (đang cân nhắc, thực hiện nếu còn thời gian).** Robot có túi chứa hữu hạn để gom rác tại các khu bẩn và mang về trạm. Người chơi cân nhắc quay về đổ túi và sạc pin hay đi tiếp để gom thêm. Bụi từ quái vẫn dùng để lên cấp. Có thể thử ở một phòng sau khi bản hiện tại đã hoàn thiện và chơi thử ổn định. Ý tưởng này nằm ngoài phạm vi bản nộp hiện tại.
 
 ---

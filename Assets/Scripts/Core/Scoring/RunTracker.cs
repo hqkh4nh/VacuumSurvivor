@@ -26,15 +26,13 @@ namespace VacuumSurvivor
         void OnEnable()
         {
             EnemyBase.EnemyDied += OnEnemyDied;
-            GameEvents.Won += OnWon;
-            GameEvents.Lost += OnLost;
+            GameEvents.DustCollected += OnDustCollected;
         }
 
         void OnDisable()
         {
             EnemyBase.EnemyDied -= OnEnemyDied;
-            GameEvents.Won -= OnWon;
-            GameEvents.Lost -= OnLost;
+            GameEvents.DustCollected -= OnDustCollected;
         }
 
         void Update()
@@ -43,16 +41,10 @@ namespace VacuumSurvivor
                 seconds += Time.deltaTime;
         }
 
-        void OnEnemyDied(Vector2 pos, int droppedDust)
-        {
-            kills++;
-            dust += droppedDust;
-        }
+        void OnEnemyDied(Vector2 pos, int droppedDust) => kills++;
+        void OnDustCollected(int amount) => dust += amount;
 
-        void OnWon() => Finalize(true);
-        void OnLost() => Finalize(false);
-
-        void Finalize(bool won)
+        public void FinishRun(bool won)
         {
             if (HasResult) return;
             Won = won;

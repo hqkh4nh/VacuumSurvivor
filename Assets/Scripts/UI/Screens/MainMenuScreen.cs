@@ -1,5 +1,6 @@
 using System.Text;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,21 +13,19 @@ namespace VacuumSurvivor
         [SerializeField] GameObject highScores;
         [SerializeField] Text highScoreText;
 
-        RectTransform portrait;
-        Vector2 portraitRest;
+        Button[] menuButtons;
+        GameObject previousSelection;
 
         void Awake()
         {
             instructions.SetActive(false);
             highScores.SetActive(false);
-            portrait = transform.Find("RobotPortrait") as RectTransform;
-            if (portrait != null) portraitRest = portrait.anchoredPosition;
+            menuButtons = GetComponentsInChildren<Button>();
         }
 
-        void Update()
+        void Start()
         {
-            if (portrait == null || instructions.activeSelf || highScores.activeSelf) return;
-            portrait.anchoredPosition = portraitRest + Vector2.up * (4f * Mathf.Sin(Time.unscaledTime * 2.3f));
+            if (menuButtons.Length > 0) menuButtons[0].Select();
         }
 
         public void PlayGame()
@@ -35,13 +34,9 @@ namespace VacuumSurvivor
             SceneManager.LoadScene("Game");
         }
 
-        public void ShowInstructions()
-        {
-            instructions.SetActive(true);
-            PanelEntrance.Play(instructions);
-        }
-        public void CloseInstructions() => instructions.SetActive(false);
-        public void CloseHighScores() => highScores.SetActive(false);
+        public void ShowInstructions() => OpenPanel(instructions);
+        public void CloseInstructions() => ClosePanel(instructions);
+        public void CloseHighScores() => ClosePanel(highScores);
         public void QuitGame() => Application.Quit();
 
         public void ShowHighScores()
@@ -53,9 +48,25 @@ namespace VacuumSurvivor
                 for (int i = 0; i < entries.Count; i++)
                     sb.Append($"{i + 1}. {entries[i].score} điểm · Cấp {entries[i].level} · {entries[i].date}\n");
             highScoreText.text = sb.ToString();
-            highScores.SetActive(true);
-            PanelEntrance.Play(highScores);
+            OpenPanel(highScores);
         }
 
+        void OpenPanel(GameObject panel)
+        {
+            var events = EventSystem.current;
+            previousSelection = events != null ? events.currentSelectedGameObject : null;
+            foreach (var button in menuButtons) button.interactable = false;
+            panel.SetActive(true);
+            PanelEntrance.Play(panel);
+            panel.GetComponentInChildren<Button>().Select();
+        }
+
+        void ClosePanel(GameObject panel)
+        {
+            panel.SetActive(false);
+            foreach (var button in menuButtons) button.interactable = true;
+            if (EventSystem.current != null && previousSelection != null)
+                EventSystem.current.SetSelectedGameObject(previousSelection);
+        }
     }
 }

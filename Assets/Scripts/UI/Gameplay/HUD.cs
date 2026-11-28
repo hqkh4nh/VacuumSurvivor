@@ -9,6 +9,8 @@ namespace VacuumSurvivor
         [SerializeField] Image batteryFill;
         [SerializeField] Image dustFill;
         [SerializeField] Text batteryLabel;
+        [SerializeField] Text dustLabel;
+        [SerializeField] Text roomLabel;
         [SerializeField] Text timerLabel;
         [SerializeField] Text levelLabel;
         [SerializeField] Text weaponLabel;
@@ -125,8 +127,9 @@ namespace VacuumSurvivor
             clockSecond = second;
             clockPaused = paused;
             clockRoom = room;
-            timerLabel.text = paused ? "TẠM DỪNG · ESC để tiếp tục" : $"{room} · {second / 60:00}:{second % 60:00}";
-            timerLabel.color = paused ? BatteryColor.Yellow : Mint;
+            roomLabel.text = paused ? "TẠM DỪNG" : room.ToUpperInvariant();
+            roomLabel.color = paused ? BatteryColor.Yellow : Mint;
+            timerLabel.text = $"{second / 60:00}:{second % 60:00}";
         }
 
         void OnBattery(float current, float max)
@@ -152,6 +155,7 @@ namespace VacuumSurvivor
         void OnDust(int current, int needed)
         {
             dustTarget = needed > 0 ? Mathf.Clamp01((float)current / needed) : 0f;
+            dustLabel.text = $"Bụi {current}/{needed}";
         }
 
         void OnLevel(int level)
@@ -161,7 +165,13 @@ namespace VacuumSurvivor
             SetBar(dustFill, dustDisplayed);
         }
 
-        void OnWeapons(string summary) => weaponLabel.text = summary.Replace("  ", "  ·  ");
+        void OnWeapons(string summary)
+        {
+            var weapons = summary.Split(new[] { "  " }, System.StringSplitOptions.RemoveEmptyEntries);
+            weaponLabel.text = string.Join("  ·  ", weapons, 0, Mathf.Min(3, weapons.Length));
+            if (weapons.Length > 3)
+                weaponLabel.text += "\n" + string.Join("  ·  ", weapons, 3, weapons.Length - 3);
+        }
 
         void OnLevelChanged(int index, string name)
         {

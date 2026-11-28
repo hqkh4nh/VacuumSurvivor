@@ -75,7 +75,9 @@ namespace VacuumSurvivor
 
         public void AddDust(int amount)
         {
+            if (amount <= 0) return;
             int gained = progress.AddDust(amount);
+            GameEvents.RaiseDustCollected(amount);
             GameEvents.RaiseDust(progress.Dust, progress.DustForNext);
             for (int i = 0; i < gained; i++) GameEvents.RaisePlayerLevel(progress.Level);
         }
